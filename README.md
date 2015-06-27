@@ -8,6 +8,7 @@ Echo results such that they can be captured in an array or try exporting a varia
 functions can export array variables
 capturing output as an array is tricky though..
 users should use spaces to pass args, not tabs
+should functions that return integers simply return that value? or should the echo paradigm be consistent?
 
 
 

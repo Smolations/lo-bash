@@ -1,43 +1,43 @@
 
 
-function newfunc {
-  uri="$1"
-  group="${uri%/*}"
-  function_name="${uri#*/}"
-  file_name="${uri}.sh"
+# function newfunc {
+#   uri="$1"
+#   group="${uri%/*}"
+#   function_name="${uri#*/}"
+#   file_name="${uri}.sh"
 
-  # the function
-  if [ -d "functions/$group" ]; then
-    dest="functions/${file_name}"
-    cat > "$dest" <<-EOF
+#   # the function
+#   if [ -d "functions/$group" ]; then
+#     dest="functions/${file_name}"
+#     cat > "$dest" <<-EOF
 
-function _.${function_name} {
-  local turn=0
+# function _.${function_name} {
+#   local turn=0
 
-  return $turn
-}
+#   return \$turn
+# }
 
-EOF
-    subl "$dest"
-  else
-    echo "Could not find function folder for: ${uri}"
-  fi
+# EOF
+#     subl "$dest"
+#   else
+#     echo "Could not find function folder for: ${uri}"
+#   fi
 
-  # the test
-  if [ -d "test/$group" ]; then
-    dest="test/${file_name}"
-    cat > "$dest" <<-EOF
-#!/bin/bash
+#   # the test
+#   if [ -d "test/$group" ]; then
+#     dest="test/${file_name}"
+#     cat > "$dest" <<-EOF
+# #!/bin/bash
 
-echo ' ---== test: _.${function_name}()'
+# echo ' ---== test: _.${function_name}()'
 
-EOF
-    chmod 0755 "$dest"
-    subl "$dest"
-  else
-    echo "Could not find test folder for: ${uri}"
-  fi
-}
+# EOF
+#     chmod 0755 "$dest"
+#     subl "$dest"
+#   else
+#     echo "Could not find test folder for: ${uri}"
+#   fi
+# }
 
 
 
@@ -63,3 +63,6 @@ EOF
 # echo bar1 = ${bar[1]}
 # echo bar2 = ${bar[2]}
 # echo bar3 = ${bar[3]}
+
+
+

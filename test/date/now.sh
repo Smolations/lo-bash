@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo 'test: _.now(1)'
-echo ' ---== test: now(1)'
+h1 'now'
 
-_.now | egrep '^[0-9]+$'
+_.now | egrep -q '^[0-9]+$' && pass || fail
+

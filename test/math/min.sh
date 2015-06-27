@@ -1,4 +1,3 @@
 #!/bin/bash
 
-echo ' ---== test: _.min()'
-
+h1 'min'

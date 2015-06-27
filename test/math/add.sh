@@ -1,5 +1,6 @@
 #!/bin/bash
 
-echo ' ---== test: _.add(1)'
+h1 'add'
 
-[ `_.add 1 3` -eq 4 ] && echo '1 + 3 = 4'
+[ `_.add 1 3` -eq 4 ] && pass || fail
+[ `_.add 2 -5` -eq -3 ] && pass || fail

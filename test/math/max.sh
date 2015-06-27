@@ -1,4 +1,3 @@
 #!/bin/bash
 
-echo ' ---== test: _.max()'
-
+h1 'max'
