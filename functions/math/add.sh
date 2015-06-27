@@ -1,5 +1,5 @@
 
 function _.add {
-  expr $1 + $2
+  _._math "$1 + $2"
 }
 
