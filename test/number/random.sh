@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# echo ' ---== test: _.random'
 h1 'random'
 
 rand_max=100
@@ -10,8 +9,6 @@ test_default=true
 test_max=true
 test_min_max=true
 
-# floating point
-# awk "BEGIN {printf \"%.5f\",1/3}"
 
 for (( i = 0; i < 50; i++ )); do
   ran_default=`_.random`
@@ -29,5 +26,3 @@ done
 [ $test_min_max ] && pass || fail
 _.random 1 10 >/dev/null && pass || fail
 _.random 10 1 >/dev/null && fail || pass
-
-# echo

@@ -6,13 +6,15 @@ _.sourceAll -r -x functions
 
 function h1 {
   # echo -n "\n ---== test: _.${1}"
-  echo -n "`printf '\n ---== test: _.%-15s  ' $1`"
+  echo -n "`printf '\n ---==:  _.%-15s  ' $1`"
 }
 function pass {
   echo -n '.'
 }
 function fail {
-  echo -n 'X'
+  local txt='X'
+  [ -n "$@" ] && txt+="[$@]"
+  echo -n "$txt"
 }
 export -f pass fail h1
 
@@ -21,6 +23,6 @@ source foo.sh
 
 
 # maybe need an _.executeAll?
-_.sourceAll -r test/
+time _.sourceAll -r test/
 # echo "-> $?"
 echo
