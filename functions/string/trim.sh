@@ -21,7 +21,6 @@
 
 function _.trim {
   local str="$1" chars=${2- }
-  # [ -z "$chars" ] && chars=' '
   sed -E "s/^[${chars}]+|[${chars}]+$//g" <<< "$str"
   return
 }

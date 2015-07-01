@@ -14,35 +14,28 @@
 # // → [1, 3]
 
 function _.difference {
-  # local turn=0 one="$1" two="$2"
-  local turn=1 cnt=0 _array1= _array2= #foo= bar=
-  local one=`_._arrayFromVar $1` two=`_._arrayFromVar $2`
+  local turn=1 new_array=$1 _difference= found=
 
-  # echo
-  # foo="1[*]"
-  # bar="2[*]"
-  # eval "$1=${!1} $2=${!2}"
+  _._arrayCopy one $2
+  _._arrayCopy two $3
 
-  # echo "${1[@]} | ${2[@]}"
-  # echo ${arr1[@]}    # works!
+  if _.isArray one && _.isArray two; then
+    _difference=() turn=0
 
+    for (( i = 0; i < ${#one[@]}; i++ )); do
+      found=
 
-  # if _.isArray $1 && _.isArray $1
-  if [ -n "$one" -a -n "$two" ]; then
-    eval "_array1=(${one}) _array2=(${two})"
+      for (( j = 0; j < ${#two[@]}; j++ )); do
+        if [ "${one[i]}" == "${two[j]}" ]; then
+          found=true
+        fi
+        [ $found ] && break
+      done
 
-    # for i in ${_array1[@]}; do
-    for (( i = 0; i < ${#_array1[@]}; i++ )); do
-      # echo "i == [${i}]"
-      if ! egrep -q "\\]=\"${_array1[i]}\"" <<< "$two"; then
-        result+="${_array1[i]}"
-      fi
+      [ ! $found ] && _difference+=("${one[i]}")
     done
 
-    echo "$result"
-    # echo "${result[@]}"
-    # echo "-> [${result[@]}]"
-    # echo
+    _._arrayCopy $new_array _difference
   fi
 
   return $turn
