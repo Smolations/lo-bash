@@ -14,4 +14,7 @@ should functions that return integers simply return that value? or should the ec
 
 Binary Dependencies
 -------------------
+awk
 egrep
+sed
+date

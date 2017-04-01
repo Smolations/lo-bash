@@ -1,4 +1,5 @@
 
+# _._arrayCopy newArrayName existingArrayName
 # @exports $1
 function _._arrayCopy {
   local turn=1 arr_copy=$1 arr_orig=$2

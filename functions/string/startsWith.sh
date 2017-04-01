@@ -22,6 +22,9 @@
 
 function _.startsWith {
   local turn=0
+  local withoutPrefix="${1#${2}}"
+
+  [ "$1" = "$withoutPrefix" ] && turn=1
 
   return $turn
 }

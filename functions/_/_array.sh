@@ -1,3 +1,4 @@
+# creates a variable that holds an array
 
 function _._array {
   local turn=1

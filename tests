@@ -13,10 +13,13 @@ function pass {
 }
 function fail {
   local txt='X'
-  [ -n "$@" ] && txt+="[$@]"
+  [ -z "$@" ] || txt+="[$@]"
   echo -n "$txt"
 }
-export -f pass fail h1
+function skip {
+  echo -n 'S'
+}
+export -f pass fail skip h1
 
 
 source foo.sh
@@ -24,5 +27,14 @@ source foo.sh
 
 # maybe need an _.executeAll?
 time _.sourceAll -r test/
+# time _.sourceAll -r test/_
+# time _.sourceAll -r test/array
+# time _.sourceAll -r test/date
+# time _.sourceAll -r test/function
+# time _.sourceAll -r test/lang
+# time _.sourceAll -r test/math
+# time _.sourceAll -r test/number
+# time _.sourceAll -r test/string
+# time _.sourceAll -r test/utility
 # echo "-> $?"
 echo
