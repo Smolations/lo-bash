@@ -1,4 +1,37 @@
-
+## /* @function
+ #  @usage _.
+ #
+ #  @output true
+ #
+ #  @exports
+ #  exports@
+ #
+ #  @description
+ #
+ #  description@
+ #
+ #  @options
+ #  options@
+ #
+ #  @notes
+ #  -
+ #  notes@
+ #
+ #  @examples
+ #  _.
+ #  examples@
+ #
+ #  @dependencies
+ #  ``
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - successful execution
+ #  1 -
+ #  returns@
+ #
+ #  @file functions//.sh
+ ## */
 # _.parseInt(string, [radix])
 
 # Converts string to an integer of the specified radix. If radix is undefined or 0, a radix of 10 is used unless value is a hexadecimal, in which case a radix of 16 is used.

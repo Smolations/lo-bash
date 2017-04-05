@@ -1,45 +1,38 @@
-
-# _.min(collection, [iteratee], [thisArg])
-
-# Gets the minimum value of collection. If collection is empty or falsey Infinity is returned. If an iteratee function is provided it is invoked for each value in collection to generate the criterion by which the value is ranked. The iteratee is bound to thisArg and invoked with three arguments: (value, index, collection).
-
-# If a property name is provided for iteratee the created _.property style callback returns the property value of the given element.
-
-# If a value is also provided for thisArg the created _.matchesProperty style callback returns true for elements that have a matching property value, else false.
-
-# If an object is provided for iteratee the created _.matches style callback returns true for elements that have the properties of the given object, else false.
-
-# Arguments
-# collection (Array|Object|string): The collection to iterate over.
-# [iteratee] (Function|Object|string): The function invoked per iteration.
-# [thisArg] (*): The this binding of iteratee.
-# Returns
-# (*): Returns the minimum value.
-
-# Example
-# _.min([4, 2, 8, 6]);
-# // → 2
-
-# _.min([]);
-# // → Infinity
-
-# var users = [
-#   { 'user': 'barney', 'age': 36 },
-#   { 'user': 'fred',   'age': 40 }
-# ];
-
-# _.min(users, function(chr) {
-#   return chr.age;
-# });
-# // → { 'user': 'barney', 'age': 36 }
-
-# // using the `_.property` callback shorthand
-# _.min(users, 'age');
-# // → { 'user': 'barney', 'age': 36 }
+## /* @function
+ #  @usage _.min <val1>[, <val2>[, ...]]
+ #
+ #  @output true
+ #
+ #  @description
+ #  Gets the minimum value of collection.
+ #  description@
+ #
+ #  @notes
+ #  - Uses `sort` behind the scenes, so follows those rules.
+ #  notes@
+ #
+ #  @examples
+ #  $ nums=(5 9 2 24 12 -4 1 19.1 24.01)
+ #  $ _.min ${nums[@]}
+ #  > -4
+ #  examples@
+ #
+ #  @dependencies
+ #  `head`
+ #  `sort`
+ #  `tr`
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - successful execution
+ #  * - unsuccessful execution
+ #  returns@
+ #
+ #  @file functions/math/min.sh
+ ## */
 
 function _.min {
   local turn=0 args=`tr ' ' "\n" <<< "$@"`
   sort -g <<< "$args" | head -n1
-  # return
 }
 

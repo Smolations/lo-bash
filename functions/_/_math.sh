@@ -1,4 +1,37 @@
-
+## /* @function
+ #  @usage _.
+ #
+ #  @output true
+ #
+ #  @exports
+ #  exports@
+ #
+ #  @description
+ #
+ #  description@
+ #
+ #  @options
+ #  options@
+ #
+ #  @notes
+ #  -
+ #  notes@
+ #
+ #  @examples
+ #  _.
+ #  examples@
+ #
+ #  @dependencies
+ #  ``
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - successful execution
+ #  1 -
+ #  returns@
+ #
+ #  @file functions//.sh
+ ## */
 # @usage _.math <operation>
 # The <operation> must be quoted so that operators won't clash with the system.
 # supported operations:  + - * / ^ ** %

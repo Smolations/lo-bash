@@ -1,14 +1,28 @@
-
-# _.lt(value, other)
-# Ⓢ Ⓝ
-
-# Checks if value is less than other.
-
-# Arguments
-# value (*): The value to compare.
-# other (*): The other value to compare.
-# Returns
-# (boolean): Returns true if value is less than other, else false.
+## /* @function
+ #  @usage _.lt <value> <other>
+ #
+ #  @output false
+ #
+ #  @description
+ #  Checks if <value> is less than <other>.
+ #  description@
+ #
+ #  @examples
+ #  $ _.lt 4 5 && echo "yup"
+ #  > yup
+ #  examples@
+ #
+ #  @dependencies
+ #  function/lang/gte.sh
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - value < other
+ #  1 - value >= other
+ #  returns@
+ #
+ #  @file functions/lang/lt.sh
+ ## */
 
 function _.lt {
   ! _.gte $@

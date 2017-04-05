@@ -2,6 +2,16 @@
 A slimmed-down version of the helpful functions in lo-dash (and maybe a few extra)--written in Bash. Bash scripters rejoice!
 
 
+New Patterns
+------------
+
+Because lo-dash is a javascript library, the syntax of the functions in this lib will often behave a bit differently. Bash only returns integers, but it can export variables and capture output. Here are some things to keep in mind:
+
+- You will often see in the documentation for a function that one or more variables get exported after execution completes. All exported variables start with an underscore and are snake_case.
+- Most non-mutative array functions in this lib will require at least 2 array names to be passed. One of them is the array on which to operate, the other is a name for the new array that will be created.
+- Using the magic of `eval`, Bash can actually emulate callback functions. The trick is that the implementor will need to define the function ahead of time, and then pass that function name as the callback.
+
+
 Binary Dependencies
 -------------------
 - awk
@@ -10,6 +20,7 @@ Binary Dependencies
 - expr
 - sed
 - tr
+- type
 - wc
 
 
@@ -114,8 +125,8 @@ Binary Dependencies
  ---==:  _.trimRight        ...
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
-real	0m2.205s
-user	0m1.162s
-sys	0m0.945s
+real	0m2.223s
+user	0m1.180s
+sys	0m0.951s
 
 ```

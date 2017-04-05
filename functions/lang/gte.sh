@@ -1,13 +1,31 @@
-
-# _.gte(value, other)
-
-# Checks if value is greater than or equal to other.
-
-# Arguments
-# value (*): The value to compare.
-# other (*): The other value to compare.
-# Returns
-# (boolean): Returns true if value is greater than or equal to other, else false.
+## /* @function
+ #  @usage _.gt <value> <other>
+ #
+ #  @output false
+ #
+ #  @description
+ #  Checks if <value> is greater than or equal to <other>.
+ #  description@
+ #
+ #  @examples
+ #  $ _.gte 4 3 && echo "yup"
+ #  > yup
+ #  $ _.gte 3 3 && echo "yup"
+ #  > yup
+ #  examples@
+ #
+ #  @dependencies
+ #  function/_/_awkCompare.sh
+ #  function/lang/isNumber.sh
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - value >= other
+ #  1 - value < other
+ #  returns@
+ #
+ #  @file functions/lang/gte.sh
+ ## */
 
 function _.gte {
   local turn=1

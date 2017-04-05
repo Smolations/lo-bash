@@ -1,17 +1,40 @@
-
-# _.difference(array, [values])
-
-# Creates an array of unique array values not included in the other provided arrays using SameValueZero for equality comparisons.
-
-# Arguments
-# array (Array): The array to inspect.
-# [values] (…Array): The arrays of values to exclude.
-# Returns
-# (Array): Returns the new array of filtered values.
-
-# Example
-# _.difference([1, 2, 3], [4, 2]);
-# // → [1, 3]
+## /* @function
+ #  @usage _.difference <newArrayName> <firstArray> <secondArray>
+ #
+ #  @output false
+ #
+ #  @exports
+ #  $<newArrayName>
+ #  exports@
+ #
+ #  @description
+ #  Creates an array of unique array values not included in the other provided arrays.
+ #  description@
+ #
+ #  @notes
+ #  -
+ #  notes@
+ #
+ #  @examples
+ #  $ arr1=( 1 2 3 )
+ #  $ arr2=( 4 2 )
+ #  $ _.difference resultArray arr1 arr2
+ #  $ echo "${resultArray[@]}"
+ #  > 1 3
+ #  examples@
+ #
+ #  @dependencies
+ #  functions/_/_arrayCopy.sh
+ #  functions/lang/isArray.sh
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - successful execution
+ #  1 - invalid argument(s) given
+ #  returns@
+ #
+ #  @file functions/array/difference.sh
+ ## */
 
 function _.difference {
   local turn=1 new_array=$1 _difference= found=

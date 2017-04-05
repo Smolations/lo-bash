@@ -1,15 +1,31 @@
+## /* @function
+ #  @usage _.isArray <arrayName>
+ #
+ #  @output false
+ #
+ #  @description
+ #  Checks if value is classified as a Bash array.
+ #  description@
+ #
+ #  @examples
+ #  $ arr=()
+ #  $ _.isArray arr && echo "yup"
+ #  > yup
+ #  examples@
+ #
+ #  @dependencies
+ #  `declare`
+ #  `grep`
+ #  dependencies@
+ #
+ #  @returns
+ #  0 - <arrayName> is an array
+ #  * - <arrayName> is NOT an array
+ #  returns@
+ #
+ #  @file functions/lang/isArray.sh
+ ## */
 
-# _.isArray(value)
-
-# Checks if value is classified as an Array object.
-
-# Arguments
-# value (*): The value to check.
-# Returns
-# (boolean): Returns true if value is correctly classified, else false.
-
-# do NOT use $ when passing var names!
-# _.isArray varName
 function _.isArray {
   declare -p $1 2> /dev/null | grep -q '^declare \-a'
 }
