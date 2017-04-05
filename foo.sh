@@ -38,6 +38,14 @@ EOF
 
 
 
+function foo {
+  echo "file: $1"
+}
+
+_.recurse "functions/math" foo
+
+
+
 
 # function foo {
 #   args=($@)

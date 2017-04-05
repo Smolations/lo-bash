@@ -53,9 +53,9 @@
 function _.truncate {
   local turn=0 len=30 omission="..." sep= str=
 
-  _._inArgs length "$@" && len="$_arg_val"
-  _._inArgs omission "${_args_clipped[@]}" && omission="$_arg_val"
-  _._inArgs separator "${_args_clipped[@]}" && sep="$_arg_val"
+  _.inArgs length "$@" && len="$_arg_val"
+  _.inArgs omission "${_args_clipped[@]}" && omission="$_arg_val"
+  _.inArgs separator "${_args_clipped[@]}" && sep="$_arg_val"
 
   str="${_args_clipped[@]}"
 

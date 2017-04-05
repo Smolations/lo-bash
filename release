@@ -1,0 +1,18 @@
+
+source SOURCEME
+
+
+function funcDoc {
+  # echo "$1 - $2"
+  echo "[${1}/${2%.*}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})" >> README.md
+}
+
+
+cat README.md.tmpl > README.md
+
+echo >> README.md
+echo >> README.md
+echo "### Function List" >> README.md
+echo >> README.md
+
+_.recurse functions funcDoc

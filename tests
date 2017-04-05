@@ -1,7 +1,6 @@
 #!/bin/bash
 
-source functions/cuz/sourceAll.sh
-_.sourceAll -r -x functions
+source SOURCEME
 
 
 function h1 {
