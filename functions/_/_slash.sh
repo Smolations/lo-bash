@@ -1,13 +1,10 @@
 ## /* @function
- #  @usage _.
+ #  @usage _._slash <string>
  #
  #  @output true
  #
- #  @exports
- #  exports@
- #
  #  @description
- #
+ #  Something to do with escaping quotes...
  #  description@
  #
  #  @options
@@ -22,18 +19,16 @@
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `sed`
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
+ #  * - any error returned from `sed`
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/_/_slash.sh
  ## */
-# later can expand to take an argument of things to slash
-# also to take piped input..
 
 function _._slash {
   sed 's/"/\\"/g' <<< "$@"

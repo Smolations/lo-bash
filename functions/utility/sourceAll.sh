@@ -30,7 +30,7 @@
  #  1 - given <path> is not a directory
  #  returns@
  #
- #  @file functions/__source_all.sh
+ #  @file functions/utility/sourceAll.sh
  ## */
 
 function _.sourceAll {

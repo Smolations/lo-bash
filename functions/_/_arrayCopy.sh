@@ -1,39 +1,35 @@
 ## /* @function
- #  @usage _.
+ #  @usage _._arrayCopy <destArrayName> <srcArrayName>
  #
- #  @output true
+ #  @output false
  #
  #  @exports
+ #  $<destArrayName>
  #  exports@
  #
  #  @description
- #
+ #  Copies an array.
  #  description@
  #
- #  @options
- #  options@
- #
- #  @notes
- #  -
- #  notes@
- #
  #  @examples
- #  _.
+ #  $ test_array=(1 '' 'hello there' 'umm' 'your "business" eh?')
+ #  $ _._arrayCopy resultArray testArray
+ #  $ echo ${resultArray[2]}
+ #  > hello there
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `eval`
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
+ #  1 - copy operation failed
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/_/_arrayCopy.sh
  ## */
-# _._arrayCopy newArrayName existingArrayName
-# @exports $1
+
 function _._arrayCopy {
   local turn=1 arr_copy=$1 arr_orig=$2
 

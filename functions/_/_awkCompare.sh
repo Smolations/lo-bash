@@ -1,39 +1,38 @@
 ## /* @function
- #  @usage _.
+ #  @usage _._awkCompare
  #
  #  @output true
  #
- #  @exports
- #  exports@
- #
  #  @description
- #
+ #  Pass comparison expressions to this function for `awk` to evaluate. This is
+ #  ideal for comparing floating point numbers. Supported operators:
+ #    < <= > >= ++ != ~ !~
+ #  See `awk` docs for more information.
  #  description@
  #
- #  @options
- #  options@
- #
  #  @notes
- #  -
+ #  - No error will be returned if other operations are used, but the function
+ #  will always evaluate to false as `awk` returns 0 for false and 1 for true.
  #  notes@
  #
  #  @examples
- #  _.
+ #  $ _._awkCompare "3 > 4" || echo "dang"
+ #  > dang
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `grep`
+ #  functions/_/_awkPrint.sh
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
+ #  1 - `awk` returned something other than 1
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/_/_awkCompare.sh
  ## */
-# when doing comparisons, awk prints 1 for true, and 0 for false
-# valid ops:  < <= > >= ++ != ~ !~
+
 function _._awkCompare {
   local turn=1
   _._awkPrint "$@" | grep -qi '1' && turn=0
