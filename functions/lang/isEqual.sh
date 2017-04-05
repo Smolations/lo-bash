@@ -24,7 +24,7 @@ function _.isEqual {
   local turn=1
 
   if _.isNumber $1 && _.isNumber $2; then
-    (( a == b )) && turn=0
+    (( $1 == $2 )) && turn=0
   else
     [ "$1" == "$2" ] && turn=0
   fi

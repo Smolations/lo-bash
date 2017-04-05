@@ -38,37 +38,6 @@ EOF
 
 
 
-function foo {
-  echo "file: $1"
-}
-
-_.recurse "functions/math" foo
-
-
-
-
-# function foo {
-#   args=($@)
-#   let "last = $# - 1"
-#   echo "last arg: ${args[$last]}"
-#   bar=(0 1 'and a' 2)
-#   export bar
-# }
-# export -f foo
-
-# a=(`foo`)
-
-# echo a0 = ${a[0]}
-# echo a1 = ${a[1]}
-# echo a2 = ${a[2]}
-# echo a3 = ${a[3]}
-
-# foo one two three
-# echo bar0 = ${bar[0]}
-# echo bar1 = ${bar[1]}
-# echo bar2 = ${bar[2]}
-# echo bar3 = ${bar[3]}
-
 
 # embedded arrays
   # #!/bin/bash

@@ -15,7 +15,7 @@ function _.gte {
   if _.isNumber $1 && _.isNumber $2; then
     # if used enough, maybe a helper function to check output for true/false
     # would be useful
-    (( $1 >= $2 )) && turn=0
+    _._awkCompare "$1 >= $2" && turn=0
   else
     [[ "$1" > "$2" ]] || [ "$1" == "$2" ] && turn=0
   fi

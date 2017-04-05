@@ -97,7 +97,7 @@ function _.sourceAll {
     turn=1
   fi
 
-  [ $showCount ] && echo "${sCount} files sourced" && echo "${xCount} functions exported"
+  # [ $showCount ] && echo "${sCount} files sourced" && echo "${xCount} functions exported"
   unset xCount sCount
 
   return $turn

@@ -4,7 +4,6 @@ source SOURCEME
 
 
 function h1 {
-  # echo -n "\n ---== test: _.${1}"
   echo -n "`printf '\n ---==:  _.%-15s  ' $1`"
 }
 function pass {
