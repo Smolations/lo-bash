@@ -4,7 +4,7 @@ source SOURCEME
 
 function funcDoc {
   # echo "$1 - $2"
-  echo "[${1}/${2%.*}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})" >> README.md
+  echo "- [${1}/${2%.*}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})" >> README.md
 }
 
 
