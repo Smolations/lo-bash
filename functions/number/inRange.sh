@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.
+ #  @usage _.inRange <number> <start=0> <end>
  #
  #  @output true
  #
@@ -7,31 +7,32 @@
  #  exports@
  #
  #  @description
- #
+ #  Checks if <number> is between <start> and up to, but not including, <end>.
+ #  If <end> is not specified, it's set to <start> with <start> then set to 0. If
+ #  <start> is greater than <end> the params are swapped to support negative ranges.
  #  description@
  #
- #  @options
- #  options@
- #
  #  @notes
- #  -
+ #  - does not currently validate that arguments are numbers
  #  notes@
  #
  #  @examples
- #  _.
+ #  $ _.inRange 5 10    # true
+ #  $ _.inRange 5 4 10  # true
+ #  $ _.inRange 15 10   # false
  #  examples@
  #
  #  @dependencies
- #  ``
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
+ #  1 - less than two arguments supplied
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/number/inRange.sh
  ## */
+
 function _.inRange {
   local turn=0 arg_count=$# from=0 to needle
 
@@ -47,4 +48,3 @@ function _.inRange {
 
   return $turn
 }
-

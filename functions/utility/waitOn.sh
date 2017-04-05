@@ -37,7 +37,7 @@
  #
  #  @dependencies
  #  `egrep`
- #  functions/_/inArgs.sh
+ #  functions/utility/inArgs.sh
  #  dependencies@
  #
  #  @returns

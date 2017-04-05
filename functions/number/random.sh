@@ -1,39 +1,31 @@
 ## /* @function
- #  @usage _.
+ #  @usage _.random [<lower=0>] [<upper=100>]
  #
  #  @output true
  #
- #  @exports
- #  exports@
- #
  #  @description
- #
+ #  Produces a random number between the inclusive lower and upper bounds.
+ #  If only one argument is provided a number between 0 and the given number
+ #  is returned. Only integers supported.
  #  description@
  #
- #  @options
- #  options@
- #
- #  @notes
- #  -
- #  notes@
- #
  #  @examples
- #  _.
+ #  $ _.random
+ #  > 32
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `$RANDOM`
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
+ #  1 - provided <lower> is greater than <upper>
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/number/random.sh
  ## */
-# differences:
-#   does not return floating point, so no third arg and default max = 100
+
 function _.random {
   local arg_count=$# turn=0 number=0 min=0 max=100
 
