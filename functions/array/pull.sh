@@ -22,6 +22,9 @@
  #  examples@
  #
  #  @dependencies
+ #  functions/_/_arrayCopy.sh
+ #  functions/_/_array.sh
+ #  functions/array/difference.sh
  #  dependencies@
  #
  #  @returns
