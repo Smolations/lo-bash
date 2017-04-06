@@ -38,6 +38,7 @@ Binary Dependencies
 - [functions/array/indexOf](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
 - [functions/array/last](https://github.com/Smolations/lo-bash/blob/master/functions/array/last.sh)
 - [functions/array/pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
+- [functions/array/remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
 - [functions/array/reverse](https://github.com/Smolations/lo-bash/blob/master/functions/array/reverse.sh)
 - [functions/cuz/type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
 - [functions/date/now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
@@ -98,6 +99,7 @@ Binary Dependencies
  ---==:  _.indexOf          ....
  ---==:  _.last             ..
  ---==:  _.pull             ...
+ ---==:  _.remove           ...
  ---==:  _.reverse          .....
  ---==:  _.now              .
  ---==:  _.eq               .....
@@ -132,8 +134,8 @@ Binary Dependencies
  ---==:  _.trimRight        ...
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
-real	0m2.358s
-user	0m1.242s
-sys	0m1.020s
+real	0m2.361s
+user	0m1.246s
+sys	0m1.017s
 
 ```
