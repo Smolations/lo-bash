@@ -1,57 +1,32 @@
 ## /* @function
- #  @usage _.
+ #  @usage _.trimLeft <string> <chars=" ">
  #
  #  @output true
  #
- #  @exports
- #  exports@
- #
  #  @description
- #
+ #  Removes leading spaces or specified <chars> from <string>.
  #  description@
  #
- #  @options
- #  options@
- #
- #  @notes
- #  -
- #  notes@
- #
  #  @examples
- #  _.
+ #  $ _.trimLeft "  abc"
+ #  > abc
+ #  $ _.trimLeft "-_-abc-_-" "_-"
+ #  > abc-_-
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `sed`
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/string/trimLeft.sh
  ## */
-# _.trimLeft([string=''], [chars=whitespace])
-
-# Removes leading whitespace or specified characters from string.
-
-# Arguments
-# [string=''] (string): The string to trim.
-# [chars=whitespace] (string): The characters to trim.
-# Returns
-# (string): Returns the trimmed string.
-
-# Example
-# _.trimLeft('  abc  ');
-# // → 'abc  '
-
-# _.trimLeft('-_-abc-_-', '_-');
-# // → 'abc-_-'
 
 function _.trimLeft {
-  local str="$1" chars=$2
-  [ -z "$chars" ] && chars=' '
+  local str="$1" chars=${2- }
   sed -E "s/^[${chars}]+//" <<< "$str"
   return 0
 }

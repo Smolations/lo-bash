@@ -19,6 +19,7 @@ Binary Dependencies
 - date
 - egrep
 - expr
+- grep
 - sed
 - tr
 - type
@@ -33,7 +34,6 @@ Binary Dependencies
 - [functions/_/_awkPrint](https://github.com/Smolations/lo-bash/blob/master/functions/_/_awkPrint.sh)
 - [functions/_/_math](https://github.com/Smolations/lo-bash/blob/master/functions/_/_math.sh)
 - [functions/_/_slash](https://github.com/Smolations/lo-bash/blob/master/functions/_/_slash.sh)
-- [functions/array/compact](https://github.com/Smolations/lo-bash/blob/master/functions/array/compact.sh)
 - [functions/array/difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
 - [functions/cuz/type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
 - [functions/date/now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
@@ -54,7 +54,6 @@ Binary Dependencies
 - [functions/number/inRange](https://github.com/Smolations/lo-bash/blob/master/functions/number/inRange.sh)
 - [functions/number/random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
 - [functions/string/endsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/endsWith.sh)
-- [functions/string/escapeRegExp](https://github.com/Smolations/lo-bash/blob/master/functions/string/escapeRegExp.sh)
 - [functions/string/length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
 - [functions/string/pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
 - [functions/string/padEnd](https://github.com/Smolations/lo-bash/blob/master/functions/string/padEnd.sh)
@@ -89,10 +88,8 @@ Binary Dependencies
  ---==:  _._array           ....
  ---==:  _._arrayCopy       ......
  ---==:  _._awkCompare      
- ---==:  _._awkPrint        
  ---==:  _._math            ......
  ---==:  _._slash           S
- ---==:  _.compact          
  ---==:  _.difference       ..................
  ---==:  _.now              .
  ---==:  _.eq               .....
@@ -112,7 +109,6 @@ Binary Dependencies
  ---==:  _.inRange          ....
  ---==:  _.random           .....
  ---==:  _.endsWith         ..
- ---==:  _.escapeRegExp     
  ---==:  _.length           ..
  ---==:  _.pad              ....
  ---==:  _.padEnd           ...
@@ -128,8 +124,8 @@ Binary Dependencies
  ---==:  _.trimRight        ...
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
-real	0m2.238s
-user	0m1.164s
-sys	0m0.965s
+real	0m2.187s
+user	0m1.129s
+sys	0m0.951s
 
 ```

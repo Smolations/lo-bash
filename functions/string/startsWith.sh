@@ -1,57 +1,27 @@
 ## /* @function
- #  @usage _.
+ #  @usage _.startsWith <string> <target>
  #
- #  @output true
- #
- #  @exports
- #  exports@
+ #  @output false
  #
  #  @description
- #
+ #  Checks if <string> starts with the given <target> string.
  #  description@
  #
- #  @options
- #  options@
- #
- #  @notes
- #  -
- #  notes@
- #
  #  @examples
- #  _.
+ #  $ _.startsWith "all bout that yolo" "all" && echo "yup"
+ #  > yup
  #  examples@
  #
  #  @dependencies
- #  ``
  #  dependencies@
  #
  #  @returns
- #  0 - successful execution
- #  1 -
+ #  0 - <string> starts with <target>
+ #  1 - <string> does NOT start with <target>
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/string/startsWith.sh
  ## */
-# _.startsWith([string=''], [target], [position=0])
-
-# Checks if string starts with the given target string.
-
-# Arguments
-# [string=''] (string): The string to search.
-# [target] (string): The string to search for.
-# [position=0] (number): The position to search from.
-# Returns
-# (boolean): Returns true if string starts with target, else false.
-
-# Example
-# _.startsWith('abc', 'a');
-# // → true
-
-# _.startsWith('abc', 'b');
-# // → false
-
-# _.startsWith('abc', 'b', 1);
-# // → true
 
 function _.startsWith {
   local turn=0

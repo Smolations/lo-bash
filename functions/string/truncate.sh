@@ -35,11 +35,9 @@
  #  examples@
  #
  #  @dependencies
- #  `cut`
- #  `egrep`
  #  `expr`
- #  functions/string/length.sh
- #  functions/string/repeat.sh
+ #  functions/lang/isNumber.sh
+ #  functions/utility/inArgs.sh
  #  dependencies@
  #
  #  @returns

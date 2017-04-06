@@ -10,7 +10,6 @@ function funcDoc {
 exec 3>&1
 exec 4>&2
 exec &> README.md
-#exec 2> README.md
 
 
 cat README.md.tmpl

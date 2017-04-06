@@ -1,53 +1,29 @@
 ## /* @function
- #  @usage _.
+ #  @usage _.trimRight <string> <chars=" ">
  #
  #  @output true
  #
- #  @exports
- #  exports@
- #
  #  @description
- #
+ #  Removes trailing spaces or specified <chars> from <string>.
  #  description@
  #
- #  @options
- #  options@
- #
- #  @notes
- #  -
- #  notes@
- #
  #  @examples
- #  _.
+ #  $ _.trimRight "  abc   "
+ #  >    abc
+ #  $ _.trimRight "-_-abc-_-" "_-"
+ #  > -_-abc
  #  examples@
  #
  #  @dependencies
- #  ``
+ #  `sed`
  #  dependencies@
  #
  #  @returns
  #  0 - successful execution
- #  1 -
  #  returns@
  #
- #  @file functions//.sh
+ #  @file functions/string/trimRight.sh
  ## */
-# _.trimRight([string=''], [chars=whitespace])
-
-# Removes trailing whitespace or specified characters from string.
-
-# Arguments
-# [string=''] (string): The string to trim.
-# [chars=whitespace] (string): The characters to trim.
-# Returns
-# (string): Returns the trimmed string.
-
-# Example
-# _.trimRight('  abc  ');
-# // → '  abc'
-
-# _.trimRight('-_-abc-_-', '_-');
-# // → '-_-abc'
 
 function _.trimRight {
   local str="$1" chars=$2
