@@ -29,5 +29,5 @@
 
 function _.isFunction {
   local tipe=`type -t $1 2>/dev/null`
-  [ "$tipe" == 'function' ]
+  [[ "$tipe" == 'function' ]]
 }

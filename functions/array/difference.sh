@@ -52,10 +52,10 @@ function _.difference {
         if [ "${one[i]}" == "${two[j]}" ]; then
           found=true
         fi
-        [ $found ] && break
+        [[ $found ]] && break
       done
 
-      [ ! $found ] && _difference+=("${one[i]}")
+      [[ ! $found ]] && _difference+=("${one[i]}")
     done
 
     _._arrayCopy $new_array _difference

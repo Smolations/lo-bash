@@ -36,7 +36,7 @@
 function _._array {
   local turn=1
 
-  if [ $# -gt 0 ]; then
+  if [[ $# > 0 ]]; then
     local arr_name=$1 array_string='' num
     shift
 

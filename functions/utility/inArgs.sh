@@ -101,9 +101,9 @@
  ## */
 
 function _.inArgs {
-  [ $# -lt 2 ] && return 1
-
   local turn=2 option patt sedPatt newArg
+
+  [[ $# < 2 ]] && return 1
 
   # __debug "__in_args received:  $@"
 
@@ -117,21 +117,21 @@ function _.inArgs {
   shift
 
   # different processing depending on the type of argument
-  if [ ${#option} == 1 ]; then
+  if [[ ${#option} == 1 ]]; then
     # POSIX-style single option/flag/switch (e.g. -a or -abc where abc contains 3 options)
     patt="^-[a-z]*${option}[a-z]*$"
-    until [ $# == 0 ]; do
+    until [[ $# == 0 ]]; do
       # __debug "[-] __in_args matching:  ${1}"
 
-      if [ $turn != 0 ]; then
+      if [[ $turn != 0 ]]; then
         if egrep --quiet --ignore-case $patt <<< "$1"; then
           # __debug "[-] MATCH!"
 
           _arg_index=${#_args_clipped[@]}
 
-          [ ${#1} -gt 2 ] && sedPatt="$option" || sedPatt="-${option}"
+          [[ ${#1} > 2 ]] && sedPatt="$option" || sedPatt="-${option}"
           newArg=$( sed "s/${sedPatt}//" <<< "$1" )
-          [ -n "$newArg" ] && _args_clipped+=( "$newArg" )
+          [[ -n "$newArg" ]] && _args_clipped+=( "$newArg" )
 
           turn=0
 
@@ -152,10 +152,10 @@ function _.inArgs {
   else
     # GNU-style long option (e.g. --option or --option=foo)
     patt="^--${option}(=|$)"
-    until [ $# == 0 ]; do
+    until [[ $# == 0 ]]; do
       # __debug "[--] __in_args matching:  ${1}"
 
-      if [ $turn != 0 ]; then
+      if [[ $turn != 0 ]]; then
         if egrep --quiet $patt <<< "$1"; then
           # __debug "-- match!"
           _arg_index=${#_args_clipped[@]}

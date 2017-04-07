@@ -11,7 +11,7 @@ function pass {
 }
 function fail {
   local txt='X'
-  [ -z "$@" ] || txt+="[$@]"
+  [[ -z "$@" ]] || txt+="[$@]"
   echo -n "$txt"
 }
 function skip {

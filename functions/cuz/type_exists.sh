@@ -72,12 +72,12 @@
  ## */
 
 function _.typeExists {
-    [ $# == 0 ] && return 1
+    [[ $# == 0 ]] && return 1
 
     local retVal=0 targ results opt=
     _type_is=
 
-    if [ $# -gt 1 ]; then
+    if [[ $# > 1 ]]; then
       opt="$1"
       shift
     fi
@@ -86,32 +86,32 @@ function _.typeExists {
 
     # odds are we will have to find the type, so we'll try it first
     _type_is=$( type -t "$targ" 2>/dev/null ) || retVal=4
-    if [ -z "$_type_is" ]; then
+    if [[ -z "$_type_is" ]]; then
         # an app will always fail a `type` check (since its a directory) so
         # $retVal needs to be reset
         retVal=0
         # look for system AND user app
         results=$(find /Applications ~/Applications -maxdepth 4 -name "${targ}.app")
-        [ -n "$results" ] && _type_is=app || retVal=4
+        [[ -n "$results" ]] && _type_is=app || retVal=4
     fi
 
     # check to see if user specified an option to indicate desired type
-    if [ -n "$opt" ] && [ $retVal == 0 ]; then
+    if [[ -n "$opt" ]] && [[ $retVal == 0 ]]; then
         case "$opt" in
             -p)
-                [ "$_type_is" == "app" ] || retVal=4;;
+                [[ "$_type_is" == "app" ]] || retVal=4;;
 
             -a)
-                [ "$_type_is" == "alias" ] || retVal=4;;
+                [[ "$_type_is" == "alias" ]] || retVal=4;;
 
             -b)
-                [ "$_type_is" == "builtin" ] || retVal=4;;
+                [[ "$_type_is" == "builtin" ]] || retVal=4;;
 
             -f)
-                [ "$_type_is" == "function" ] || retVal=4;;
+                [[ "$_type_is" == "function" ]] || retVal=4;;
 
             -k)
-                [ "$_type_is" == "keyword" ] || retVal=4;;
+                [[ "$_type_is" == "keyword" ]] || retVal=4;;
 
             *)
                 echo "${E}  Incorrect option [${1}] specified for \`__type_exists\`.  ${X}"

@@ -36,6 +36,7 @@ Binary Dependencies
 - [functions/_/_slash](https://github.com/Smolations/lo-bash/blob/master/functions/_/_slash.sh)
 - [functions/array/difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
 - [functions/array/indexOf](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
+- [functions/array/join](https://github.com/Smolations/lo-bash/blob/master/functions/array/join.sh)
 - [functions/array/last](https://github.com/Smolations/lo-bash/blob/master/functions/array/last.sh)
 - [functions/array/pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
 - [functions/array/remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
@@ -97,6 +98,7 @@ Binary Dependencies
  ---==:  _._slash           S
  ---==:  _.difference       ..................
  ---==:  _.indexOf          ....
+ ---==:  _.join             ..
  ---==:  _.last             ..
  ---==:  _.pull             ...
  ---==:  _.remove           ...
@@ -134,8 +136,8 @@ Binary Dependencies
  ---==:  _.trimRight        ...
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
-real	0m2.361s
-user	0m1.246s
-sys	0m1.017s
+real	0m2.437s
+user	0m1.282s
+sys	0m1.069s
 
 ```

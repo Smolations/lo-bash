@@ -49,10 +49,10 @@
 function _.split {
   local turn=0 tmpStr="$1" sep="$2" arrayName="$3" arr=()
 
-  [ -z "$sep" ] && turn=1
-  [ -z "$arrayName" ] && turn=2
+  [[ -z "$sep" ]] && turn=1
+  [[ -z "$arrayName" ]] && turn=2
 
-  if [ $turn -eq 0 ]; then
+  if [[ $turn == 0 ]]; then
     sepIndex=`_._awkPrint "index(\"$tmpStr\", \"$sep\")"`
 
     if (( sepIndex > 0 )); then

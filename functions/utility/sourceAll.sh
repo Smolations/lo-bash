@@ -48,34 +48,34 @@ function _.sourceAll {
   egrep -q '(^| )-r ' <<< "$@" && recurse=true && flags+=('-r')
 
   # sPath="${_args_clipped[@]}"
-  [ -z "$sPath" ] && arg=$( pwd ) || arg="${sPath%/}"
+  [[ -z "$sPath" ]] && arg=$( pwd ) || arg="${sPath%/}"
   # echo "$showCount | $exportFuncs | $arg | ${flags[@]}"
   # echo "$arg"
 
   # validate directory and start sourcing
-  if [ -d "$arg" ]; then
+  if [[ -d "$arg" ]]; then
     for file in "${arg}/"*; do
 
-      if [ -d "$file" ]; then
-        if [ $recurse ]; then
+      if [[ -d "$file" ]]; then
+        if [[ $recurse ]]; then
           export sCount
           _.sourceAll ${flags[@]} "$file"
         fi
 
-      elif [ -s "$file" ]; then
+      elif [[ -s "$file" ]]; then
         # echo "Going to source: ${file}"
         # DO NOT LEAVE THIS HERE. try _.executeAll
-        [ "${file%%/*}" == "test" ] && ./"$file" || source "$file"
+        [[ "${file%%/*}" == "test" ]] && ./"$file" || source "$file"
 
         # (( sCount++ )) && source "$file"
         # source "$file"
         (( sCount++ ))
 
-        if [ $exportFuncs ]; then
+        if [[ $exportFuncs ]]; then
           grepped=` grep '^function' "$file" `
           # echo "grepped = $grepped"
 
-          if [ -n "$grepped" ]; then
+          if [[ -n "$grepped" ]]; then
             fName="${grepped#* }"
             fName="${fName% *}"
             fName="${fName%(*}"
@@ -83,7 +83,7 @@ function _.sourceAll {
 
             # supported characters for bash function names
             f_type=$( type -t "$fName" 2>/dev/null )
-            if egrep -qi '^[-_.a-z0-9]+$' <<< "$fName" && [ "$f_type" == 'function' ]; then
+            if egrep -qi '^[-_.a-z0-9]+$' <<< "$fName" && [[ "$f_type" == 'function' ]]; then
               eval export -f $fName
               (( xCount++ ))
             fi
@@ -97,7 +97,7 @@ function _.sourceAll {
     turn=1
   fi
 
-  # [ $showCount ] && echo "${sCount} files sourced" && echo "${xCount} functions exported"
+  # [[ $showCount ]] && echo "${sCount} files sourced" && echo "${xCount} functions exported"
   unset xCount sCount
 
   return $turn

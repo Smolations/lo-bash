@@ -27,15 +27,18 @@
  ## */
 
 function _.random {
-  local arg_count=$# turn=0 number=0 min=0 max=100
+  local arg_count=$# turn=0
+  declare -i min=0
+  declare -i max=100
+  declare -i number=100
 
-  (( arg_count == 1 )) && max=$1
-  (( arg_count == 2 )) && min=$1 max=$2
+  [[ $arg_count == 1 ]] && max=$1
+  [[ $arg_count == 2 ]] && min=$1 max=$2
 
-  if (( min > max )); then
+  if [[ $min > $max ]]; then
     turn=1
   else
-    while (( number < min )); do
+    while [[ $number < $min ]]; do
       number=$RANDOM let "number %= $max"
     done
 

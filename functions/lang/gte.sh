@@ -35,7 +35,7 @@ function _.gte {
     # would be useful
     _._awkCompare "$1 >= $2" && turn=0
   else
-    [[ "$1" > "$2" ]] || [ "$1" == "$2" ] && turn=0
+    [[ "$1" > "$2" ]] || [[ "$1" == "$2" ]] && turn=0
   fi
 
   return $turn

@@ -70,7 +70,7 @@ function _.log {
 
     # not using __in_args due to pipe considerations
     for i in {1..3}; do
-      if [ "$1" == "-n" ]; then
+      if [[ "$1" == "-n" ]]; then
         noStamp=true
         shift
 
@@ -79,18 +79,18 @@ function _.log {
         shift
 
       # for backwards compatibility until other projects remove the -p option
-      elif [ "$1" == "-p" ]; then
+      elif [[ "$1" == "-p" ]]; then
         shift
       fi
     done
 
-    [ -z "$log_file" ] && return 1
-    [ ! -f "$log_file" ] && ! touch "$log_file" 2>/dev/null && return 2
+    [[ -z "$log_file" ]] && return 1
+    [[ ! -f "$log_file" ]] && ! touch "$log_file" 2>/dev/null && return 2
 
     pre="[$(date "+%Y-%m-%d %H:%M:%S")]  "
     data="$@"
 
-    if [ $noStamp ]; then
+    if [[ $noStamp ]]; then
       # this processing ensures that the indentation of the output starts at the
       # same place as if the date prefix were included. if this functionality is
       # not desired, simply set pre="".

@@ -31,20 +31,20 @@
 function _.tree {
   local path="${@%/}" indent filePre folderPre
 
-  [ -z "$path" ] && path=`pwd`
+  [[ -z "$path" ]] && path=`pwd`
 
-  [ ! -d "$path" ] && return 1
+  [[ ! -d "$path" ]] && return 1
 
   indent="$indent    "
   filePre=""
   folderPre=""
 
-  if [ ! $inRecurse ]; then
+  if [[ ! $inRecurse ]]; then
     echo "${COL_YELLOW}$(cd "$path"; pwd)${X}"
   fi
 
   for entry in `ls "$path"`; do
-    if [ -d "${path}/${entry}" ]; then
+    if [[ -d "${path}/${entry}" ]]; then
       export inRecurse=true
       grep -q '^\.' <<< "$entry" && continue
       echo "${indent}${folderPre}${COL_YELLOW}${entry}${X}"

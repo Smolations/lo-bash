@@ -22,7 +22,7 @@
  #  @examples
  #  # ignore errors
  #  _.shortAns "Enter your Git user name:"
- #  if [ -n "$_ans" ]; then
+ #  if [[ -n "$_ans" ]]; then
  #      git config --global user.name "$_ans"
  #      ...
  #  fi
@@ -30,7 +30,7 @@
  #  # OR
  #
  #  # account for any errors during processing within the function
- #  if _.shortAns "Enter your Git user name:" && [ -n "$_ans" ]; then
+ #  if _.shortAns "Enter your Git user name:" && [[ -n "$_ans" ]]; then
  #      git config --global user.name "$_ans"
  #      ...
  #  fi
@@ -45,7 +45,7 @@
  ## */
 
 function _.shortAns {
-  [ $# == 0 ] && return 1
+  [[ $# == 0 ]] && return 1
 
   _ans=
   local prompt="$@"

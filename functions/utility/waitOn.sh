@@ -52,7 +52,7 @@
  ## */
 
 function _.waitOn {
-  [ $# == 0 ] && return 1
+  [[ $# == 0 ]] && return 1
 
   local maxWait thePID argsMsg indicators i modNum exitMsg waitMsg argsClipped
 
@@ -89,13 +89,13 @@ function _.waitOn {
   indicators=( '\\' '/' )
 
   # max wait time in seconds
-  [ -z "$maxWait" ] && maxWait=120
+  [[ -z "$maxWait" ]] && maxWait=120
 
   # __log "_.waitOn: PID(${thePID})  ${waitMsg} | ${maxWait} seconds"
 
   i=1
   _exit_status=
-  while [ $i -lt $maxWait ]; do
+  while [[ $i < $maxWait ]]; do
     if ps -p${thePID} &> /dev/null; then
       modNum=$(( i % ${#indicators[@]} ))
       echo -en " ${B}${COL_MAGENTA}${indicators[$modNum]}${X}  ${waitMsg} \r"
@@ -106,7 +106,7 @@ function _.waitOn {
       _exit_status=$?
 
       exitMsg="(${E}exit ${_exit_status}${X})"
-      [ ${_exit_status} == 0 ] && exitMsg="(${COL_GREEN}exit ${_exit_status}${X})"
+      [[ ${_exit_status} == 0 ]] && exitMsg="(${COL_GREEN}exit ${_exit_status}${X})"
 
       echo "    ${waitMsg}    ${exitMsg} ${i} sec."
 
@@ -118,7 +118,7 @@ function _.waitOn {
   # __log   "_.waitOn:  _exit_status = ${_exit_status}"
   export _exit_status
 
-  if [ -z "${_exit_status}" ]; then
+  if [[ -z "${_exit_status}" ]]; then
     return 8
   else
     return 0

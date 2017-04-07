@@ -4,7 +4,7 @@ function newfunc {
   uri="$1" group="${uri%/*}" function_name="${uri#*/}" file_name="${uri}.sh"
 
   # the function
-  if [ -d "functions/$group" ]; then
+  if [[ -d "functions/$group" ]]; then
     dest="functions/${file_name}"
     cat > "$dest" <<-EOF
 ## /* @function
@@ -53,7 +53,7 @@ EOF
   fi
 
   # the test
-  if [ -d "test/$group" ]; then
+  if [[ -d "test/$group" ]]; then
     dest="test/${file_name}"
     cat > "$dest" <<-EOF
 #!/bin/bash

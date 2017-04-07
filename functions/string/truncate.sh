@@ -63,10 +63,10 @@ function _.truncate {
   # error if bad length
   ! _.isNumber $len && return 1
 
-  if [ $str_len -gt $len ]; then
+  if [[ $str_len > $len ]]; then
     new_len=`expr $len - $omission_len`
 
-    if [ -n "$sep" ]; then
+    if [[ -n "$sep" ]]; then
       str="${str%${sep}*}${omission}"
     else
       str="${str:0:$new_len}${omission}"

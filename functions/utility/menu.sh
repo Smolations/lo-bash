@@ -105,18 +105,18 @@ MENU_INDEX=${X}${B}
 MENU_OPTION=${X}
 MENU_PROMPT=${X}${MENU_HEADER}
 
- #[ -n "$MENU_HL"     ] || export MENU_HL=${X}${COL_BLUE}
- #[ -n "$MENU_HEADER" ] || export MENU_HEADER=${X}${COL_BLUE}
- #[ -n "$MENU_INDEX"  ] || export MENU_INDEX=${X}${B}${COL_YELLOW}
- #[ -n "$MENU_OPTION" ] || export MENU_OPTION=${X}${COL_CYAN}
- #[ -n "$MENU_PROMPT" ] || export MENU_PROMPT=${X}${B}${COL_YELLOW}
+ #[[ -n "$MENU_HL"     ]] || export MENU_HL=${X}${COL_BLUE}
+ #[[ -n "$MENU_HEADER" ]] || export MENU_HEADER=${X}${COL_BLUE}
+ #[[ -n "$MENU_INDEX"  ]] || export MENU_INDEX=${X}${B}${COL_YELLOW}
+ #[[ -n "$MENU_OPTION" ]] || export MENU_OPTION=${X}${COL_CYAN}
+ #[[ -n "$MENU_PROMPT" ]] || export MENU_PROMPT=${X}${B}${COL_YELLOW}
 
 function _.menu {
   declare -a items extraItems ndxes vals
   local i j k index item opt optndx pair prompt msg parsedItem bar
   local hr="${MENU_HL}  ------------------------------------------------  ${X}"
 
-  [ $# == 0 ] && return 1
+  [[ $# == 0 ]] && return 1
 
   # purposely not using __in_args due to complexity of args
   if egrep -q "^--prompt=" <<< "$1"; then
@@ -125,25 +125,25 @@ function _.menu {
   fi
 
   egrep -q ' -k :' <<< "$@" && k=true
-  if [ $k ]; then
-    until [ "$1" == "-k" ]; do
+  if [[ $k ]]; then
+    until [[ "$1" == "-k" ]]; do
       items[${#items[@]}]="$1"
       shift
     done
     shift
-    until [ $# == 0 ]; do
+    until [[ $# == 0 ]]; do
       extraItems[${#extraItems[@]}]="$1"
       shift
     done
 
   else
-    until [ $# == 0 ]; do
+    until [[ $# == 0 ]]; do
       items[${#items[@]}]="$1"
       shift
     done
   fi
 
-  if [ ${#items[@]} -eq 0 ] && [ ${#extraItems[@]} -eq 0 ]; then
+  if [[ ${#items[@]} == 0 ]] && [[ ${#extraItems[@]} == 0 ]]; then
     # __debug "_.menu: No lists given. Given: $@"
     echo
     echo ${E}"  _.menu did not detect any list items to display. Aborting...  "${X}
@@ -156,14 +156,14 @@ function _.menu {
 
   # check for custom message
   msg="Please make a selection"
-  [ -n "$prompt" ] && msg="$prompt"
+  [[ -n "$prompt" ]] && msg="$prompt"
 
   # build menu
   echo ${MENU_HL}${X}
   echo ${MENU_HEADER}"  ${msg} (or press Enter to abort):  "${X}
   echo ${MENU_HL}${X}
 
-  if [ ${#items[@]} -gt 0 ]; then
+  if [[ ${#items[@]} > 0 ]]; then
     for (( i = 1; i <= ${#items[@]}; i++ )); do
       j=$(( i - 1 ))
       item="${items[$j]}"
@@ -183,7 +183,7 @@ function _.menu {
   fi
 
   # If extra list is given, parse
-  if [ ${#extraItems[@]} -gt 0 ]; then
+  if [[ ${#extraItems[@]} > 0 ]]; then
     echo "$hr"
     i=0
     for pair in "${extraItems[@]}"; do
@@ -206,17 +206,17 @@ function _.menu {
   read opt
 
   # validate response
-  if [ -n "$opt" ]; then
+  if [[ -n "$opt" ]]; then
     _menu_sel_index="$opt"
 
-    if [ ${#extraItems[@]} -gt 0 ] && __in_array "$opt" "${ndxes[@]}"; then
+    if [[ ${#extraItems[@]} > 0 ]] && _.inArray "$opt" "${ndxes[@]}"; then
         _menu_sel_value="${vals[${_in_array_index}]}"
 
-    # elif egrep -q '^[[:digit:]]+$' <<< "$opt" && [ $opt -gt 0 ]; then
-    elif egrep -q '^[0-9]+$' <<< "$opt" && [ $opt -gt 0 ]; then
+    # elif egrep -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then
+    elif egrep -q '^[0-9]+$' <<< "$opt" && [[ $opt > 0 ]]; then
       (( optndx = opt - 1 ))
 
-      if [ -n "${items[${optndx}]}" ]; then
+      if [[ -n "${items[${optndx}]}" ]]; then
         _menu_sel_value="${items[${optndx}]}"
       else
         # invalid selection. no *numeric* key matches what user typed in.

@@ -30,10 +30,10 @@ function _.last {
 
   _._arrayCopy arrCopy $arrayName || turn=1
 
-  if (( turn == 0 )); then
+  if [[ $turn == 0 ]]; then
     let "lastIndex = ${#arrCopy[@]} - 1"
 
-    if [ "$lastIndex" != "-1" ]; then
+    if [[ $lastIndex != -1 ]]; then
       val="${arrCopy[lastIndex]}"
     else
       turn=2

@@ -26,8 +26,7 @@
  ## */
 
 function _.trimRight {
-  local str="$1" chars=$2
-  [ -z "$chars" ] && chars=' '
+  local str="$1" chars=${2- }
   sed -E "s/[${chars}]+$//" <<< "$str"
   return 0
 }

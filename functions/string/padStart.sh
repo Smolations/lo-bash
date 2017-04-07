@@ -51,15 +51,15 @@ function _.padStart {
   local str="$1" len=$2 chars="$3"
   local avail_for_pad chars_len pad_freq prefix str_len
 
-  [ -z "$len" ] && len=0
-  [ -z "$chars" ] && chars=' '
+  [[ -z "$len" ]] && len=0
+  [[ -z "$chars" ]] && chars=' '
 
   chars_len=`_.length "$chars"`
   str_len=`_.length "$str"`
 
   ! egrep --quiet '^[0-9]+$' <<< "$len" && return 1
 
-  if [ $str_len -lt $len ]; then
+  if [[ $str_len < $len ]]; then
     avail_for_pad=`expr $len - $str_len`
     pad_freq=`expr $avail_for_pad / $chars_len + 1`
 

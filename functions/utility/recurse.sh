@@ -37,7 +37,7 @@ function _.recurse {
 
   local turn=0 fName="$2" sPath="${1%/}"
 
-  if [ "$fName" == "" ]; then
+  if [[ "$fName" == "" ]]; then
     fName="$sPath"
     sPath=`pwd`
   fi
@@ -47,13 +47,13 @@ function _.recurse {
   fi
 
   # validate directory and start sourcing
-  if [ -d "$sPath" ]; then
+  if [[ -d "$sPath" ]]; then
     for file in "${sPath}/"*; do
 
-      if [ -d "$file" ]; then
+      if [[ -d "$file" ]]; then
         _.recurse "$file" $fName
 
-      elif [ -s "$file" ]; then
+      elif [[ -s "$file" ]]; then
         eval $fName "${file%/*}" "${file##*/}"
       fi
 

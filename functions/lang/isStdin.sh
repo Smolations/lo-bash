@@ -26,5 +26,5 @@
  ## */
 
 function _.isStdin {
-  [ "$( tty )" == 'not a tty' ]
+  [[ "$( tty )" == 'not a tty' ]]
 }

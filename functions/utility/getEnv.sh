@@ -33,7 +33,7 @@
  #  @examples
  #  _.getEnv
  #
- #  if [ $_ENV_OSX ]; then
+ #  if [[ $_ENV_OSX ]]; then
  #    say "I am on teh b3st 0S!"
  #  fi
  #  examples@
@@ -70,7 +70,7 @@ function _.getEnv {
   _ENV_SUMMARY=
   _ENV_OTHER=
 
-  if [ -z "${_ENV_UNAME}" ]; then
+  if [[ -z "${_ENV_UNAME}" ]]; then
       retVal=1
 
   else
@@ -105,7 +105,7 @@ function _.getEnv {
         ;;
     esac
 
-    if [ "${1}" = "-e" ]; then
+    if [[ "${1}" == "-e" ]]; then
       echo $_ENV_SUMMARY
     fi
   fi

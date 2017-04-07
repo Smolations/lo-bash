@@ -59,7 +59,7 @@ function _.isEqual {
   if _.isNumber $1 && _.isNumber $2; then
     (( $1 == $2 )) && turn=0
   else
-    [ "$1" == "$2" ] && turn=0
+    [[ "$1" == "$2" ]] && turn=0
   fi
 
   return $turn

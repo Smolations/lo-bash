@@ -21,7 +21,7 @@
  #
  #  function predicate {
  #    local element="$1" turn=1
- #    [ "${#element}" -gt 4 ] && turn=0
+ #    [[ ${#element} > 4 ]] && turn=0
  #    return $turn
  #  }
  #
@@ -48,7 +48,7 @@ function _.remove {
 
   _._arrayCopy _tmpArray $arrayName || turn=1
 
-  if (( turn == 0 )); then
+  if [[ $turn == 0 ]]; then
     for (( i = 0; i < ${#_tmpArray[@]}; i++ )); do
       eval "$funcName '${_tmpArray[i]}' $i" || _newArray+=( "${_tmpArray[i]}" )
     done

@@ -33,7 +33,7 @@ function _.parseInt {
 
   # come back to different bases?
   str=`egrep --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`
-  [ -n "$str" ] && egrep -q '^0+$' <<< "$str" || str=`_.trimLeft "$str" '0'`
+  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`_.trimLeft "$str" '0'`
 
   echo -n $str
   return $turn

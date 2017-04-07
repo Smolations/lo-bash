@@ -26,14 +26,14 @@
  #  @examples
  #  # ignore errors
  #  _.yesNo --default=n "Does this work"
- #  if [ $_yes ]; then
+ #  if [[ $_yes ]]; then
  #      ...
  #  fi
  #
  #  # OR
  #
  #  # take into account if there is an error during processing within _.yesNo
- #  if _.yesNo --default=n "Does this work" && [ $_yes ]; then
+ #  if _.yesNo --default=n "Does this work" && [[ $_yes ]]; then
  #      ...
  #  fi
  #  examples@
@@ -62,7 +62,7 @@ function _.yesNo {
   _no=
 
   # must pass --default option AND question
-  if [ $# -lt 2 ]; then
+  if [[ $# < 2 ]]; then
     return 1
   fi
 
@@ -79,22 +79,22 @@ function _.yesNo {
   default="${default//Y/y}"
 
   # validate input
-  if [ -z "$default" ] || ! egrep -q '^[yn]$' <<< "$default"; then
+  if [[ -z "$default" ]] || ! egrep -q '^[yn]$' <<< "$default"; then
     return 4
   fi
 
-  optN=$([ "$default" = "n" ] && echo "${A}N${X}" || echo "n")
-  optY=$([ "$default" = "y" ] && echo "${A}Y${X}" || echo "y")
+  optN=$([[ "$default" == "n" ]] && echo "${A}N${X}" || echo "n")
+  optY=$([[ "$default" == "y" ]] && echo "${A}Y${X}" || echo "y")
 
   # -n to keep response on same line; -e to honor escapes like \n
   echo -ne "${Q}  ${question} ${X}[${optY}/${optN}]${Q}?${X}  "
   read ans
   # __log "_.yesNo(): User answered '$ans'"
-  [ -z "$ans" ] && ans=$default
+  [[ -z "$ans" ]] && ans=$default
 
   ans=$( egrep --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
 
-  if [ -n "$ans" ]; then
+  if [[ -n "$ans" ]]; then
     ans="${ans//Y/y}"
     ans="${ans//N/n}"
     _raw_ans=$ans
@@ -107,10 +107,10 @@ function _.yesNo {
 
   # __log "_.yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
 
-  if [ -z "$_raw_ans" ] || [ "$_raw_ans" == "$default" ]; then
-    [ "$default" = "y" ] && _yes=true || _no=true
+  if [[ -z "$_raw_ans" ]] || [[ "$_raw_ans" == "$default" ]]; then
+    [[ "$default" == "y" ]] && _yes=true || _no=true
   else
-    [ "$ans" == "y" ] && _yes=true || _no=true
+    [[ "$ans" == "y" ]] && _yes=true || _no=true
   fi
 
   export _yes _no _raw_ans
