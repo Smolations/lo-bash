@@ -39,11 +39,14 @@
  ## */
 
 function _.repeat {
-  local turn=0 str mult out i eOpt=
+  declare -i turn=0
+  declare -i mult
+  declare -i i
+  local str out eOpt=
 
-  [[ $# > 3 || $# < 2 ]] && return 1
+  (( $# > 3 || $# < 2 )) && return 1
 
-  if [[ $# == 3 ]]; then
+  if (( $# == 3 )); then
     if [[ "$1" == '-n' ]]; then
       eOpt='-n' && shift
     else
@@ -53,9 +56,7 @@ function _.repeat {
 
   str=$1 mult=${2-0}
 
-  ! egrep -q '^[0-9]+$' <<< $mult && return 2
-
-  if [[ $mult > 0 ]]; then
+  if (( mult > 0 )); then
     for i in $( seq $mult ); do out+="${str}"; done
   fi
 

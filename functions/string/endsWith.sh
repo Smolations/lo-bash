@@ -27,10 +27,10 @@
  ## */
 
 function _.endsWith {
-  local turn=0
+  declare -i turn=0
   local withoutSuffix="${1%${2}}"
 
-  [[ "$1" = "$withoutSuffix" ]] && turn=1
+  [[ "$1" == "$withoutSuffix" ]] && turn=1
 
   return $turn
 }

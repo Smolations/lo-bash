@@ -42,7 +42,7 @@ function newfunc {
  ## */
 
 function _.${function_name} {
-  local turn=0
+  declare -i turn=0
 
   return \$turn
 }

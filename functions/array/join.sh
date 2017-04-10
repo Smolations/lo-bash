@@ -30,13 +30,14 @@
  ## */
 
 function _.join {
-  local turn=0 arrayName="$1" sep="${2- }" str=""
+  declare -i turn=0
+  local arrayName="$1" sep="${2- }" str=""
 
   _._arrayCopy _tmpArray $arrayName || turn=1
 
-  if [[ $turn == 0 ]]; then
+  if (( turn == 0 )); then
     for (( i = 0; i < ${#_tmpArray[@]}; i++ )); do
-      str="${str}${_tmpArray[i]}${sep}"
+      str+="${_tmpArray[i]}${sep}"
     done
   fi
 

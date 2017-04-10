@@ -27,5 +27,5 @@
  ## */
 
 function _.isArray {
-  declare -p $1 2> /dev/null | grep -q '^declare \-a'
+  declare -ap $1 2> /dev/null | grep -q '^declare \-a'
 }

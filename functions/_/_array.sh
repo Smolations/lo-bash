@@ -34,18 +34,19 @@
  ## */
 
 function _._array {
-  local turn=1
+  declare -i turn=1
+  declare -i num
+  local arr_name=$1 arr_string=""
 
-  if [[ $# > 0 ]]; then
-    local arr_name=$1 array_string='' num
+  if (( $# > 0 )); then
     shift
 
     num=$#
     for (( i = 0; i < num; i++)); do
-      array_string+=" [${i}]=\"`_._slash "${1}"`\"" && shift
+      arr_string+=" [${i}]=\"`_._slash "${1}"`\"" && shift
     done
 
-    eval "${arr_name}=(${array_string} )" && turn=$?
+    eval "${arr_name}=(${arr_string} )" && turn=$?
     export $arr_name
   fi
 

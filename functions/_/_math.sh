@@ -35,6 +35,6 @@
  ## */
 
 function _._math {
-  args=$@
+  local args=$@
   awk "BEGIN { printf(\"%.16g\",${args// /}) }"
 }

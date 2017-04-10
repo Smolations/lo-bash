@@ -44,11 +44,12 @@
  ## */
 
 function _.remove {
-  local turn=0 arrayName="$1" funcName="$2" _newArray=( )
+  declare -i turn=0
+  local arrayName="$1" funcName="$2" _newArray=( )
 
   _._arrayCopy _tmpArray $arrayName || turn=1
 
-  if [[ $turn == 0 ]]; then
+  if (( turn == 0 )); then
     for (( i = 0; i < ${#_tmpArray[@]}; i++ )); do
       eval "$funcName '${_tmpArray[i]}' $i" || _newArray+=( "${_tmpArray[i]}" )
     done

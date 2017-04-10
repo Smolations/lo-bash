@@ -26,22 +26,24 @@
  ## */
 
 function _.last {
-  local lastIndex turn=0 arrayName="$1" val=
+  declare -i turn=0
+  declare -i lastIndex
+  local arrayName="$1" val=
 
-  _._arrayCopy arrCopy $arrayName || turn=1
+  _._arrayCopy _arrCopy $arrayName || turn=1
 
-  if [[ $turn == 0 ]]; then
-    let "lastIndex = ${#arrCopy[@]} - 1"
+  if (( turn == 0 )); then
+    let "lastIndex = ${#_arrCopy[@]} - 1"
 
-    if [[ $lastIndex != -1 ]]; then
-      val="${arrCopy[lastIndex]}"
+    if (( lastIndex > -1 )); then
+      val="${_arrCopy[lastIndex]}"
     else
       turn=2
     fi
   fi
 
   echo "$val"
-  unset arrCopy
+  unset _arrCopy
 
   return $turn
 }

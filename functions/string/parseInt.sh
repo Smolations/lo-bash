@@ -29,7 +29,8 @@
  ## */
 
 function _.parseInt {
-  local turn=0 str=`_.trim "$@"`
+  declare -i turn=0
+  local str=`_.trim "$@"`
 
   # come back to different bases?
   str=`egrep --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`

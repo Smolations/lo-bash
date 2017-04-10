@@ -49,7 +49,12 @@
  ##
 
 function _.truncate {
-  local turn=0 len=30 omission="..." sep= str=
+  declare -i turn=0
+  declare -i len=30
+  declare -i new_len
+  declare -i omission_len
+  declare -i str_len
+  local omission="..." sep= str=
 
   _.inArgs length "$@" && len="$_arg_val"
   _.inArgs omission "${_args_clipped[@]}" && omission="$_arg_val"
@@ -60,10 +65,7 @@ function _.truncate {
   omission_len=${#omission}
   str_len=${#str}
 
-  # error if bad length
-  ! _.isNumber $len && return 1
-
-  if [[ $str_len > $len ]]; then
+  if (( str_len > len )); then
     new_len=`expr $len - $omission_len`
 
     if [[ -n "$sep" ]]; then

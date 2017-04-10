@@ -35,7 +35,8 @@
  ## */
 
 function _.reverse {
-  local turn=0 arrayName="$1" _newArray=( )
+  declare -i turn=0
+  local arrayName="$1" _newArray=( )
 
   _._arrayCopy _tmpArray $arrayName || turn=1
 

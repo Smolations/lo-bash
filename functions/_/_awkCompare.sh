@@ -34,7 +34,7 @@
  ## */
 
 function _._awkCompare {
-  local turn=1
+  declare -i turn=1
   _._awkPrint "$@" | grep -qi '1' && turn=0
   return $turn
 }

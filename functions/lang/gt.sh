@@ -26,7 +26,7 @@
  ## */
 
 function _.gt {
-  local turn=1
+  declare -i turn=1
 
   if _.isNumber $1 && _.isNumber $2; then
     # if used enough, maybe a helper function to check output for true/false

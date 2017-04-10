@@ -8,11 +8,9 @@
  #  characters (<chars>) are truncated if they exceed <length>.
  #  description@
  #
- #  @options
- #  options@
- #
  #  @notes
  #  - Note that <chars> doesn't have to be a single character.
+ #  - If an invalid <length> is supplied, it will be casted to 0.
  #  - You may have noticed that `printf` is quite capable of doing a job like
  #  this. It still poses the problem of having spaces (or a common variable)
  #  in the `printf` string.
@@ -31,9 +29,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep`
  #  `expr`
- #  functions/string/length.sh
  #  functions/string/repeat.sh
  #  dependencies@
  #
@@ -46,20 +42,19 @@
  ##
 
 function _.padStart {
-  local turn=0
+  declare -i turn=0
+  declare -i len=${2-0}
+  declare -i avail_for_pad
+  declare -i chars_len
+  declare -i pad_freq
+  declare -i str_len
 
-  local str="$1" len=$2 chars="$3"
-  local avail_for_pad chars_len pad_freq prefix str_len
+  local str="$1" chars="${3- }" prefix
 
-  [[ -z "$len" ]] && len=0
-  [[ -z "$chars" ]] && chars=' '
+  chars_len=${#chars}
+  str_len=${#str}
 
-  chars_len=`_.length "$chars"`
-  str_len=`_.length "$str"`
-
-  ! egrep --quiet '^[0-9]+$' <<< "$len" && return 1
-
-  if [[ $str_len < $len ]]; then
+  if (( str_len < len )); then
     avail_for_pad=`expr $len - $str_len`
     pad_freq=`expr $avail_for_pad / $chars_len + 1`
 

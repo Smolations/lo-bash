@@ -31,7 +31,8 @@
  ## */
 
 function _._arrayCopy {
-  local turn=1 arr_copy=$1 arr_orig=$2
+  declare -i turn=1
+  local arr_copy=$1 arr_orig=$2
 
   if _.isArray $arr_orig; then
     turn=0

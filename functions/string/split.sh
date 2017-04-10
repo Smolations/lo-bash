@@ -47,7 +47,11 @@
  ## */
 
 function _.split {
-  local turn=0 tmpStr="$1" sep="$2" arrayName="$3" arr=()
+  declare -i turn=0
+  declare -i sepEnd
+  declare -i sepIndex
+  declare -i sepStart
+  local tmpStr="$1" sep="$2" arrayName="$3" arr=() el tmpStr
 
   [[ -z "$sep" ]] && turn=1
   [[ -z "$arrayName" ]] && turn=2

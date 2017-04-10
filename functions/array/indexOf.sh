@@ -37,14 +37,17 @@
  ## */
 
 function _.indexOf {
-  local turn=0 arrayName="$1" needle="$2" fromIndex=${3-0} ndx=
+  declare -i turn=0
+  declare -i fromIndex=${3-0}
+  declare -i ndx
+  local arrayName="$1" needle="$2"
 
   _._arrayCopy arrCopy $arrayName || turn=1
   (( fromIndex <= ${#arrCopy[@]} )) || turn=2
 
   if (( turn == 0 )); then
     for (( i = fromIndex; i < ${#arrCopy[@]}; i++ )); do
-      if [ "${arrCopy[i]}" = "$needle" ]; then
+      if [[ "${arrCopy[i]}" == "$needle" ]]; then
         ndx=$i
         break
       fi

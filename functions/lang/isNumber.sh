@@ -32,7 +32,7 @@
  ## */
 
 function _.isNumber {
-  local turn=0
+  declare -i turn=0
 
   case ${1#[-+]} in
     ''|*[!0-9.]*| *.*.*) turn=1 ;;

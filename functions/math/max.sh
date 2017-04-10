@@ -32,7 +32,8 @@
  ## */
 
 function _.max {
-  local turn=0 args=`tr ' ' "\n" <<< "$@"`
+  declare -i turn=0
+  local args=`tr ' ' "\n" <<< "$@"`
   sort -g <<< "$args" | tail -n1
 }
 

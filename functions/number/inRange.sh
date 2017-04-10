@@ -14,6 +14,7 @@
  #
  #  @notes
  #  - does not currently validate that arguments are numbers
+ #  - only works with integers
  #  notes@
  #
  #  @examples
@@ -34,7 +35,11 @@
  ## */
 
 function _.inRange {
-  local turn=0 arg_count=$# from=0 to needle
+  declare -i turn=0
+  declare -i arg_count=$#
+  declare -i from=0
+  declare -i to
+  declare -i needle
 
   if (( arg_count < 2 )); then
     turn=1

@@ -33,9 +33,10 @@
  ## */
 
 function _.recurse {
-  (( $# == 0 )) && return 1
+  declare -i turn=0
+  local fName="$2" sPath="${1%/}"
 
-  local turn=0 fName="$2" sPath="${1%/}"
+  (( $# == 0 )) && return 1
 
   if [[ "$fName" == "" ]]; then
     fName="$sPath"
@@ -54,6 +55,7 @@ function _.recurse {
         _.recurse "$file" $fName
 
       elif [[ -s "$file" ]]; then
+        # pass directory path and file name
         eval $fName "${file%/*}" "${file##*/}"
       fi
 

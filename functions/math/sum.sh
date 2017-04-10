@@ -27,10 +27,17 @@
  ## */
 
 function _.sum {
-  local sum=0 args=($@) item
+  declare -i turn=0
+  declare -i summ=0
+  local args=($@) item
+
   for (( i = 0; i < ${#args[@]}; i++ )); do
-    item=${args[$i]}; (( sum += item ))
+    item=${args[$i]}
+    (( summ += item ))
   done
-  echo $sum
+
+  echo $summ
+
+  return $turn
 }
 

@@ -1,9 +1,16 @@
 
 source SOURCEME
 
-
+funcGroup=""
 function funcDoc {
-  echo "- [${1}/${2%.*}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})"
+  local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
+
+  if [[ "$funcGroup" != "$fGroup" ]]; then
+    echo "- *${fGroup}*"
+    funcGroup="$fGroup"
+  fi
+
+  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})"
 }
 
 # set up file descriptors to write to file

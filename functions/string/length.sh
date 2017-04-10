@@ -34,7 +34,8 @@
  ## */
 
 function _.length {
-  local len turn=0
+  declare -i turn=0
+  declare -i len
 
   if [[ -z "$@" ]]; then
     len=0
@@ -50,7 +51,7 @@ function _.length {
     fi
   fi
 
-  [[ $turn == 0 ]] && echo $len
+  (( turn == 0 )) && echo $len
 
   return $turn
 }

@@ -37,7 +37,8 @@
  ## */
 
 function _.difference {
-  local turn=1 new_array=$1 _difference= found=
+  declare -i turn=1
+  local new_array=$1 _difference= found=
 
   _._arrayCopy one $2
   _._arrayCopy two $3

@@ -20,26 +20,27 @@
  #
  #  @returns
  #  0 - successful execution
- #  1 - provided <lower> is greater than <upper>
+ #  1 - provided <lower> is greater than or equal to <upper>
  #  returns@
  #
  #  @file functions/number/random.sh
  ## */
 
 function _.random {
-  local arg_count=$# turn=0
+  declare -i turn=0
   declare -i min=0
   declare -i max=100
-  declare -i number=100
+  declare -i number=$RANDOM
 
-  [[ $arg_count == 1 ]] && max=$1
-  [[ $arg_count == 2 ]] && min=$1 max=$2
+  (( $# == 1 )) && max=$1
+  (( $# == 2 )) && min=$1 max=$2
 
-  if [[ $min > $max ]]; then
+  if (( min >= max )); then
     turn=1
+
   else
-    while [[ $number < $min ]]; do
-      number=$RANDOM let "number %= $max"
+    while (( number < min || number > max )); do
+      let "number = $RANDOM % $max"
     done
 
     echo $number
@@ -47,4 +48,3 @@ function _.random {
 
   return $turn
 }
-

@@ -37,7 +37,8 @@
  ## */
 
 function _.pull {
-  local turn=0 arrayName="$1"
+  declare -i turn=0
+  local arrayName="$1"
 
   _._arrayCopy _tmpArray $arrayName || turn=1
 

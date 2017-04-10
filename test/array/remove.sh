@@ -6,8 +6,9 @@ h1 'remove'
 arr=( 'hiya' 'hello' 'foobar' 'deuces' 'sup' )
 
 function predicate {
-  local element="$1" turn=1
-  [[ "${#element}" > 4 ]] && turn=0
+  declare -i turn=1
+  local element="$1"
+  (( ${#element} > 4 )) && turn=0
   return $turn
 }
 
