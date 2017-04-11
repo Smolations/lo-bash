@@ -28,14 +28,14 @@ Binary Dependencies
 
 ### Function List
 
-- *_*
+- **_**
   - [_array](https://github.com/Smolations/lo-bash/blob/master/functions/_/_array.sh)
   - [_arrayCopy](https://github.com/Smolations/lo-bash/blob/master/functions/_/_arrayCopy.sh)
   - [_awkCompare](https://github.com/Smolations/lo-bash/blob/master/functions/_/_awkCompare.sh)
   - [_awkPrint](https://github.com/Smolations/lo-bash/blob/master/functions/_/_awkPrint.sh)
   - [_math](https://github.com/Smolations/lo-bash/blob/master/functions/_/_math.sh)
   - [_slash](https://github.com/Smolations/lo-bash/blob/master/functions/_/_slash.sh)
-- *array*
+- **array**
   - [difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
   - [forEach](https://github.com/Smolations/lo-bash/blob/master/functions/array/forEach.sh)
   - [indexOf](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
@@ -45,11 +45,11 @@ Binary Dependencies
   - [pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
   - [remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
   - [reverse](https://github.com/Smolations/lo-bash/blob/master/functions/array/reverse.sh)
-- *cuz*
+- **cuz**
   - [type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
-- *date*
+- **date**
   - [now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
-- *lang*
+- **lang**
   - [eq](https://github.com/Smolations/lo-bash/blob/master/functions/lang/eq.sh)
   - [gt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gt.sh)
   - [gte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gte.sh)
@@ -60,15 +60,15 @@ Binary Dependencies
   - [isStdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isStdin.sh)
   - [lt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lt.sh)
   - [lte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lte.sh)
-- *math*
+- **math**
   - [add](https://github.com/Smolations/lo-bash/blob/master/functions/math/add.sh)
   - [max](https://github.com/Smolations/lo-bash/blob/master/functions/math/max.sh)
   - [min](https://github.com/Smolations/lo-bash/blob/master/functions/math/min.sh)
   - [sum](https://github.com/Smolations/lo-bash/blob/master/functions/math/sum.sh)
-- *number*
+- **number**
   - [inRange](https://github.com/Smolations/lo-bash/blob/master/functions/number/inRange.sh)
   - [random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
-- *string*
+- **string**
   - [endsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/endsWith.sh)
   - [length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
   - [pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
@@ -85,7 +85,7 @@ Binary Dependencies
   - [trimLeft](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimLeft.sh)
   - [trimRight](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimRight.sh)
   - [truncate](https://github.com/Smolations/lo-bash/blob/master/functions/string/truncate.sh)
-- *utility*
+- **utility**
   - [getEnv](https://github.com/Smolations/lo-bash/blob/master/functions/utility/getEnv.sh)
   - [inArgs](https://github.com/Smolations/lo-bash/blob/master/functions/utility/inArgs.sh)
   - [log](https://github.com/Smolations/lo-bash/blob/master/functions/utility/log.sh)
@@ -153,8 +153,8 @@ Binary Dependencies
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
  ---==:  _.times            ...
-real	0m2.329s
-user	0m1.279s
-sys	0m0.951s
+real	0m2.380s
+user	0m1.299s
+sys	0m0.971s
 
 ```
