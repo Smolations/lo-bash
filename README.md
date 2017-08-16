@@ -153,8 +153,8 @@ Binary Dependencies
  ---==:  _.truncate         ...
  ---==:  _.inArgs           ..................
  ---==:  _.times            ...
-real	0m2.380s
-user	0m1.299s
-sys	0m0.971s
+real	0m3.093s
+user	0m1.561s
+sys	0m0.935s
 
 ```
