@@ -45,13 +45,22 @@
  ## */
 
 function _.shortAns {
-  [[ $# == 0 ]] && return 1
+  declare -i turn=0
+  local prompt
 
   _ans=
-  local prompt="$@"
 
-  echo -ne "${Q}  ${prompt}${X}  "
-  read _ans
+  if (( $# == 0 )); then
+    turn=1
+
+  else
+    prompt="$@"
+
+    echo -ne "${Q}  ${prompt}${X}  "
+    read _ans
+  fi
 
   export _ans
+
+  return $turn
 }

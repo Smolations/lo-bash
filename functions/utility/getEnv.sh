@@ -51,7 +51,7 @@
  ## */
 
 function _.getEnv {
-  local retVal=0
+  declare -i turn=0
 
   # get uname info
   _ENV_UNAME=$(which uname &> /dev/null && uname -s)
@@ -71,7 +71,7 @@ function _.getEnv {
   _ENV_OTHER=
 
   if [[ -z "${_ENV_UNAME}" ]]; then
-      retVal=1
+      turn=1
 
   else
     case $_ENV_UNAME in
@@ -114,5 +114,5 @@ function _.getEnv {
   export _ENV_WINDOWS _ENV_CYGWIN _ENV_MSYSGIT
   export _ENV_SUMMARY _ENV_OTHER
 
-  return $retVal
+  return $turn
 }
