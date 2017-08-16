@@ -33,7 +33,10 @@ function _.gt {
     # would be useful
     _._awkCompare "$1 > $2" && turn=0
   else
-    [[ "$1" > "$2" ]] && turn=0
+    # use perl here as it behaves the same in bash 3/4
+    # when comparing strings
+    perlRes=$(perl -e "print '$1' cmp '$2'")
+    [[ "$perlRes" == "1" ]] && turn=0
   fi
 
   return $turn
