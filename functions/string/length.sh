@@ -44,7 +44,8 @@ function _.length {
     # len=$( __strip_color_codes "$@" | wc -c | tr -d '\n\t ' )
     len=$( echo "$@" | wc -c | tr -d '\n\t ' )
 
-    if egrep -q '^\d+$' <<< "$len"; then
+    # \d not working in ubuntu bash4 for some reason...
+    if egrep -q '^[0-9]+$' <<< "$len"; then
       (( len-- ))
     else
       turn=1
