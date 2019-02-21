@@ -1,3 +1,19 @@
+# determine the path to this script.
+LOBASH_PATH="${BASH_SOURCE[0]}"
+if [ -h "${LOBASH_PATH}" ]; then
+    echo symbolic link
+    while [ -h "${LOBASH_PATH}" ]; do LOBASH_PATH=`readlink "${LOBASH_PATH}"`; done
+fi
+pushd . > /dev/null
+cd `dirname ${LOBASH_PATH}` > /dev/null
+export LOBASH_PATH=`pwd`
+popd > /dev/null
 
-source ./functions/utility/sourceAll.sh
+
+if [ ! -d "$LOBASH_PATH" ]; then
+    echo "Failed to set \`lo-bash\` path. It will not be loaded."
+    return 1
+fi
+
+source "${LOBASH_PATH}"/functions/utility/sourceAll.sh
 _.sourceAll -r -v -x functions
