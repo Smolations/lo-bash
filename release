@@ -14,7 +14,7 @@ function funcDoc {
     funcGroup="$fGroup"
   fi
 
-  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/${branch_name}/${1}/${2})"
+  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})"
 }
 
 # set up file descriptors to write to file
