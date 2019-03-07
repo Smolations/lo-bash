@@ -1,16 +1,20 @@
 
 source SOURCEME
 
+branch_name=$(expr "$( git symbolic-ref HEAD )" : 'refs/heads/\(.*\)')
 funcGroup=""
+
 function funcDoc {
   local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
+
+  _startsWith "${funcName}" 'lb' || funcName="_${funcName}"
 
   if [[ "$funcGroup" != "$fGroup" ]]; then
     echo "- **${fGroup}**"
     funcGroup="$fGroup"
   fi
 
-  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})"
+  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/${branch_name}/${1}/${2})"
 }
 
 # set up file descriptors to write to file
@@ -27,7 +31,7 @@ echo "### Function List"
 echo
 
 # link to each function in code
-_.recurse functions funcDoc
+_recurse functions funcDoc
 
 # show test output
 echo

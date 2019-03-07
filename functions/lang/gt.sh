@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.gt <value> <other>
+ #  @usage _gt <value> <other>
  #
  #  @output false
  #
@@ -8,13 +8,14 @@
  #  description@
  #
  #  @examples
- #  $ _.gt 4 3 && echo "yup"
+ #  $ _gt 4 3 && echo "yup"
  #  > yup
  #  examples@
  #
  #  @dependencies
- #  function/_/_awkCompare.sh
- #  function/lang/isNumber.sh
+ #  `perl`
+ #  lb_awkCompare
+ #  _isNumber
  #  dependencies@
  #
  #  @returns
@@ -25,13 +26,13 @@
  #  @file functions/lang/gt.sh
  ## */
 
-function _.gt {
+function _gt {
   declare -i turn=1
 
-  if _.isNumber $1 && _.isNumber $2; then
+  if _isNumber $1 && _isNumber $2; then
     # if used enough, maybe a helper function to check output for true/false
     # would be useful
-    _._awkCompare "$1 > $2" && turn=0
+    lb_awkCompare "$1 > $2" && turn=0
   else
     # use perl here as it behaves the same in bash 3/4
     # when comparing strings

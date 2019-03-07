@@ -1,19 +1,19 @@
 ## /* @function
- #  @usage _.eq <val1> <val2>
+ #  @usage _eq <val1> <val2>
  #
  #  @output false
  #
  #  @description
- #  An alias for `_.isEqual`.
+ #  An alias for `_isEqual`.
  #  description@
  #
  #  @examples
- #  $ _.eq 3 3 && echo "yup"
+ #  $ _eq 3 3 && echo "yup"
  #  > yup
  #  examples@
  #
  #  @dependencies
- #  functions/lang/isEqual.sh
+ #  _isEqual
  #  dependencies@
  #
  #  @returns
@@ -24,7 +24,7 @@
  #  @file functions/lang/eq.sh
  ## */
 
-function _.eq {
-  _.isEqual $@
+function _eq {
+  _isEqual $@
 }
 

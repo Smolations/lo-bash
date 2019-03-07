@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.isFunction <name>
+ #  @usage _isFunction <name>
  #
  #  @output false
  #
@@ -12,7 +12,7 @@
  #  foo {
  #    # ...
  #  }
- #  _.isFunction foo && echo "yup"
+ #  _isFunction foo && echo "yup"
  #  examples@
  #
  #  @dependencies
@@ -27,7 +27,7 @@
  #  @file functions/lang/isFunction.sh
  ## */
 
-function _.isFunction {
+function _isFunction {
   local tipe=`type -t $1 2>/dev/null`
   [[ "$tipe" == 'function' ]]
 }

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-h1 '_slash'
+h1 'lb_slash'
 
-slashed=`_._slash 'should be "two slashes"'`
+slashed=`lb_slash 'should be "two slashes"'`
 
 # echo "$slashed" && pass
 skip # egrep -q '\\' <<< "$slashed" && pass || fail

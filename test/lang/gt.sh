@@ -1,13 +1,13 @@
 #!/bin/bash
 
-h1 'gt'
+h1 '_gt'
 
-_.gt 3 1 && pass || fail
-_.gt 3 -1 && pass || fail
-_.gt '5' 2 && pass || fail
-_.gt '1.32' '1.233' && pass || fail
-_.gt 'g' 'b' && pass || fail
+_gt 3 1 && pass || fail
+_gt 3 -1 && pass || fail
+_gt '5' 2 && pass || fail
+_gt '1.32' '1.233' && pass || fail
+_gt 'g' 'b' && pass || fail
 
-_.gt 1 3 && fail || pass
-_.gt 2 2 && fail || pass
-_.gt 'bee' 'bees' && fail || pass
+_gt 1 3 && fail || pass
+_gt 2 2 && fail || pass
+_gt 'bee' 'bees' && fail || pass

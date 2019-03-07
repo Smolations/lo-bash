@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.lte <value> <other>
+ #  @usage _lte <value> <other>
  #
  #  @output false
  #
@@ -8,14 +8,14 @@
  #  description@
  #
  #  @examples
- #  $ _.lte 4 5 && echo "yup"
+ #  $ _lte 4 5 && echo "yup"
  #  > yup
- #  $ _.lte 5 5 && echo "yup"
+ #  $ _lte 5 5 && echo "yup"
  #  > yup
  #  examples@
  #
  #  @dependencies
- #  function/lang/gt.sh
+ #  _gt
  #  dependencies@
  #
  #  @returns
@@ -26,6 +26,6 @@
  #  @file functions/lang/lte.sh
  ## */
 
-function _.lte {
-  ! _.gt $@
+function _lte {
+  ! _gt $@
 }

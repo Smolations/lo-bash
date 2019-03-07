@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._slash <string>
+ #  @usage lb_slash <string>
  #
  #  @output true
  #
@@ -15,7 +15,7 @@
  #  notes@
  #
  #  @examples
- #  _.
+ #  lb_slash
  #  examples@
  #
  #  @dependencies
@@ -27,9 +27,9 @@
  #  * - any error returned from `sed`
  #  returns@
  #
- #  @file functions/_/_slash.sh
+ #  @file functions/_/lb_slash.sh
  ## */
 
-function _._slash {
+function lb_slash {
   sed 's/"/\\"/g' <<< "$@"
 }

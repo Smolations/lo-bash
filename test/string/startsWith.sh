@@ -1,7 +1,7 @@
 #!/bin/bash
 
-h1 'startsWith'
+h1 '_startsWith'
 
-`_.startsWith "abcdef" "abc"` && pass || fail
-`_.startsWith "abcdefg" "bcd"` && fail || pass
+`_startsWith "abcdef" "abc"` && pass || fail
+`_startsWith "abcdefg" "bcd"` && fail || pass
 # && pass || fail

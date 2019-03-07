@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.add <num1> <num2>
+ #  @usage _add <num1> <num2>
  #
  #  @output true
  #
@@ -12,14 +12,14 @@
  #  notes@
  #
  #  @examples
- #  $ _.add 5 4
+ #  $ _add 5 4
  #  > 9
- #  $ _.add 1.2 2.3
+ #  $ _add 1.2 2.3
  #  > 3.5
  #  examples@
  #
  #  @dependencies
- #  functions/_/_math.sh
+ #  lb_math
  #  dependencies@
  #
  #  @returns
@@ -30,7 +30,7 @@
  #  @file functions/math/add.sh
  ## */
 
-function _.add {
-  _._math "$1 + $2"
+function _add {
+  lb_math "$1 + $2"
 }
 

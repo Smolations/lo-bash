@@ -11,9 +11,9 @@ popd > /dev/null
 
 
 if [ ! -d "$LOBASH_PATH" ]; then
-    echo "Failed to set \`lo-bash\` path. It will not be loaded."
-    return 1
+  echo "Failed to set \`lo-bash\` path. It will not be loaded."
+  return 1
 fi
 
 source "${LOBASH_PATH}"/functions/utility/sourceAll.sh
-_.sourceAll -r -v -x "${LOBASH_PATH}"/functions
+_sourceAll -r -v -x "${LOBASH_PATH}"/functions

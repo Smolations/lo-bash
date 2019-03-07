@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.indexOf <arrayName> <value> <fromIndex=0>
+ #  @usage _indexOf <arrayName> <value> <fromIndex=0>
  #
  #  @output true
  #
@@ -14,17 +14,18 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' true 'hello' )
- #  $ _.indexOf arr 2
+ #  $ _indexOf arr 2
  #  > 0
- #  $ _.indexOf arr "hello"
+ #  $ _indexOf arr "hello"
  #  > 1
- #  $ _.indexOf arr "hello" 2
+ #  $ _indexOf arr "hello" 2
  #  > 4
- #  $ _.indexOf arr true
+ #  $ _indexOf arr true
  #  > 3
  #  examples@
  #
  #  @dependencies
+ #  lb_arrayCopy
  #  dependencies@
  #
  #  @returns
@@ -36,13 +37,13 @@
  #  @file functions/array/indexOf.sh
  ## */
 
-function _.indexOf {
+function _indexOf {
   declare -i turn=0
   declare -i fromIndex=${3-0}
   declare -i ndx
   local arrayName="$1" needle="$2"
 
-  _._arrayCopy arrCopy $arrayName || turn=1
+  lb_arrayCopy arrCopy $arrayName || turn=1
   (( fromIndex <= ${#arrCopy[@]} )) || turn=2
 
   if (( turn == 0 )); then

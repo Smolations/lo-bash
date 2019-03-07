@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.gte <value> <other>
+ #  @usage _gte <value> <other>
  #
  #  @output false
  #
@@ -8,16 +8,16 @@
  #  description@
  #
  #  @examples
- #  $ _.gte 4 3 && echo "yup"
+ #  $ _gte 4 3 && echo "yup"
  #  > yup
- #  $ _.gte 3 3 && echo "yup"
+ #  $ _gte 3 3 && echo "yup"
  #  > yup
  #  examples@
  #
  #  @dependencies
- #  function/_/_awkCompare.sh
- #  function/lang/isNumber.sh
- #  perl
+ #  `perl`
+ #  lb_awkCompare
+ #  _isNumber
  #  dependencies@
  #
  #  @returns
@@ -28,14 +28,14 @@
  #  @file functions/lang/gte.sh
  ## */
 
-function _.gte {
+function _gte {
   declare -i turn=1
   local perlRes=
 
-  if _.isNumber $1 && _.isNumber $2; then
+  if _isNumber $1 && _isNumber $2; then
     # if used enough, maybe a helper function to check output for true/false
     # would be useful
-    _._awkCompare "$1 >= $2" && turn=0
+    lb_awkCompare "$1 >= $2" && turn=0
   else
     # use perl here as it behaves the same in bash 3/4
     # when comparing strings

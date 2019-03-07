@@ -1,9 +1,9 @@
 #!/bin/bash
 
-h1 '_arrayCopy'
+h1 'lb_arrayCopy'
 
 test_array=(1 '' 'hello there' 'umm' 'your "business" eh?')
-_._arrayCopy result_array test_array
+lb_arrayCopy result_array test_array
 
 
 [[ "${#test_array[@]}" == "${#result_array[@]}" ]] && pass || fail "${#test_array[@]} == ${#result_array[@]}"

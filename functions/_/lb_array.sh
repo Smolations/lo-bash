@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._array <arrayName> [<val1>[ <val2>[ ...]]]
+ #  @usage lb_array <arrayName> [<val1>[ <val2>[ ...]]]
  #
  #  @output false
  #
@@ -12,17 +12,17 @@
  #  description@
  #
  #  @examples
- #  $ _._array myArray 1 2 3
+ #  $ lb_array myArray 1 2 3
  #  $ echo ${myArray[1]}
  #  > 2
- #  $ _._array myArray 'i' 'have several' 'elements'
+ #  $ lb_array myArray 'i' 'have several' 'elements'
  #  $ echo ${myArray[2]}
  #  > elements
  #  examples@
  #
  #  @dependencies
  #  `eval`
- #  functions/_/_slash.sh
+ #  lb_slash
  #  dependencies@
  #
  #  @returns
@@ -30,10 +30,10 @@
  #  1 - no arguments given
  #  returns@
  #
- #  @file functions/_/_array.sh
+ #  @file functions/_/lb_array.sh
  ## */
 
-function _._array {
+function lb_array {
   declare -i turn=1
   declare -i num
   local arr_name=$1 arr_string=""
@@ -43,7 +43,7 @@ function _._array {
 
     num=$#
     for (( i = 0; i < num; i++)); do
-      arr_string+=" [${i}]=\"`_._slash "${1}"`\"" && shift
+      arr_string+=" [${i}]=\"`lb_slash "${1}"`\"" && shift
     done
 
     eval "${arr_name}=(${arr_string} )" && turn=$?

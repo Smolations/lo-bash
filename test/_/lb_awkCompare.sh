@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_awkCompare'
+h1 'lb_awkCompare'
 
 # && pass || fail
 

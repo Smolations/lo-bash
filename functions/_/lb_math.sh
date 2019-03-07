@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._math <*>
+ #  @usage lb_math <*>
  #
  #  @output true
  #
@@ -16,9 +16,9 @@
  #  notes@
  #
  #  @examples
- #  $ _._math '2 + 2'
+ #  $ lb_math '2 + 2'
  #  > 4
- #  $ _._math '2 / 3'
+ #  $ lb_math '2 / 3'
  #  > 0.6666666666666666
  #  examples@
  #
@@ -31,10 +31,10 @@
  #  * - any error returned from `awk`
  #  returns@
  #
- #  @file functions/_/_math.sh
+ #  @file functions/_/lb_math.sh
  ## */
 
-function _._math {
+function lb_math {
   local args=$@
   awk "BEGIN { printf(\"%.16g\",${args// /}) }"
 }

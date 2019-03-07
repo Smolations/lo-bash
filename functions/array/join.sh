@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.join <arrayName> <separator=" ">
+ #  @usage _join <arrayName> <separator=" ">
  #
  #  @output true
  #
@@ -14,11 +14,12 @@
  #
  #  @examples
  #  $ arr=( 'a' 'b' 'c' )
- #  $ _.join arr '~'
+ #  $ _join arr '~'
  #  > a~b~c
  #  examples@
  #
  #  @dependencies
+ #  lb_arrayCopy
  #  dependencies@
  #
  #  @returns
@@ -29,11 +30,11 @@
  #  @file functions/array/join.sh
  ## */
 
-function _.join {
+function _join {
   declare -i turn=0
   local arrayName="$1" sep="${2- }" str=""
 
-  _._arrayCopy _tmpArray $arrayName || turn=1
+  lb_arrayCopy _tmpArray $arrayName || turn=1
 
   if (( turn == 0 )); then
     for (( i = 0; i < ${#_tmpArray[@]}; i++ )); do
