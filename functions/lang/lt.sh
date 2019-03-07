@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.lt <value> <other>
+ #  @usage _lt <value> <other>
  #
  #  @output false
  #
@@ -8,12 +8,12 @@
  #  description@
  #
  #  @examples
- #  $ _.lt 4 5 && echo "yup"
+ #  $ _lt 4 5 && echo "yup"
  #  > yup
  #  examples@
  #
  #  @dependencies
- #  function/lang/gte.sh
+ #  _gte
  #  dependencies@
  #
  #  @returns
@@ -24,6 +24,6 @@
  #  @file functions/lang/lt.sh
  ## */
 
-function _.lt {
-  ! _.gte $@
+function _lt {
+  ! _gte $@
 }

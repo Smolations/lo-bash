@@ -4,7 +4,7 @@ source SOURCEME
 
 
 function h1 {
-  echo -n "`printf '\n ---==:  _.%-15s  ' $1`"
+  echo -n "`printf '\n ---==:  %-15s  ' $1`"
 }
 function pass {
   echo -n '.'
@@ -20,19 +20,19 @@ function skip {
 export -f pass fail skip h1
 
 
-source foo.sh
+# source foo.sh
 
 
 # maybe need an _.executeAll?
-time _.sourceAll -r test/
-# time _.sourceAll -r test/_
-# time _.sourceAll -r test/array
-# time _.sourceAll -r test/date
-# time _.sourceAll -r test/function
-# time _.sourceAll -r test/lang
-# time _.sourceAll -r test/math
-# time _.sourceAll -r test/number
-# time _.sourceAll -r test/string
-# time _.sourceAll -r test/utility
+time _sourceAll -r test/
+# _sourceAll -r test/_
+# _sourceAll -r test/array
+# _sourceAll -r test/date
+# _sourceAll -r test/cuz
+# _sourceAll -r test/lang
+# _sourceAll -r test/math
+# _sourceAll -r test/number
+# _sourceAll -r test/string
+# _sourceAll -r test/utility
 # echo "-> $?"
 echo

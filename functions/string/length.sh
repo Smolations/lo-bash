@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.length <string>
+ #  @usage _length <string>
  #
  #  @output true
  #
@@ -14,14 +14,14 @@
  #  notes@
  #
  #  @examples
- #  $ _.length "hey mom"
+ #  $ _length "hey mom"
  #  > 7
  #  examples@
  #
  #  @dependencies
- #  `wc`
- #  `tr`
  #  `egrep`
+ #  `tr`
+ #  `wc`
  #  functions/__strip_color_codes.sh
  #  dependencies@
  #
@@ -33,7 +33,7 @@
  #  @file functions/string/length.sh
  ## */
 
-function _.length {
+function _length {
   declare -i turn=0
   declare -i len
 

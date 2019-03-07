@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 'times'
+h1 '_times'
 
 
 function iteratee {
@@ -8,10 +8,10 @@ function iteratee {
   echo -n $ndx
 }
 
-result=`_.times 4 iteratee`
+result=`_times 4 iteratee`
 [[ "$result" == "0123" ]] && pass || fail "'$result' == '0123'"
 
-_.times 4 iteratee resultArray
+_times 4 iteratee resultArray
 (( ${#resultArray[@]} == 4 )) && pass || fail "'${#resultArray[@]}' == '4'"
 (( ${resultArray[2]} == 2 )) && pass || fail "'${resultArray[2]}' == '2'"
 

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.yesNo --default=<y|n> <question>
+ #  @usage _yesNo --default=<y|n> <question>
  #
  #  @output true
  #
@@ -25,22 +25,23 @@
  #
  #  @examples
  #  # ignore errors
- #  _.yesNo --default=n "Does this work"
+ #  _yesNo --default=n "Does this work"
  #  if [[ $_yes ]]; then
  #      ...
  #  fi
  #
  #  # OR
  #
- #  # take into account if there is an error during processing within _.yesNo
- #  if _.yesNo --default=n "Does this work" && [[ $_yes ]]; then
+ #  # take into account if there is an error during processing within _yesNo
+ #  if _yesNo --default=n "Does this work" && [[ $_yes ]]; then
  #      ...
  #  fi
  #  examples@
  #
  #  @dependencies
  #  `egrep`
- #  functions/_/inArgs.sh
+ #  `read`
+ #  _inArgs
  #  dependencies@
  #
  #  @returns
@@ -53,8 +54,8 @@
  #  @file functions/utility/yesNo.sh
  ## */
 
-function _.yesNo {
-  # __debug "_.yesNo() $@"
+function _yesNo {
+  # __debug "_yesNo() $@"
 
   local Q="${X}${B}" A="${X}${B}${COL_MAGENTA}" default question optN optY ans
   _raw_ans=
@@ -67,7 +68,7 @@ function _.yesNo {
   fi
 
   # the --default option is required.
-  if ! _.inArgs default "$@"; then
+  if ! _inArgs default "$@"; then
     return 2
   fi
 
@@ -89,7 +90,7 @@ function _.yesNo {
   # -n to keep response on same line; -e to honor escapes like \n
   echo -ne "${Q}  ${question} ${X}[${optY}/${optN}]${Q}?${X}  "
   read ans
-  # __log "_.yesNo(): User answered '$ans'"
+  # _log "_yesNo(): User answered '$ans'"
   [[ -z "$ans" ]] && ans=$default
 
   ans=$( egrep --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
@@ -102,10 +103,10 @@ function _.yesNo {
   else
     # this should get triggered when user answers something other than
     # the allowed characters
-    _.yesNo --default=$default "$question"
+    _yesNo --default=$default "$question"
   fi
 
-  # __log "_.yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
+  # _log "_yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
 
   if [[ -z "$_raw_ans" ]] || [[ "$_raw_ans" == "$default" ]]; then
     [[ "$default" == "y" ]] && _yes=true || _no=true

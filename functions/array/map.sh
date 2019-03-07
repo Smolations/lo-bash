@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.map <arrayName> <funcName> <newArray>
+ #  @usage _map <arrayName> <funcName> <newArray>
  #
  #  @output false
  #
@@ -27,20 +27,20 @@
  #    local val="$1"
  #
  #    if (( ndx > 1 )); then
- #      _.toUpper "$val"
+ #      _toUpper "$val"
  #    else
  #      echo "$val"
  #    fi
  #  }
  #
- #  _.map arr iteratee newArray
+ #  _map arr iteratee newArray
  #  echo "${newArray[@]}"   # this is INSANE
  #  examples@
  #
  #  @dependencies
  #  `eval`
- #  functions/_/_arrayCopy.sh
- #  functions/lang/isFunction.sh
+ #  lb_arrayCopy
+ #  _isFunction
  #  dependencies@
  #
  #  @returns
@@ -53,17 +53,17 @@
  #  @file functions/array/map.sh
  ## */
 
-function _.map {
+function _map {
   declare -i turn=0
   local arrayName="${1?Existing array name required as first argument}"
   local funcName="${2?Function name required as second argument}"
   local newArrayName="${3?New array name required as third argument}"
   local _newArray=()
 
-  if ! _._arrayCopy _tmpArray $arrayName; then
+  if ! lb_arrayCopy _tmpArray $arrayName; then
     turn=1
 
-  elif ! _.isFunction "$funcName"; then
+  elif ! _isFunction "$funcName"; then
     turn=2
 
   else
@@ -71,7 +71,7 @@ function _.map {
       _newArray+=( `eval "$funcName \"${_tmpArray[i]}\" $i"` )
     done
 
-    _._arrayCopy $newArrayName _newArray || turn=4
+    lb_arrayCopy $newArrayName _newArray || turn=4
   fi
 
   unset _tmpArray

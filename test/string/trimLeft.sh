@@ -1,13 +1,13 @@
 #!/bin/bash
 
-h1 'trimLeft'
+h1 '_trimLeft'
 
 needle=3456
 alpha="  ${needle}  "
 bravo="00${needle}"
 
 
-[[ "`_.trimLeft "$alpha"`" == "${needle}  " ]] && pass || fail
-[[ "`_.trimLeft "$bravo" 0`" == "$needle" ]] && pass || fail
+[[ "`_trimLeft "$alpha"`" == "${needle}  " ]] && pass || fail
+[[ "`_trimLeft "$bravo" 0`" == "$needle" ]] && pass || fail
 
-[[ "`_.trimLeft "$alpha"`" == "${needle}" ]] && fail || pass
+[[ "`_trimLeft "$alpha"`" == "${needle}" ]] && fail || pass

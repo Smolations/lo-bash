@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._awkCompare
+ #  @usage lb_awkCompare
  #
  #  @output true
  #
@@ -16,13 +16,13 @@
  #  notes@
  #
  #  @examples
- #  $ _._awkCompare "3 > 4" || echo "dang"
+ #  $ lb_awkCompare "3 > 4" || echo "dang"
  #  > dang
  #  examples@
  #
  #  @dependencies
  #  `grep`
- #  functions/_/_awkPrint.sh
+ #  lb_awkPrint
  #  dependencies@
  #
  #  @returns
@@ -30,12 +30,12 @@
  #  1 - `awk` returned something other than 1
  #  returns@
  #
- #  @file functions/_/_awkCompare.sh
+ #  @file functions/_/lb_awkCompare.sh
  ## */
 
-function _._awkCompare {
+function lb_awkCompare {
   declare -i turn=1
-  _._awkPrint "$@" | grep -qi '1' && turn=0
+  lb_awkPrint "$@" | grep -qi '1' && turn=0
   return $turn
 }
 

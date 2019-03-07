@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.difference <newArrayName> <firstArray> <secondArray>
+ #  @usage _difference <newArrayName> <firstArray> <secondArray>
  #
  #  @output false
  #
@@ -18,14 +18,14 @@
  #  @examples
  #  $ arr1=( 1 2 3 )
  #  $ arr2=( 4 2 )
- #  $ _.difference resultArray arr1 arr2
+ #  $ _difference resultArray arr1 arr2
  #  $ echo "${resultArray[@]}"
  #  > 1 3
  #  examples@
  #
  #  @dependencies
- #  functions/_/_arrayCopy.sh
- #  functions/lang/isArray.sh
+ #  lb_arrayCopy
+ #  _isArray
  #  dependencies@
  #
  #  @returns
@@ -36,14 +36,14 @@
  #  @file functions/array/difference.sh
  ## */
 
-function _.difference {
+function _difference {
   declare -i turn=1
   local new_array=$1 _difference= found=
 
-  _._arrayCopy one $2
-  _._arrayCopy two $3
+  lb_arrayCopy one $2
+  lb_arrayCopy two $3
 
-  if _.isArray one && _.isArray two; then
+  if _isArray one && _isArray two; then
     _difference=() turn=0
 
     for (( i = 0; i < ${#one[@]}; i++ )); do
@@ -59,7 +59,7 @@ function _.difference {
       [[ ! $found ]] && _difference+=("${one[i]}")
     done
 
-    _._arrayCopy $new_array _difference
+    lb_arrayCopy $new_array _difference
   fi
 
   return $turn

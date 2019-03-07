@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.remove <arrayName> <funcName>
+ #  @usage _remove <arrayName> <funcName>
  #
  #  @output false
  #
@@ -10,7 +10,7 @@
  #  description@
  #
  #  @notes
- #  - This method mutates <arrayName>. Use _.pull to pull elements from an
+ #  - This method mutates <arrayName>. Use _pull to pull elements from an
  #  array by value.
  #  notes@
  #
@@ -25,13 +25,13 @@
  #    return $turn
  #  }
  #
- #  _.remove arr predicate
+ #  _remove arr predicate
  #  # arr is now ( 'hiya' 'sup' )
  #  examples@
  #
  #  @dependencies
  #  `eval`
- #  functions/_/_arrayCopy.sh
+ #  lb_arrayCopy
  #  dependencies@
  #
  #  @returns
@@ -43,18 +43,18 @@
  #  @file functions/array/remove.sh
  ## */
 
-function _.remove {
+function _remove {
   declare -i turn=0
   local arrayName="$1" funcName="$2" _newArray=( )
 
-  _._arrayCopy _tmpArray $arrayName || turn=1
+  lb_arrayCopy _tmpArray $arrayName || turn=1
 
   if (( turn == 0 )); then
     for (( i = 0; i < ${#_tmpArray[@]}; i++ )); do
       eval "$funcName '${_tmpArray[i]}' $i" || _newArray+=( "${_tmpArray[i]}" )
     done
 
-    _._arrayCopy $arrayName _newArray || turn=2
+    lb_arrayCopy $arrayName _newArray || turn=2
   fi
 
   unset _tmpArray _newArray

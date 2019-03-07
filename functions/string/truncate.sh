@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.truncate [--length=<num>] [--omission=<string>] [--separator=<string>] <string="">
+ #  @usage _truncate [--length=<num>] [--omission=<string>] [--separator=<string>] <string="">
  #
  #  @output true
  #
@@ -24,20 +24,20 @@
  #  notes@
  #
  #  @examples
- #  $ _.truncate "hi-diddly-ho there, neighborino"
+ #  $ _truncate "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there, neighbo...
  #
- #  $ _.truncate --length=24 --separator=' ' "hi-diddly-ho there, neighborino"
+ #  $ _truncate --length=24 --separator=' ' "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there,...
  #
- #  $ _.truncate --omission=' [...]' "hi-diddly-ho there, neighborino"
+ #  $ _truncate --omission=' [...]' "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there, neig [...]
  #  examples@
  #
  #  @dependencies
  #  `expr`
- #  functions/lang/isNumber.sh
- #  functions/utility/inArgs.sh
+ #  _inArgs
+ #  _isNumber
  #  dependencies@
  #
  #  @returns
@@ -48,7 +48,7 @@
  #  @file functions/string/truncate.sh
  ##
 
-function _.truncate {
+function _truncate {
   declare -i turn=0
   declare -i len=30
   declare -i new_len
@@ -56,9 +56,9 @@ function _.truncate {
   declare -i str_len
   local omission="..." sep= str=
 
-  _.inArgs length "$@" && len="$_arg_val"
-  _.inArgs omission "${_args_clipped[@]}" && omission="$_arg_val"
-  _.inArgs separator "${_args_clipped[@]}" && sep="$_arg_val"
+  _inArgs length "$@" && len="$_arg_val"
+  _inArgs omission "${_args_clipped[@]}" && omission="$_arg_val"
+  _inArgs separator "${_args_clipped[@]}" && sep="$_arg_val"
 
   str="${_args_clipped[@]}"
 

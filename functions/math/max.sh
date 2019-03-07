@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.max <val1>[, <val2>[, ...]]
+ #  @usage _max <val1>[, <val2>[, ...]]
  #
  #  @output true
  #
@@ -13,7 +13,7 @@
  #
  #  @examples
  #  $ nums=(5 9 2 24 12 1 19.1 24.01 -4)
- #  $ _.max ${nums[@]}
+ #  $ _max ${nums[@]}
  #  > 24.01
  #  examples@
  #
@@ -31,7 +31,7 @@
  #  @file functions/math/max.sh
  ## */
 
-function _.max {
+function _max {
   declare -i turn=0
   local args=`tr ' ' "\n" <<< "$@"`
   sort -g <<< "$args" | tail -n1

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.reverse <arrayName>
+ #  @usage _reverse <arrayName>
  #
  #  @output false
  #
@@ -14,7 +14,7 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' true )
- #  $ _.reverse arr
+ #  $ _reverse arr
  #  $ echo "${arr[0]}"
  #  > true
  #  $ echo "${arr[3]}"
@@ -22,7 +22,7 @@
  #  examples@
  #
  #  @dependencies
- #  functions/_/_arrayCopy.sh
+ #  lb_arrayCopy
  #  dependencies@
  #
  #  @returns
@@ -34,18 +34,18 @@
  #  @file functions/array/reverse.sh
  ## */
 
-function _.reverse {
+function _reverse {
   declare -i turn=0
   local arrayName="$1" _newArray=( )
 
-  _._arrayCopy _tmpArray $arrayName || turn=1
+  lb_arrayCopy _tmpArray $arrayName || turn=1
 
   if (( turn == 0 )); then
     for (( i = ${#_tmpArray[@]} - 1; i > -1 ; i-- )); do
       _newArray+=( "${_tmpArray[i]}" )
     done
 
-    _._arrayCopy $arrayName _newArray || turn=2
+    lb_arrayCopy $arrayName _newArray || turn=2
   fi
 
   unset _newArray _tmpArray

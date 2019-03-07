@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.getEnv [-e]
+ #  @usage _getEnv [-e]
  #
  #  @output true (with -e option)
  #
@@ -31,7 +31,7 @@
  #  notes@
  #
  #  @examples
- #  _.getEnv
+ #  _getEnv
  #
  #  if [[ $_ENV_OSX ]]; then
  #    say "I am on teh b3st 0S!"
@@ -40,6 +40,7 @@
  #
  #  @dependencies
  #  `uname`
+ #  `which`
  #  dependencies@
  #
  #  @returns
@@ -50,7 +51,7 @@
  #  @file functions/utility/getEnv.sh
  ## */
 
-function _.getEnv {
+function _getEnv {
   declare -i turn=0
 
   # get uname info

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.trimRight <string> <chars=" ">
+ #  @usage _trimRight <string> <chars=" ">
  #
  #  @output true
  #
@@ -8,9 +8,9 @@
  #  description@
  #
  #  @examples
- #  $ _.trimRight "  abc   "
+ #  $ _trimRight "  abc   "
  #  >    abc
- #  $ _.trimRight "-_-abc-_-" "_-"
+ #  $ _trimRight "-_-abc-_-" "_-"
  #  > -_-abc
  #  examples@
  #
@@ -25,7 +25,7 @@
  #  @file functions/string/trimRight.sh
  ## */
 
-function _.trimRight {
+function _trimRight {
   local str="$1" chars=${2- }
   sed -E "s/[${chars}]+$//" <<< "$str"
   return 0

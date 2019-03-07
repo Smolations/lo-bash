@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.source_all [-vx] [<path>]
+ #  @usage _source_all [-vx] [<path>]
  #
  #  @output true (for -v)
  #
@@ -33,7 +33,7 @@
  #  @file functions/utility/sourceAll.sh
  ## */
 
-function _.sourceAll {
+function _sourceAll {
   (( $# == 0 )) && return 1
   args=($@)
 
@@ -59,12 +59,12 @@ function _.sourceAll {
       if [[ -d "$file" ]]; then
         if [[ $recurse ]]; then
           export sCount
-          _.sourceAll ${flags[@]} "$file"
+          _sourceAll ${flags[@]} "$file"
         fi
 
       elif [[ -s "$file" ]]; then
         # echo "Going to source: ${file}"
-        # DO NOT LEAVE THIS HERE. try _.executeAll
+        # DO NOT LEAVE THIS HERE. try _executeAll
         [[ "${file%%/*}" == "test" ]] && ./"$file" || source "$file"
 
         # (( sCount++ )) && source "$file"

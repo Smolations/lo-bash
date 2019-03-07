@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._awkPrint <*>
+ #  @usage lb_awkPrint <*>
  #
  #  @output true
  #
@@ -10,7 +10,7 @@
  #  description@
  #
  #  @examples
- #  $ _._awkPrint "2 + 4"
+ #  $ lb_awkPrint "2 + 4"
  #  > 6
  #  examples@
  #
@@ -23,10 +23,10 @@
  #  * - any possible awk failure (probably syntax-related)
  #  returns@
  #
- #  @file functions/_/_awkPrint.sh
+ #  @file functions/_/lb_awkPrint.sh
  ## */
 
-function _._awkPrint {
+function lb_awkPrint {
   awk "BEGIN { print(${@}) }"
 }
 

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.isNumber <value>
+ #  @usage _isNumber <value>
  #
  #  @output false
  #
@@ -9,15 +9,15 @@
  #  description@
  #
  #  @examples
- #  _.isNumber .4       # true
- #  _.isNumber 4.       # true
- #  _.isNumber 4        # true
- #  _.isNumber -5       # true
- #  _.isNumber +5       # true
- #  _.isNumber 7.312    # true
- #  _.isNumber '65'     # true
- #  _.isNumber 7.3.12   # false
- #  _.isNumber 'a'      # false
+ #  _isNumber .4       # true
+ #  _isNumber 4.       # true
+ #  _isNumber 4        # true
+ #  _isNumber -5       # true
+ #  _isNumber +5       # true
+ #  _isNumber 7.312    # true
+ #  _isNumber '65'     # true
+ #  _isNumber 7.3.12   # false
+ #  _isNumber 'a'      # false
  #  examples@
  #
  #  @dependencies
@@ -31,7 +31,7 @@
  #  @file functions/lang/isNumber.sh
  ## */
 
-function _.isNumber {
+function _isNumber {
   declare -i turn=0
 
   case ${1#[-+]} in

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.menu [--prompt=<msg>] <list_item> [<list_item>] ... ] [-k <list_item> [<list_item>] ...]
+ #  @usage _menu [--prompt=<msg>] <list_item> [<list_item>] ... ] [-k <list_item> [<list_item>] ...]
  #
  #  @output true
  #
@@ -15,7 +15,7 @@
  #  If you require a second list that has user-specified indexes (non-numeric), you
  #  can pass them using the following format (note the -k option):
  #
- #      _.menu -k ":key1:list item description" ":key2:list item description ..."
+ #      _menu -k ":key1:list item description" ":key2:list item description ..."
  #
  #  Each index must be contained within colons. The leading colon is used when
  #  parsing parameters, and to ensure the desired index is what will appear in the
@@ -45,9 +45,9 @@
  #  @examples
  #  list="oolah boolah boo"
  #  msg="this is a message"
- #  _.menu --prompt="$msg" $list
+ #  _menu --prompt="$msg" $list
  #
- #  # output of _.menu command (snippet) above would be
+ #  # output of _menu command (snippet) above would be
  #  # ...
  #  # 1.  oolah
  #  # 2.  boolah
@@ -59,24 +59,24 @@
  #
  #  ### ...OR we could add an extra option... ###
  #
- #  _.menu $list -k ":N:Show me something new!"
+ #  _menu $list -k ":N:Show me something new!"
  #
  #  ### Can be effectively used in conditional scripts as well ###
  #
- #  if _.menu $list ":N:Show me something new!"; then
- #      case $_menu_sel_index in
- #          1)
- #              ...
+ #  if _menu $list ":N:Show me something new!"; then
+ #    case $_menu_sel_index in
+ #      1)
+ #        ...
  #
- #          ...
- #          # don't forget your custom option!
- #          N) ...;;
+ #      ...
+ #      # don't forget your custom option!
+ #      N) ...;;
  #
- #          # the only other success in this case is if the user pressed enter to abort.
- #          # remember _.menu will output "You chose to abort."
- #          *)
- #              echo "Exiting..."; exit 0;;
- #      esac
+ #      # the only other success in this case is if the user pressed enter to abort.
+ #      # remember _menu will output "You chose to abort."
+ #      *)
+ #        echo "Exiting..."; exit 0;;
+ #    esac
  #  else
  #      echo "Sorry, your choice was not understood. Exiting..."
  #      exit 1
@@ -86,7 +86,9 @@
  #  @dependencies
  #  `awk`
  #  `egrep`
- #  functions/__in_array.sh
+ #  `printf`
+ #  `read`
+ #  _inArray
  #  dependencies@
  #
  #  @returns
@@ -111,7 +113,7 @@ MENU_PROMPT=${X}${MENU_HEADER}
  #[[ -n "$MENU_OPTION" ]] || export MENU_OPTION=${X}${COL_CYAN}
  #[[ -n "$MENU_PROMPT" ]] || export MENU_PROMPT=${X}${B}${COL_YELLOW}
 
-function _.menu {
+function _menu {
   declare -a items extraItems ndxes vals
   local i j k index item opt optndx pair prompt msg parsedItem bar
   local hr="${MENU_HL}  ------------------------------------------------  ${X}"
@@ -144,9 +146,9 @@ function _.menu {
   fi
 
   if [[ ${#items[@]} == 0 ]] && [[ ${#extraItems[@]} == 0 ]]; then
-    # __debug "_.menu: No lists given. Given: $@"
+    # __debug "_menu: No lists given. Given: $@"
     echo
-    echo ${E}"  _.menu did not detect any list items to display. Aborting...  "${X}
+    echo ${E}"  _menu did not detect any list items to display. Aborting...  "${X}
     return 2
   fi
 
@@ -209,7 +211,7 @@ function _.menu {
   if [[ -n "$opt" ]]; then
     _menu_sel_index="$opt"
 
-    if [[ ${#extraItems[@]} > 0 ]] && _.inArray "$opt" "${ndxes[@]}"; then
+    if [[ ${#extraItems[@]} > 0 ]] && _inArray "$opt" "${ndxes[@]}"; then
         _menu_sel_value="${vals[${_in_array_index}]}"
 
     # elif egrep -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then

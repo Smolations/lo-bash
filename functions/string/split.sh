@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.split <string> <separator> <arrayName>
+ #  @usage _split <string> <separator> <arrayName>
  #
  #  @output false
  #
@@ -20,12 +20,12 @@
  #
  #  @examples
  #  $ str="what's up guys?"
- #  $ _.split "$str" " " splitArray
+ #  $ _split "$str" " " splitArray
  #  $ echo "${#splitArray[@]}"
  #  > 3
  #  $ echo "${splitArray[2]}"
  #  > guys?
- #  $ _.split "$str" " up " splitArray
+ #  $ _split "$str" " up " splitArray
  #  $ echo "${#splitArray[@]}"
  #  > 2
  #  $ echo "${splitArray[0]}"
@@ -33,8 +33,8 @@
  #  examples@
  #
  #  @dependencies
- #  functions/_/_array.sh
- #  functions/_/_awkPrint.sh
+ #  lb_array
+ #  lb_awkPrint
  #  dependencies@
  #
  #  @returns
@@ -46,7 +46,7 @@
  #  @file functions/string/split.sh
  ## */
 
-function _.split {
+function _split {
   declare -i turn=0
   declare -i sepEnd
   declare -i sepIndex
@@ -57,7 +57,7 @@ function _.split {
   [[ -z "$arrayName" ]] && turn=2
 
   if [[ $turn == 0 ]]; then
-    sepIndex=`_._awkPrint "index(\"$tmpStr\", \"$sep\")"`
+    sepIndex=`lb_awkPrint "index(\"$tmpStr\", \"$sep\")"`
 
     if (( sepIndex > 0 )); then
       while (( sepIndex > 0 )); do
@@ -66,14 +66,14 @@ function _.split {
         el="${tmpStr:0:${sepStart}}"
         tmpStr="${tmpStr:${sepEnd}}"
         arr+=("$el")
-        sepIndex=`_._awkPrint "index(\"$tmpStr\", \"$sep\")"`
+        sepIndex=`lb_awkPrint "index(\"$tmpStr\", \"$sep\")"`
       done
       arr+=("$tmpStr")
     else
       arr+=("$tmpStr")
     fi
 
-    _._array $arrayName "${arr[@]}"
+    lb_array $arrayName "${arr[@]}"
   fi
 
   return $turn

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _._arrayCopy <destArrayName> <srcArrayName>
+ #  @usage lb_arrayCopy <destArrayName> <srcArrayName>
  #
  #  @output false
  #
@@ -13,13 +13,14 @@
  #
  #  @examples
  #  $ test_array=(1 '' 'hello there' 'umm' 'your "business" eh?')
- #  $ _._arrayCopy resultArray testArray
+ #  $ lb_arrayCopy resultArray testArray
  #  $ echo ${resultArray[2]}
  #  > hello there
  #  examples@
  #
  #  @dependencies
  #  `eval`
+ #  _isArray
  #  dependencies@
  #
  #  @returns
@@ -27,14 +28,14 @@
  #  1 - copy operation failed
  #  returns@
  #
- #  @file functions/_/_arrayCopy.sh
+ #  @file functions/_/lb_arrayCopy.sh
  ## */
 
-function _._arrayCopy {
+function lb_arrayCopy {
   declare -i turn=1
   local arr_copy=$1 arr_orig=$2
 
-  if _.isArray $arr_orig; then
+  if _isArray $arr_orig; then
     turn=0
     eval "${arr_copy}=( \"\${${arr_orig}[@]}\" )"
   else

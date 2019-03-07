@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.isEqual <val1> <val2>
+ #  @usage _isEqual <val1> <val2>
  #
  #  @output false
  #
@@ -15,17 +15,17 @@
  #  notes@
  #
  #  @examples
- #  $ _.isEqual 2 2 && echo 'yup'
+ #  $ _isEqual 2 2 && echo 'yup'
  #  > yup
- #  $ _.isEqual 'hey' 'hey' && echo 'yup'
+ #  $ _isEqual 'hey' 'hey' && echo 'yup'
  #  > yup
- #  $ _.isEqual 'hey' 'heyo' || echo 'aww'
+ #  $ _isEqual 'hey' 'heyo' || echo 'aww'
  #  > aww
  #  examples@
  #
  #  @dependencies
- #  functions/_/_awkCompare.sh
- #  functions/lang/isNumber.sh
+ #  lb_awkCompare
+ #  _isNumber
  #  dependencies@
  #
  #  @returns
@@ -36,11 +36,11 @@
  #  @file functions/lang/isEqual.sh
  ## */
 
-function _.isEqual {
+function _isEqual {
   declare -i turn=1
 
-  if _.isNumber $1 && _.isNumber $2; then
-    _._awkCompare "$1 == $2" && turn=0
+  if _isNumber $1 && _isNumber $2; then
+    lb_awkCompare "$1 == $2" && turn=0
   else
     [[ "$1" == "$2" ]] && turn=0
   fi

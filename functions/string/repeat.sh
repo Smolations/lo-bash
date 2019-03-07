@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.repeat [-n] <string> <num>
+ #  @usage _repeat [-n] <string> <num>
  #
  #  @output true
  #
@@ -14,18 +14,19 @@
  #  options@
  #
  #  @examples
- #  _.repeat "*" 3
+ #  _repeat "*" 3
  #  > ***
  #
- #  _.repeat "abc" 2
+ #  _repeat "abc" 2
  #  > abcabc
  #
- #  _.repeat "abc" 0
+ #  _repeat "abc" 0
  #  >
  #  examples@
  #
  #  @dependencies
  #  `egrep`
+ #  `seq`
  #  dependencies@
  #
  #  @returns
@@ -38,7 +39,7 @@
  #  @file functions/string/repeat.sh
  ## */
 
-function _.repeat {
+function _repeat {
   declare -i turn=0
   declare -i mult
   declare -i i

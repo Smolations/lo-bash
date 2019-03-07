@@ -1,10 +1,10 @@
 #!/bin/bash
 
-h1 'isEqual'
+h1 '_isEqual'
 
-_.isEqual 4 4 && pass || fail
-_.isEqual 2 '2' && pass || fail
-_.isEqual '2a' '2a' && pass || fail
+_isEqual 4 4 && pass || fail
+_isEqual 2 '2' && pass || fail
+_isEqual '2a' '2a' && pass || fail
 
-_.isEqual 3 4 && fail || pass
-_.isEqual '2a' '2b' && fail || pass
+_isEqual 3 4 && fail || pass
+_isEqual '2a' '2b' && fail || pass

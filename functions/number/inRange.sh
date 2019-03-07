@@ -1,10 +1,7 @@
 ## /* @function
- #  @usage _.inRange <number> <start=0> <end>
+ #  @usage _inRange <number> <start=0> <end>
  #
  #  @output true
- #
- #  @exports
- #  exports@
  #
  #  @description
  #  Checks if <number> is between <start> and up to, but not including, <end>.
@@ -18,9 +15,9 @@
  #  notes@
  #
  #  @examples
- #  $ _.inRange 5 10    # true
- #  $ _.inRange 5 4 10  # true
- #  $ _.inRange 15 10   # false
+ #  $ _inRange 5 10    # true
+ #  $ _inRange 5 4 10  # true
+ #  $ _inRange 15 10   # false
  #  examples@
  #
  #  @dependencies
@@ -34,7 +31,7 @@
  #  @file functions/number/inRange.sh
  ## */
 
-function _.inRange {
+function _inRange {
   declare -i turn=0
   declare -i arg_count=$#
   declare -i from=0

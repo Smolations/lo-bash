@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _.last <arrayName>
+ #  @usage _last <arrayName>
  #
  #  @output true
  #
@@ -9,11 +9,12 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' )
- #  $ _.last arr
+ #  $ _last arr
  #  > foobar
  #  examples@
  #
  #  @dependencies
+ #  lb_arrayCopy
  #  dependencies@
  #
  #  @returns
@@ -25,12 +26,12 @@
  #  @file functions/array/last.sh
  ## */
 
-function _.last {
+function _last {
   declare -i turn=0
   declare -i lastIndex
   local arrayName="$1" val=
 
-  _._arrayCopy _arrCopy $arrayName || turn=1
+  lb_arrayCopy _arrCopy $arrayName || turn=1
 
   if (( turn == 0 )); then
     let "lastIndex = ${#_arrCopy[@]} - 1"

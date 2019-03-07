@@ -1,13 +1,13 @@
 #!/bin/bash
 
-h1 'lt'
+h1 '_lt'
 
-_.lt 1 3 && pass || fail
-_.lt -1 3 && pass || fail
-_.lt 2 '5' && pass || fail
-_.lt '1.233' '1.32' && pass || fail
-_.lt 'b' 'g' && pass || fail
+_lt 1 3 && pass || fail
+_lt -1 3 && pass || fail
+_lt 2 '5' && pass || fail
+_lt '1.233' '1.32' && pass || fail
+_lt 'b' 'g' && pass || fail
 
-_.lt 3 1 && fail || pass
-_.lt 2 2 && fail || pass
-_.lt 'bees' 'bee' && fail || pass
+_lt 3 1 && fail || pass
+_lt 2 2 && fail || pass
+_lt 'bees' 'bee' && fail || pass

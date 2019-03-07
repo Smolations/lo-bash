@@ -1,6 +1,6 @@
 ## /* @function
- #  @usage _.type_exists [-p | -a | -b | -f | -k] <command>
- #  @usage _.type_exists [-p | -a | -b | -f | -k] <app_name>
+ #  @usage _type_exists [-p | -a | -b | -f | -k] <command>
+ #  @usage _type_exists [-p | -a | -b | -f | -k] <app_name>
  #
  #  @output on error
  #
@@ -11,7 +11,7 @@
  #  @description
  #  This function is basically a wrapper around the `type` command. Its purpose
  #  is to tell the user if a particular app/file/function/etc. exists on their
- #  system. Without passing an option, `__type_exists` will use the return
+ #  system. Without passing an option, `_type_exists` will use the return
  #  code of the `type` command for the given input. Passing one of the options
  #  (and they can *only* be passed one at a time), will result in success only
  #  if the `type` of the input matches the type specified by the given option.
@@ -20,7 +20,7 @@
  #  In addition to pass/fail return codes, this function also exports a variable
  #  in case the script author needs it for some reason. See @exports.
  #
- #  `type -t` returns a single word if the <command> is found. `__type_exists`
+ #  `type -t` returns a single word if the <command> is found. `_type_exists`
  #  adds another word, "app", to the mix specifically for OS X *.app's. The
  #  exported variable will be populated with one of these words if a type is
  #  found:
@@ -51,14 +51,14 @@
  #  notes@
  #
  #  @examples
- #  __type_exists echo                      => 0   $_type_is = "builtin"
- #  __type_exists -f echo                   => 4   $_type_is = "builtin"
- #  __type_exists fi                        => 0   $_type_is = "keyword"
- #  __type_exists -app git                  => 2   $_type_is = "file"
- #  __type_exists "Mission Control"         => 0   $_type_is = "app"
- #  __type_exists Mission Control           => 4   $_type_is = ""
- #  __type_exists -p Mission Control        => 0   $_type_is = "app"
- #  __type_exists __type_exists             => 0   $_type_is = "function"
+ #  _type_exists echo                      => 0   $_type_is = "builtin"
+ #  _type_exists -f echo                   => 4   $_type_is = "builtin"
+ #  _type_exists fi                        => 0   $_type_is = "keyword"
+ #  _type_exists -app git                  => 2   $_type_is = "file"
+ #  _type_exists "Mission Control"         => 0   $_type_is = "app"
+ #  _type_exists Mission Control           => 4   $_type_is = ""
+ #  _type_exists -p Mission Control        => 0   $_type_is = "app"
+ #  _type_exists _type_exists              => 0   $_type_is = "function"
  #  examples@
  #
  #  @returns
@@ -68,10 +68,10 @@
  #  4 - type returned failure OR does not match type for given option
  #  returns@
  #
- #  @file functions/__type_exists.sh
+ #  @file functions/cuz/type_exists.sh
  ## */
 
-function _.typeExists {
+function _typeExists {
     [[ $# == 0 ]] && return 1
 
     local retVal=0 targ results opt=
@@ -87,36 +87,36 @@ function _.typeExists {
     # odds are we will have to find the type, so we'll try it first
     _type_is=$( type -t "$targ" 2>/dev/null ) || retVal=4
     if [[ -z "$_type_is" ]]; then
-        # an app will always fail a `type` check (since its a directory) so
-        # $retVal needs to be reset
-        retVal=0
-        # look for system AND user app
-        results=$(find /Applications ~/Applications -maxdepth 4 -name "${targ}.app")
-        [[ -n "$results" ]] && _type_is=app || retVal=4
+      # an app will always fail a `type` check (since its a directory) so
+      # $retVal needs to be reset
+      retVal=0
+      # look for system AND user app
+      results=$(find /Applications ~/Applications -maxdepth 4 -name "${targ}.app")
+      [[ -n "$results" ]] && _type_is=app || retVal=4
     fi
 
     # check to see if user specified an option to indicate desired type
     if [[ -n "$opt" ]] && [[ $retVal == 0 ]]; then
-        case "$opt" in
-            -p)
-                [[ "$_type_is" == "app" ]] || retVal=4;;
+      case "$opt" in
+        -p)
+          [[ "$_type_is" == "app" ]] || retVal=4;;
 
-            -a)
-                [[ "$_type_is" == "alias" ]] || retVal=4;;
+        -a)
+          [[ "$_type_is" == "alias" ]] || retVal=4;;
 
-            -b)
-                [[ "$_type_is" == "builtin" ]] || retVal=4;;
+        -b)
+          [[ "$_type_is" == "builtin" ]] || retVal=4;;
 
-            -f)
-                [[ "$_type_is" == "function" ]] || retVal=4;;
+        -f)
+          [[ "$_type_is" == "function" ]] || retVal=4;;
 
-            -k)
-                [[ "$_type_is" == "keyword" ]] || retVal=4;;
+        -k)
+          [[ "$_type_is" == "keyword" ]] || retVal=4;;
 
-            *)
-                echo "${E}  Incorrect option [${1}] specified for \`__type_exists\`.  ${X}"
-                retVal=2
-        esac
+        *)
+          echo "${E}  Incorrect option [${1}] specified for \`_type_exists\`.  ${X}"
+          retVal=2
+      esac
     fi
 
     export _type_is
