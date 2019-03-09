@@ -1,11 +1,11 @@
 ## /* @function
- #  @usage _source_all [-vx] [<path>]
+ #  @usage _sourceAll [-r] [-x] [<path>]
  #
- #  @output true (for -v)
+ #  @output false (unless sourced files use STDOUT)
  #
  #  @description
  #  This function will source all files in the given <path>, bringing any
- #  exported variables into the calling context. Given folders are searched
+ #  exported variables into the calling context. Given folders can be searched
  #  recursively. If no <path> is provided, the current directory is sourced.
  #  Because of this, be very intentional about how you use this function.
  #  description@
@@ -13,7 +13,6 @@
  #  @options
  #  -r      Find files recursively for the given path.
  #  -x      If the sourced files contains a single function, export each function.
- #  -v      Output number of functions/files exported (e.g. "3 functions exported").
  #  options@
  #
  #  @notes
@@ -22,8 +21,16 @@
  #  notes@
  #
  #  @examples
- #  __source_all "/some/path/to/folder"
+ #  _sourceAll "/some/path/to/folder"
+ #  _sourceAll -x "/some/path/to/folder/of/functions"
+ #  _sourceAll    # sources pwd
  #  examples@
+ #
+ #  @dependencies
+ #  `egrep`
+ #  `eval`
+ #  `type`
+ #  dependencies@
  #
  #  @returns
  #  0 - successful execution
@@ -38,54 +45,46 @@ function _sourceAll {
   args=($@)
 
   let "last = $# - 1"
-  local turn=0 sCount=0 xCount=0 showCount= exportFuncs= recurse=
-  local grepped fName arg sPath="${args[$last]}"
+  local turn=0 source_count=0 export_count=0
+  local export_funcs= recurse=
+  local grepped fn_name arg source_path="${args[$last]}"
+  local fn_regex='^\s*((function [A-Za-z0-9_-]*)|([A-Za-z0-9_-]* *\(\)))'
 
   # parse arguments
   flags=()
-  egrep -q '(^| )-v ' <<< "$@" && showCount=true #&& flags+=('-v')
-  egrep -q '(^| )-x ' <<< "$@" && exportFuncs=true && flags+=('-x')
+  egrep -q '(^| )-x ' <<< "$@" && export_funcs=true && flags+=('-x')
   egrep -q '(^| )-r ' <<< "$@" && recurse=true && flags+=('-r')
 
-  # sPath="${_args_clipped[@]}"
-  [[ -z "$sPath" ]] && arg=$( pwd ) || arg="${sPath%/}"
-  # echo "$showCount | $exportFuncs | $arg | ${flags[@]}"
-  # echo "$arg"
+  [[ -z "$source_path" ]] && arg=$( pwd ) || arg="${source_path%/}"
+  # echo "$export_funcs | $arg | ${flags[@]}"
 
   # validate directory and start sourcing
-  if [[ -d "$arg" ]]; then
+  if [[ -d "${arg}" ]]; then
     for file in "${arg}/"*; do
 
-      if [[ -d "$file" ]]; then
+      if [[ -d "${file}" ]]; then
         if [[ $recurse ]]; then
-          export sCount
-          _sourceAll ${flags[@]} "$file"
+          export source_count
+          _sourceAll ${flags[@]} "${file}"
         fi
 
-      elif [[ -s "$file" ]]; then
+      elif [[ -s "${file}" ]]; then
         # echo "Going to source: ${file}"
-        # DO NOT LEAVE THIS HERE. try _executeAll
-        [[ "${file%%/*}" == "test" ]] && ./"$file" || source "$file"
+        source "${file}"
+        (( source_count++ ))
 
-        # (( sCount++ )) && source "$file"
-        # source "$file"
-        (( sCount++ ))
+        if [[ $export_funcs ]]; then
+          # echo 'grepping fn_regex'
+          fn_name=$( egrep "${fn_regex}" "${file}" \
+            | sed 's/^[^A-Za-z0-9_-]*//;s/^function //;s/\([A-Za-z0-9_-]*\).*/\1/g' )
+          # echo "fn_name = [${fn_name}]"
 
-        if [[ $exportFuncs ]]; then
-          grepped=` grep '^function' "$file" `
-          # echo "grepped = $grepped"
-
-          if [[ -n "$grepped" ]]; then
-            fName="${grepped#* }"
-            fName="${fName% *}"
-            fName="${fName%(*}"
-            # echo "fName = $fName"
-
+          if [[ -n "${fn_name}" ]]; then
             # supported characters for bash function names
-            f_type=$( type -t "$fName" 2>/dev/null )
-            if egrep -qi '^[-_.a-z0-9]+$' <<< "$fName" && [[ "$f_type" == 'function' ]]; then
-              eval export -f $fName
-              (( xCount++ ))
+            f_type=$( type -t "${fn_name}" 2>/dev/null )
+            if egrep -qi '^[-_.a-z0-9]+$' <<< "${fn_name}" && [[ "${f_type}" == 'function' ]]; then
+              eval export -f $fn_name
+              (( export_count++ ))
             fi
           fi
         fi
@@ -97,8 +96,7 @@ function _sourceAll {
     turn=1
   fi
 
-  # [[ $showCount ]] && echo "${sCount} files sourced" && echo "${xCount} functions exported"
-  unset xCount sCount
+  unset export_count source_count
 
   return $turn
 }
