@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::in_range <number> <start=0> <end>
+ #  @usage _::number::in_range <number> <start=0> <end>
  #
  #  @output true
  #
@@ -15,9 +15,9 @@
  #  notes@
  #
  #  @examples
- #  $ _::in_range 5 10    # true
- #  $ _::in_range 5 4 10  # true
- #  $ _::in_range 15 10   # false
+ #  $ _::number::in_range 5 10    # true
+ #  $ _::number::in_range 5 4 10  # true
+ #  $ _::number::in_range 15 10   # false
  #  examples@
  #
  #  @dependencies
@@ -31,7 +31,7 @@
  #  @file functions/number/inRange.sh
  ## */
 
-function _::in_range() {
+function _::number::in_range() {
   declare -i turn=0
   declare -i arg_count=$#
   declare -i from=0

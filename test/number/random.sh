@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_::random'
+h1 '_::number::random'
 
 rand_max=100
 rand_min=10
@@ -11,9 +11,9 @@ test_min_max=true
 
 
 for (( i = 0; i < 50; i++ )); do
-  ran_default=`_::random`
-  ran_max=`_::random $rand_max`
-  ran_min_max=`_::random $rand_min $rand_max`
+  ran_default=`_::number::random`
+  ran_max=`_::number::random $rand_max`
+  ran_min_max=`_::number::random $rand_min $rand_max`
 
   [[ $test_default ]] && (( ran_default < 0 || ran_default > 100 )) && test_default=
   [[ $test_max ]] && (( ran_max < 0 || ran_max > rand_max )) && test_max=
@@ -24,5 +24,5 @@ done
 [[ $test_default ]] && pass || fail
 [[ $test_max ]] && pass || fail
 [[ $test_min_max ]] && pass || fail
-_::random 1 10 >/dev/null && pass || fail
-_::random 10 1 >/dev/null && fail || pass
+_::number::random 1 10 >/dev/null && pass || fail
+_::number::random 10 1 >/dev/null && fail || pass

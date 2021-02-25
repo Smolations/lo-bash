@@ -133,8 +133,8 @@ Binary Dependencies
  ---==:  _::max                     [32m.(B[m
  ---==:  _::min                     [32m.(B[m
  ---==:  _::sum                     [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::in_range                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::random                  [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::number::in_range                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::number::random                  [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::string::ends_with               [32m.(B[m[32m.(B[m
  ---==:  _::string::length                  [32m.(B[m[32m.(B[m
  ---==:  _::string::pad_end                 [32m.(B[m[32m.(B[m[32m.(B[m
