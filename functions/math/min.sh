@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::min <val1>[, <val2>[, ...]]
+ #  @usage _::math::min <val1>[, <val2>[, ...]]
  #
  #  @output true
  #
@@ -13,7 +13,7 @@
  #
  #  @examples
  #  $ nums=(5 9 2 24 12 -4 1 19.1 24.01)
- #  $ _::min ${nums[@]}
+ #  $ _::math::min ${nums[@]}
  #  > -4
  #  examples@
  #
@@ -31,7 +31,7 @@
  #  @file functions/math/min.sh
  ## */
 
-function _::min() {
+function _::math::min() {
   declare -i turn=0
   local args=`tr ' ' "\n" <<< "$@"`
   sort -g <<< "$args" | head -n1

@@ -53,11 +53,11 @@ Binary Dependencies
   - [_eq](https://github.com/Smolations/lo-bash/blob/master/functions/lang/eq.sh)
   - [_gte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gte.sh)
   - [_gt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gt.sh)
-  - [_isArray](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isArray.sh)
-  - [_isEqual](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isEqual.sh)
-  - [_isFunction](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isFunction.sh)
-  - [_isNumber](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isNumber.sh)
-  - [_isStdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isStdin.sh)
+  - [_is_array](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_array.sh)
+  - [_is_equal](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_equal.sh)
+  - [_is_function](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_function.sh)
+  - [_is_number](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_number.sh)
+  - [_is_stdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_stdin.sh)
   - [_lte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lte.sh)
   - [_lt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lt.sh)
 - **math**
@@ -66,23 +66,23 @@ Binary Dependencies
   - [_min](https://github.com/Smolations/lo-bash/blob/master/functions/math/min.sh)
   - [_sum](https://github.com/Smolations/lo-bash/blob/master/functions/math/sum.sh)
 - **number**
-  - [_inRange](https://github.com/Smolations/lo-bash/blob/master/functions/number/inRange.sh)
+  - [_in_range](https://github.com/Smolations/lo-bash/blob/master/functions/number/in_range.sh)
   - [_random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
 - **string**
-  - [_endsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/endsWith.sh)
+  - [_ends_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/ends_with.sh)
   - [_length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
-  - [_padEnd](https://github.com/Smolations/lo-bash/blob/master/functions/string/padEnd.sh)
+  - [_pad_end](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad_end.sh)
   - [_pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
-  - [_padStart](https://github.com/Smolations/lo-bash/blob/master/functions/string/padStart.sh)
-  - [_parseInt](https://github.com/Smolations/lo-bash/blob/master/functions/string/parseInt.sh)
+  - [_pad_start](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad_start.sh)
+  - [_parse_int](https://github.com/Smolations/lo-bash/blob/master/functions/string/parse_int.sh)
   - [_repeat](https://github.com/Smolations/lo-bash/blob/master/functions/string/repeat.sh)
   - [_replace](https://github.com/Smolations/lo-bash/blob/master/functions/string/replace.sh)
   - [_split](https://github.com/Smolations/lo-bash/blob/master/functions/string/split.sh)
-  - [_startsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/startsWith.sh)
-  - [_toLower](https://github.com/Smolations/lo-bash/blob/master/functions/string/toLower.sh)
-  - [_toUpper](https://github.com/Smolations/lo-bash/blob/master/functions/string/toUpper.sh)
-  - [_trimLeft](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimLeft.sh)
-  - [_trimRight](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimRight.sh)
+  - [_starts_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/starts_with.sh)
+  - [_to_lower](https://github.com/Smolations/lo-bash/blob/master/functions/string/to_lower.sh)
+  - [_to_upper](https://github.com/Smolations/lo-bash/blob/master/functions/string/to_upper.sh)
+  - [_trim_left](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim_left.sh)
+  - [_trim_right](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim_right.sh)
   - [_trim](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim.sh)
   - [_truncate](https://github.com/Smolations/lo-bash/blob/master/functions/string/truncate.sh)
 - **util**
@@ -106,7 +106,7 @@ Binary Dependencies
 
  ---==:  lb_arrayCopy               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  lb_array                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  lb_awkCompare
+ ---==:  lb_awkCompare              
  ---==:  lb_math                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  lb_slash                   S
  ---==:  _::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
@@ -129,33 +129,33 @@ Binary Dependencies
  ---==:  _::is_stdin                [32m.(B[m[32m.(B[m
  ---==:  _::lte                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::lt                      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::add                     [32m.(B[m[32m.(B[m
- ---==:  _::max                     [32m.(B[m
- ---==:  _::min                     [32m.(B[m
- ---==:  _::sum                     [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::number::in_range                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::number::random                  [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::ends_with               [32m.(B[m[32m.(B[m
- ---==:  _::string::length                  [32m.(B[m[32m.(B[m
- ---==:  _::string::pad_end                 [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::pad                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::pad_start               [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::parse_int               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::repeat                  [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::replace                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::split                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::starts_with             [32m.(B[m[32m.(B[m
- ---==:  _::string::to_lower                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::to_upper                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim_left               [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim_right              [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::truncate                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::math::add               [32m.(B[m[32m.(B[m
+ ---==:  _::math::max               [32m.(B[m
+ ---==:  _::math::min               [32m.(B[m
+ ---==:  _::math::sum               [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::number::in_range        [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::number::random          [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::ends_with       [32m.(B[m[32m.(B[m
+ ---==:  _::string::length          [32m.(B[m[32m.(B[m
+ ---==:  _::string::pad_end         [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::pad             [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::pad_start       [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::parse_int       [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::repeat          [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::replace         [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::split           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::starts_with     [32m.(B[m[32m.(B[m
+ ---==:  _::string::to_lower        [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::to_upper        [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim_left       [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim_right      [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim            [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::truncate        [32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::in_args           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::strip_styles      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::times             [32m.(B[m[32m.(B[m[32m.(B[m
-real	0m0.451s
-user	0m0.372s
-sys	0m0.098s
+real	0m0.427s
+user	0m0.379s
+sys	0m0.091s
 
 ```
