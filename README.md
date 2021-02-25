@@ -29,133 +29,133 @@ Binary Dependencies
 ### Function List
 
 - **_**
-  - [lb_arrayCopy](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_arrayCopy.sh)
-  - [lb_array](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_array.sh)
-  - [lb_awkCompare](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_awkCompare.sh)
-  - [lb_awkPrint](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_awkPrint.sh)
-  - [lb_math](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_math.sh)
-  - [lb_slash](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_slash.sh)
+  - [`lb_arrayCopy`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_arrayCopy.sh)
+  - [`lb_array`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_array.sh)
+  - [`lb_awkCompare`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_awkCompare.sh)
+  - [`lb_awkPrint`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_awkPrint.sh)
+  - [`lb_math`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_math.sh)
+  - [`lb_slash`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/_/lb_slash.sh)
 - **array**
-  - [_difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
-  - [_forEach](https://github.com/Smolations/lo-bash/blob/master/functions/array/forEach.sh)
-  - [_indexOf](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
-  - [_join](https://github.com/Smolations/lo-bash/blob/master/functions/array/join.sh)
-  - [_last](https://github.com/Smolations/lo-bash/blob/master/functions/array/last.sh)
-  - [_map](https://github.com/Smolations/lo-bash/blob/master/functions/array/map.sh)
-  - [_pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
-  - [_remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
-  - [_reverse](https://github.com/Smolations/lo-bash/blob/master/functions/array/reverse.sh)
+  - [`_::array::difference`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/difference.sh)
+  - [`_::array::for_each`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/for_each.sh)
+  - [`_::array::index_of`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/index_of.sh)
+  - [`_::array::join`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/join.sh)
+  - [`_::array::last`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/last.sh)
+  - [`_::array::map`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/map.sh)
+  - [`_::array::pull`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/pull.sh)
+  - [`_::array::remove`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/remove.sh)
+  - [`_::array::reverse`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/array/reverse.sh)
 - **cuz**
-  - [_type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
+  - [`_::cuz::type_exists`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/cuz/type_exists.sh)
 - **date**
-  - [_now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
+  - [`_::date::now`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/date/now.sh)
 - **lang**
-  - [_eq](https://github.com/Smolations/lo-bash/blob/master/functions/lang/eq.sh)
-  - [_gte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gte.sh)
-  - [_gt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gt.sh)
-  - [_is_array](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_array.sh)
-  - [_is_equal](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_equal.sh)
-  - [_is_function](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_function.sh)
-  - [_is_number](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_number.sh)
-  - [_is_stdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/is_stdin.sh)
-  - [_lte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lte.sh)
-  - [_lt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lt.sh)
+  - [`_::lang::eq`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/eq.sh)
+  - [`_::lang::gte`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/gte.sh)
+  - [`_::lang::gt`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/gt.sh)
+  - [`_::lang::is_array`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/is_array.sh)
+  - [`_::lang::is_equal`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/is_equal.sh)
+  - [`_::lang::is_function`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/is_function.sh)
+  - [`_::lang::is_number`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/is_number.sh)
+  - [`_::lang::is_stdin`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/is_stdin.sh)
+  - [`_::lang::lte`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/lte.sh)
+  - [`_::lang::lt`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/lang/lt.sh)
 - **math**
-  - [_add](https://github.com/Smolations/lo-bash/blob/master/functions/math/add.sh)
-  - [_max](https://github.com/Smolations/lo-bash/blob/master/functions/math/max.sh)
-  - [_min](https://github.com/Smolations/lo-bash/blob/master/functions/math/min.sh)
-  - [_sum](https://github.com/Smolations/lo-bash/blob/master/functions/math/sum.sh)
+  - [`_::math::add`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/math/add.sh)
+  - [`_::math::max`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/math/max.sh)
+  - [`_::math::min`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/math/min.sh)
+  - [`_::math::sum`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/math/sum.sh)
 - **number**
-  - [_in_range](https://github.com/Smolations/lo-bash/blob/master/functions/number/in_range.sh)
-  - [_random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
+  - [`_::number::in_range`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/number/in_range.sh)
+  - [`_::number::random`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/number/random.sh)
 - **string**
-  - [_ends_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/ends_with.sh)
-  - [_length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
-  - [_pad_end](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad_end.sh)
-  - [_pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
-  - [_pad_start](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad_start.sh)
-  - [_parse_int](https://github.com/Smolations/lo-bash/blob/master/functions/string/parse_int.sh)
-  - [_repeat](https://github.com/Smolations/lo-bash/blob/master/functions/string/repeat.sh)
-  - [_replace](https://github.com/Smolations/lo-bash/blob/master/functions/string/replace.sh)
-  - [_split](https://github.com/Smolations/lo-bash/blob/master/functions/string/split.sh)
-  - [_starts_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/starts_with.sh)
-  - [_to_lower](https://github.com/Smolations/lo-bash/blob/master/functions/string/to_lower.sh)
-  - [_to_upper](https://github.com/Smolations/lo-bash/blob/master/functions/string/to_upper.sh)
-  - [_trim_left](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim_left.sh)
-  - [_trim_right](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim_right.sh)
-  - [_trim](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim.sh)
-  - [_truncate](https://github.com/Smolations/lo-bash/blob/master/functions/string/truncate.sh)
+  - [`_::string::ends_with`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/ends_with.sh)
+  - [`_::string::length`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/length.sh)
+  - [`_::string::pad_end`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/pad_end.sh)
+  - [`_::string::pad`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/pad.sh)
+  - [`_::string::pad_start`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/pad_start.sh)
+  - [`_::string::parse_int`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/parse_int.sh)
+  - [`_::string::repeat`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/repeat.sh)
+  - [`_::string::replace`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/replace.sh)
+  - [`_::string::split`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/split.sh)
+  - [`_::string::starts_with`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/starts_with.sh)
+  - [`_::string::to_lower`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/to_lower.sh)
+  - [`_::string::to_upper`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/to_upper.sh)
+  - [`_::string::trim_left`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/trim_left.sh)
+  - [`_::string::trim_right`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/trim_right.sh)
+  - [`_::string::trim`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/trim.sh)
+  - [`_::string::truncate`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/string/truncate.sh)
 - **util**
-  - [_get_env](https://github.com/Smolations/lo-bash/blob/master/functions/util/get_env.sh)
-  - [_in_args](https://github.com/Smolations/lo-bash/blob/master/functions/util/in_args.sh)
-  - [_log](https://github.com/Smolations/lo-bash/blob/master/functions/util/log.sh)
-  - [_menu](https://github.com/Smolations/lo-bash/blob/master/functions/util/menu.sh)
-  - [_recurse](https://github.com/Smolations/lo-bash/blob/master/functions/util/recurse.sh)
-  - [_short_ans](https://github.com/Smolations/lo-bash/blob/master/functions/util/short_ans.sh)
-  - [_source_all](https://github.com/Smolations/lo-bash/blob/master/functions/util/source_all.sh)
-  - [_strip_styles](https://github.com/Smolations/lo-bash/blob/master/functions/util/strip_styles.sh)
-  - [_times](https://github.com/Smolations/lo-bash/blob/master/functions/util/times.sh)
-  - [_tree](https://github.com/Smolations/lo-bash/blob/master/functions/util/tree.sh)
-  - [_wait_on](https://github.com/Smolations/lo-bash/blob/master/functions/util/wait_on.sh)
-  - [_yes_no](https://github.com/Smolations/lo-bash/blob/master/functions/util/yes_no.sh)
+  - [`_::util::get_env`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/get_env.sh)
+  - [`_::util::in_args`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/in_args.sh)
+  - [`_::util::log`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/log.sh)
+  - [`_::util::menu`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/menu.sh)
+  - [`_::util::recurse`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/recurse.sh)
+  - [`_::util::short_ans`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/short_ans.sh)
+  - [`_::util::source_all`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/source_all.sh)
+  - [`_::util::strip_styles`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/strip_styles.sh)
+  - [`_::util::times`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/times.sh)
+  - [`_::util::tree`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/tree.sh)
+  - [`_::util::wait_on`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/wait_on.sh)
+  - [`_::util::yes_no`](https://github.com/Smolations/lo-bash/blob/more_arch_decisions/functions/util/yes_no.sh)
 
 
 ### tl;dr Test Output
 
 ```
 
- ---==:  lb_arrayCopy               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  lb_array                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  lb_awkCompare
- ---==:  lb_math                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  lb_arrayCopy               ......
+ ---==:  lb_array                   ....
+ ---==:  lb_awkCompare              
+ ---==:  lb_math                    ......
  ---==:  lb_slash                   S
- ---==:  _::array::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::array::for_each                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::array::index_of                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::array::join                    [32m.(B[m[32m.(B[m
- ---==:  _::array::last                    [32m.(B[m[32m.(B[m
- ---==:  _::array::map                     [32m.(B[m
- ---==:  _::array::pull                    [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::array::remove                  [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::array::reverse                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::date::now                     [32m.(B[m
- ---==:  _::lang::eq                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::gte               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::gt                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::is_array          [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::is_equal          [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::is_function       [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::is_number         [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::is_stdin          [32m.(B[m[32m.(B[m
- ---==:  _::lang::lte               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::lang::lt                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::math::add               [32m.(B[m[32m.(B[m
- ---==:  _::math::max               [32m.(B[m
- ---==:  _::math::min               [32m.(B[m
- ---==:  _::math::sum               [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::number::in_range        [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::number::random          [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::ends_with       [32m.(B[m[32m.(B[m
- ---==:  _::string::length          [32m.(B[m[32m.(B[m
- ---==:  _::string::pad_end         [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::pad             [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::pad_start       [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::parse_int       [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::repeat          [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::replace         [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::split           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::starts_with     [32m.(B[m[32m.(B[m
- ---==:  _::string::to_lower        [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::to_upper        [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim_left       [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim_right      [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::trim            [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::string::truncate        [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::util::in_args           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::util::strip_styles      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::util::times             [32m.(B[m[32m.(B[m[32m.(B[m
-real	0m0.472s
-user	0m0.388s
-sys	0m0.097s
+ ---==:  _::array::difference       ..................
+ ---==:  _::array::for_each         ...
+ ---==:  _::array::index_of         ....
+ ---==:  _::array::join             ..
+ ---==:  _::array::last             ..
+ ---==:  _::array::map              .
+ ---==:  _::array::pull             ...
+ ---==:  _::array::remove           ...
+ ---==:  _::array::reverse          .....
+ ---==:  _::date::now               .
+ ---==:  _::lang::eq                .....
+ ---==:  _::lang::gte               ...........
+ ---==:  _::lang::gt                ........
+ ---==:  _::lang::is_array          ....
+ ---==:  _::lang::is_equal          .....
+ ---==:  _::lang::is_function       ...
+ ---==:  _::lang::is_number         ..........
+ ---==:  _::lang::is_stdin          ..
+ ---==:  _::lang::lte               ...........
+ ---==:  _::lang::lt                ........
+ ---==:  _::math::add               ..
+ ---==:  _::math::max               .
+ ---==:  _::math::min               .
+ ---==:  _::math::sum               ...
+ ---==:  _::number::in_range        ....
+ ---==:  _::number::random          .....
+ ---==:  _::string::ends_with       ..
+ ---==:  _::string::length          ..
+ ---==:  _::string::pad_end         ...
+ ---==:  _::string::pad             ....
+ ---==:  _::string::pad_start       ...
+ ---==:  _::string::parse_int       ......
+ ---==:  _::string::repeat          ...
+ ---==:  _::string::replace         .....
+ ---==:  _::string::split           ............
+ ---==:  _::string::starts_with     ..
+ ---==:  _::string::to_lower        ...
+ ---==:  _::string::to_upper        ...
+ ---==:  _::string::trim_left       ...
+ ---==:  _::string::trim_right      ...
+ ---==:  _::string::trim            ....
+ ---==:  _::string::truncate        ...
+ ---==:  _::util::in_args           ..................
+ ---==:  _::util::strip_styles      .........
+ ---==:  _::util::times             ...
+real	0m0.500s
+user	0m0.377s
+sys	0m0.113s
 
 ```

@@ -7,7 +7,7 @@ function h1() {
   echo -n "`printf '\n ---==:  %-25s  ' $1`"
 }
 function pass() {
-  echo -n "${FG_GREEN}.${X}"
+  echo -n "."
 }
 function fail() {
   local txt='X'

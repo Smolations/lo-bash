@@ -7,14 +7,14 @@ funcGroup=""
 function funcDoc() {
   local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
 
-  _::string::starts_with "${funcName}" 'lb' || funcName="_${funcName}"
+  _::string::starts_with "${funcName}" 'lb' || funcName="_::${fGroup}::${funcName}"
 
   if [[ "$funcGroup" != "$fGroup" ]]; then
     echo "- **${fGroup}**"
     funcGroup="$fGroup"
   fi
 
-  echo "  - [${funcName}](https://github.com/Smolations/lo-bash/blob/master/${1}/${2})"
+  echo "  - [\`${funcName}\`](https://github.com/Smolations/lo-bash/blob/${branch_name}/${1}/${2})"
 }
 
 # set up file descriptors to write to file
