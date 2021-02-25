@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_::map'
+h1 '_::array::map'
 
 
 arr=( 'this' 'is' 'insane')
@@ -17,6 +17,6 @@ function iteratee() {
 }
 
 
-_::map arr iteratee newArray
+_::array::map arr iteratee newArray
 
 [[ "${newArray[@]}" == "this is INSANE" ]] && pass || fail "'${newArray[@]}' == 'this is INSANE'"

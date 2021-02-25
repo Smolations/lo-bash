@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::join <arrayName> <separator=" ">
+ #  @usage _::array::join <arrayName> <separator=" ">
  #
  #  @output true
  #
@@ -14,7 +14,7 @@
  #
  #  @examples
  #  $ arr=( 'a' 'b' 'c' )
- #  $ _::join arr '~'
+ #  $ _::array::join arr '~'
  #  > a~b~c
  #  examples@
  #
@@ -30,7 +30,7 @@
  #  @file functions/array/join.sh
  ## */
 
-function _::join() {
+function _::array::join() {
   declare -i turn=0
   local arrayName="$1" sep="${2- }" str=""
 

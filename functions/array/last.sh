@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::last <arrayName>
+ #  @usage _::array::last <arrayName>
  #
  #  @output true
  #
@@ -9,7 +9,7 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' )
- #  $ _::last arr
+ #  $ _::array::last arr
  #  > foobar
  #  examples@
  #
@@ -26,7 +26,7 @@
  #  @file functions/array/last.sh
  ## */
 
-function _::last() {
+function _::array::last() {
   declare -i turn=0
   declare -i lastIndex
   local arrayName="$1" val=

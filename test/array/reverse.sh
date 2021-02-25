@@ -1,11 +1,11 @@
 #!/bin/bash
 
-h1 '_::reverse'
+h1 '_::array::reverse'
 
 
 arr=( 2 'hello' 'foobar' true )
 
-_::reverse arr
+_::array::reverse arr
 
 [[ "${#arr[@]}" = "4" ]] && pass || fail "'${#arr[@]}' = '4'"
 [[ "${arr[0]}" = "true" ]] && pass || fail "'${arr[0]}' = 'true'"

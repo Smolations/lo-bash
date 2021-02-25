@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::map <arrayName> <funcName> <newArray>
+ #  @usage _::array::map <arrayName> <funcName> <newArray>
  #
  #  @output false
  #
@@ -33,7 +33,7 @@
  #    fi
  #  }
  #
- #  _::map arr iteratee newArray
+ #  _::array::map arr iteratee newArray
  #  echo "${newArray[@]}"   # this is INSANE
  #  examples@
  #
@@ -53,7 +53,7 @@
  #  @file functions/array/map.sh
  ## */
 
-function _::map() {
+function _::array::map() {
   declare -i turn=0
   local arrayName="${1?Existing array name required as first argument}"
   local funcName="${2?Function name required as second argument}"

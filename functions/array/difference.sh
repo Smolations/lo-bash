@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::difference <newArrayName> <firstArray> <secondArray>
+ #  @usage _::array::difference <newArrayName> <firstArray> <secondArray>
  #
  #  @output false
  #
@@ -18,7 +18,7 @@
  #  @examples
  #  $ arr1=( 1 2 3 )
  #  $ arr2=( 4 2 )
- #  $ _::difference resultArray arr1 arr2
+ #  $ _::array::difference resultArray arr1 arr2
  #  $ echo "${resultArray[@]}"
  #  > 1 3
  #  examples@
@@ -36,7 +36,7 @@
  #  @file functions/array/difference.sh
  ## */
 
-function _::difference() {
+function _::array::difference() {
   declare -i turn=1
   local new_array=$1 difference= found=
 

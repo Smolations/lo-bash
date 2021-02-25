@@ -109,15 +109,15 @@ Binary Dependencies
  ---==:  lb_awkCompare
  ---==:  lb_math                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  lb_slash                   S
- ---==:  _::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::for_each                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::index_of                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::join                    [32m.(B[m[32m.(B[m
- ---==:  _::last                    [32m.(B[m[32m.(B[m
- ---==:  _::map                     [32m.(B[m
- ---==:  _::pull                    [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::remove                  [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::reverse                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::for_each                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::index_of                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::join                    [32m.(B[m[32m.(B[m
+ ---==:  _::array::last                    [32m.(B[m[32m.(B[m
+ ---==:  _::array::map                     [32m.(B[m
+ ---==:  _::array::pull                    [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::remove                  [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::array::reverse                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::date::now                     [32m.(B[m
  ---==:  _::lang::eq                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::lang::gte               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m

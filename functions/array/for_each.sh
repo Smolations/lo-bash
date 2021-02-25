@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::for_each  <arrayName> <funcName>
+ #  @usage _::array::for_each  <arrayName> <funcName>
  #
  #  @output false
  #
@@ -24,7 +24,7 @@
  #    echo "${ndx}. ${val}"
  #  }
  #
- #  _::for_each arr iteratee
+ #  _::array::for_each arr iteratee
  #  # 0. alpha
  #  # 1. bravo
  #  # 2. charlie
@@ -45,7 +45,7 @@
  #  @file functions/array/forEach.sh
  ## */
 
-function _::for_each() {
+function _::array::for_each() {
   declare -i turn=0
   declare -i cnt
   local arrayName="$1" funcName="$2"
