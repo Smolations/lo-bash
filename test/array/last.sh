@@ -1,13 +1,13 @@
 #!/bin/bash
 
-h1 '_last'
+h1 'lo::last'
 
 
 arr1=( 2 'hello' 'foobar' true 'hello' )
-t1="`_last arr1`"
+t1="`lo::last arr1`"
 [[ "$t1" == "hello" ]] && pass || fail "'$t1' = 'hello'"
 
 arr2=( )
-`_last arr2` && fail || pass
+`lo::last arr2` && fail || pass
 
 # && pass || fail

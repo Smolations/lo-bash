@@ -1,16 +1,16 @@
 #!/bin/bash
 
-h1 '_gte'
+h1 'lo::gte'
 
-_gte 3 1 && pass || fail "_gte 3 1"
-_gte 3 -1 && pass || fail "_gte 3 -1"
-_gte -1 -1 && pass || fail "_gte -1 -1"
-_gte '5' 2 && pass || fail "_gte '5' 2"
-_gte '1.32' '1.233' && pass || fail "_gte '1.32' '1.233'"
-_gte 'g' 'b' && pass || fail "_gte 'g' 'b'"
-_gte 'g' 'g' && pass || fail "_gte 'g' 'g'"
-_gte 'go' 'g' && pass || fail "_gte 'go' 'g'"
+lo::gte 3 1 && pass || fail "lo::gte 3 1"
+lo::gte 3 -1 && pass || fail "lo::gte 3 -1"
+lo::gte -1 -1 && pass || fail "lo::gte -1 -1"
+lo::gte '5' 2 && pass || fail "lo::gte '5' 2"
+lo::gte '1.32' '1.233' && pass || fail "lo::gte '1.32' '1.233'"
+lo::gte 'g' 'b' && pass || fail "lo::gte 'g' 'b'"
+lo::gte 'g' 'g' && pass || fail "lo::gte 'g' 'g'"
+lo::gte 'go' 'g' && pass || fail "lo::gte 'go' 'g'"
 
-_gte 1 3 && fail "_gte 1 3" || pass
-_gte 'Bee' 'bee' && fail "_gte 'Bee' 'bee'" || pass
-_gte 'bee' 'bees' && fail "_gte 'bee' 'bees'" || pass
+lo::gte 1 3 && fail "lo::gte 1 3" || pass
+lo::gte 'Bee' 'bee' && fail "lo::gte 'Bee' 'bee'" || pass
+lo::gte 'bee' 'bees' && fail "lo::gte 'bee' 'bees'" || pass

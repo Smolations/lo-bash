@@ -1,12 +1,12 @@
 #!/bin/bash
 
-h1 '_join'
+h1 'lo::join'
 
 
 arr=( 'a' 'b' 'c' )
 
-str=`_join arr`
+str=`lo::join arr`
 [[ "$str" == "a b c" ]] && pass || fail "'$str' = 'a b c'"
 
-str=`_join arr '~'`
+str=`lo::join arr '~'`
 [[ "$str" == "a~b~c" ]] && pass || fail "'$str' = 'a~b~c'"

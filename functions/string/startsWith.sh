@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _startsWith <string> <target>
+ #  @usage lo::startsWith <string> <target>
  #
  #  @output false
  #
@@ -8,7 +8,7 @@
  #  description@
  #
  #  @examples
- #  $ _startsWith "all bout that yolo" "all" && echo "yup"
+ #  $ lo::startsWith "all bout that yolo" "all" && echo "yup"
  #  > yup
  #  examples@
  #
@@ -23,7 +23,7 @@
  #  @file functions/string/startsWith.sh
  ## */
 
-function _startsWith {
+function lo::startsWith {
   declare -i turn=0
   local withoutPrefix="${1#${2}}"
 

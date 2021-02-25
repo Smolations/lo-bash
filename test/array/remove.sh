@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_remove'
+h1 'lo::remove'
 
 
 arr=( 'hiya' 'hello' 'foobar' 'deuces' 'sup' )
@@ -12,7 +12,7 @@ function predicate {
   return $turn
 }
 
-_remove arr predicate
+lo::remove arr predicate
 
 [[ "${#arr[@]}" == "2" ]] && pass || fail "'${#arr[@]}' == '2'"
 [[ "${arr[0]}" == "hiya" ]] && pass || fail "'${arr[0]}' == 'hiya'"

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _isArray <arrayName>
+ #  @usage lo::isArray <arrayName>
  #
  #  @output false
  #
@@ -9,7 +9,7 @@
  #
  #  @examples
  #  $ arr=()
- #  $ _isArray arr && echo "yup"
+ #  $ lo::isArray arr && echo "yup"
  #  > yup
  #  examples@
  #
@@ -26,6 +26,6 @@
  #  @file functions/lang/isArray.sh
  ## */
 
-function _isArray {
+function lo::isArray {
   declare -ap $1 2> /dev/null | grep -q '^declare \-a'
 }

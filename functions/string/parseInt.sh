@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _parseInt <string>
+ #  @usage lo::parseInt <string>
  #
  #  @output true
  #
@@ -12,13 +12,13 @@
  #  notes@
  #
  #  @examples
- #  $ _parseInt
+ #  $ lo::parseInt
  #  examples@
  #
  #  @dependencies
  #  `egrep`
- #  _trim
- #  _trimLeft
+ #  lo::trim
+ #  lo::trimLeft
  #  dependencies@
  #
  #  @returns
@@ -28,13 +28,13 @@
  #  @file functions/string/parseInt.sh
  ## */
 
-function _parseInt {
+function lo::parseInt {
   declare -i turn=0
-  local str=`_trim "$@"`
+  local str=`lo::trim "$@"`
 
   # come back to different bases?
   str=`egrep --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`
-  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`_trimLeft "$str" '0'`
+  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`lo::trimLeft "$str" '0'`
 
   echo -n $str
   return $turn

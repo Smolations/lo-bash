@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _log [-n] [--file=<path>] [<data_string> [<data_string> [...]]]
+ #  @usage lo::log [-n] [--file=<path>] [<data_string> [<data_string> [...]]]
  #
  #  @output false
  #
@@ -12,9 +12,9 @@
  #  exported variables from the parent process, but no matter how hard it may try,
  #  the subprocess cannot export any variables into the parent process's context.
  #  This means that the value of $FUNCTIONSH_LOG_PATH can be set at the top of
- #  a script, the script will log any messages sent to _log to that file, and,
+ #  a script, the script will log any messages sent to lo::log to that file, and,
  #  when the script is finished executing, the subprocess will close, and any
- #  further messages sent to _log will be logged to whatever $FUNCTIONSH_LOG_PATH
+ #  further messages sent to lo::log will be logged to whatever $FUNCTIONSH_LOG_PATH
  #  was originally set in the parent process.
  #
  #  Given the behavior of $FUNCTIONSH_LOG_PATH, recommended usage is as follows:
@@ -24,7 +24,7 @@
  #       $FUNCTIONSH_LOG_PATH at the top of the script, and write the script
  #       in a manner designed for execution of the script.
  #    3. If a project requires sourcing scripts instead of executing, create a
- #       wrapper function around _log and pass it the --file option with the
+ #       wrapper function around lo::log and pass it the --file option with the
  #       project-specific log file. The only downside to this method is that
  #       piped input will no longer work (unless the user implements it).
  #  description@
@@ -39,14 +39,14 @@
  #  @notes
  #  - This function will accept piped input, as seen in the examples below. it does
  #  NOT, however, work well taking piped input from longer-running processes (e.g.):
- #      $ tail -f $file | _log
+ #      $ tail -f $file | lo::log
  #  - The default timestamp as seen in the log has no preceding spaces but
  #  includes 2 trailing spaces (e.g.): [2014-04-12 14:47:40]
  #  notes@
  #
  #  @examples
- #  $ _log "The build cannot be started."
- #  $ git merge master | _log --file=~/Library/Logs/gitlog.log
+ #  $ lo::log "The build cannot be started."
+ #  $ git merge master | lo::log --file=~/Library/Logs/gitlog.log
  #  examples@
  #
  #  @dependencies
@@ -54,8 +54,8 @@
  #  `date`
  #  `grep`
  #  `printf`
- #  _isStdin
- #  _stripStyles
+ #  lo::isStdin
+ #  lo::stripStyles
  #  dependencies@
  #
  #  @returns
@@ -67,7 +67,7 @@
  #  @file functions/utility/log.sh
  ## */
 
-function _log {
+function lo::log {
   local noStamp data pre i log_file="$LOBASH_LOG_PATH"
 
   # not using __in_args due to pipe considerations
@@ -100,12 +100,12 @@ function _log {
     pre="${pre:1}"
   fi
 
-  if _isStdin; then
+  if lo::isStdin; then
     cat - | while IFS= read data; do
-      echo -e "${pre}$(_stripStyles "$data")" >> "$log_file"
+      echo -e "${pre}$(lo::stripStyles "$data")" >> "$log_file"
     done
 
   else
-    echo -e "${pre}$(_stripStyles "$data")" >> "$log_file"
+    echo -e "${pre}$(lo::stripStyles "$data")" >> "$log_file"
   fi
 }

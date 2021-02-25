@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_map'
+h1 'lo::map'
 
 
 arr=( 'this' 'is' 'insane')
@@ -10,13 +10,13 @@ function iteratee {
   local val="$1"
 
   if (( ndx > 1 )); then
-    _toUpper "$val"
+    lo::toUpper "$val"
   else
     echo "$val"
   fi
 }
 
 
-_map arr iteratee newArray
+lo::map arr iteratee newArray
 
 [[ "${newArray[@]}" == "this is INSANE" ]] && pass || fail "'${newArray[@]}' == 'this is INSANE'"

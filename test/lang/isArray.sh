@@ -1,17 +1,17 @@
 #!/bin/bash
 
-h1 '_isArray'
+h1 'lo::isArray'
 
 
 alpha='1 2 3'
 bravo=(1 2 3)
 
 function arrayTest {
-  _isArray $1
+  lo::isArray $1
 }
 
-_isArray bravo && pass || fail
+lo::isArray bravo && pass || fail
 arrayTest bravo && pass || fail
 
-_isArray alpha && fail || pass
+lo::isArray alpha && fail || pass
 arrayTest alpha && fail || pass

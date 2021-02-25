@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _forEach  <arrayName> <funcName>
+ #  @usage lo::forEach  <arrayName> <funcName>
  #
  #  @output false
  #
@@ -24,7 +24,7 @@
  #    echo "${ndx}. ${val}"
  #  }
  #
- #  _forEach arr iteratee
+ #  lo::forEach arr iteratee
  #  # 0. alpha
  #  # 1. bravo
  #  # 2. charlie
@@ -33,7 +33,7 @@
  #  @dependencies
  #  `eval`
  #  lb_arrayCopy
- #  _isFunction
+ #  lo::isFunction
  #  dependencies@
  #
  #  @returns
@@ -45,7 +45,7 @@
  #  @file functions/array/forEach.sh
  ## */
 
-function _forEach {
+function lo::forEach {
   declare -i turn=0
   declare -i cnt
   local arrayName="$1" funcName="$2"
@@ -53,7 +53,7 @@ function _forEach {
   if ! lb_arrayCopy _tmpArray $arrayName; then
     turn=1
 
-  elif ! _isFunction $funcName; then
+  elif ! lo::isFunction $funcName; then
     turn=2
 
   else

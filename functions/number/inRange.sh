@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _inRange <number> <start=0> <end>
+ #  @usage lo::inRange <number> <start=0> <end>
  #
  #  @output true
  #
@@ -15,9 +15,9 @@
  #  notes@
  #
  #  @examples
- #  $ _inRange 5 10    # true
- #  $ _inRange 5 4 10  # true
- #  $ _inRange 15 10   # false
+ #  $ lo::inRange 5 10    # true
+ #  $ lo::inRange 5 4 10  # true
+ #  $ lo::inRange 15 10   # false
  #  examples@
  #
  #  @dependencies
@@ -31,7 +31,7 @@
  #  @file functions/number/inRange.sh
  ## */
 
-function _inRange {
+function lo::inRange {
   declare -i turn=0
   declare -i arg_count=$#
   declare -i from=0

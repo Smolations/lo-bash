@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _pull <arrayName> [<val1>[ <val2>[ ...]]]
+ #  @usage lo::pull <arrayName> [<val1>[ <val2>[ ...]]]
  #
  #  @output false
  #
@@ -8,13 +8,13 @@
  #  description@
  #
  #  @notes
- #  - This method mutates <arrayName>. Use _remove to remove elements from an
+ #  - This method mutates <arrayName>. Use lo::remove to remove elements from an
  #  array by predicate.
  #  notes@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' true 'sup' )
- #  $ _pull arr 'hello' true
+ #  $ lo::pull arr 'hello' true
  #  $ echo "${#arr[@]}"
  #  > 3
  #  $ echo "${arr[@]}"
@@ -24,7 +24,7 @@
  #  @dependencies
  #  lb_arrayCopy
  #  lb_array
- #  _difference
+ #  lo::difference
  #  dependencies@
  #
  #  @returns
@@ -36,7 +36,7 @@
  #  @file functions/array/pull.sh
  ## */
 
-function _pull {
+function lo::pull {
   declare -i turn=0
   local arrayName="$1"
 
@@ -46,7 +46,7 @@ function _pull {
 
   if (( turn == 0 )); then
     lb_array _argsArray "$@" && \
-    _difference _newArray _tmpArray _argsArray && \
+    lo::difference _newArray _tmpArray _argsArray && \
     lb_arrayCopy $arrayName _newArray || \
     turn=2
   fi

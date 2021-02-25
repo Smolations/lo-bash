@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _endsWith <string> <target>
+ #  @usage lo::endsWith <string> <target>
  #
  #  @output false
  #
@@ -11,7 +11,7 @@
  #  notes@
  #
  #  @examples
- #  $ _endsWith "all bout that yolo" "yolo" && echo "yup"
+ #  $ lo::endsWith "all bout that yolo" "yolo" && echo "yup"
  #  > yup
  #  examples@
  #
@@ -26,7 +26,7 @@
  #  @file functions/string/endsWith.sh
  ## */
 
-function _endsWith {
+function lo::endsWith {
   declare -i turn=0
   local withoutSuffix="${1%${2}}"
 

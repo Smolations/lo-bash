@@ -13,5 +13,5 @@ lb_array myArray 'i hope' 'strings with "quotes"' 'will work'
 [[ 'strings with "quotes"' == "${myArray[1]}" ]] && pass || fail
 
 lb_array emptyArray
-_isArray emptyArray && pass || fail
+lo::isArray emptyArray && pass || fail
 

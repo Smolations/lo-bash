@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _padStart <string=""> <length=0> <chars=" ">
+ #  @usage lo::padStart <string=""> <length=0> <chars=" ">
  #
  #  @output true
  #
@@ -18,19 +18,19 @@
  #  notes@
  #
  #  @examples
- #  $ _padStart "abc"
+ #  $ lo::padStart "abc"
  #  >    abc
  #
- #  $ _padStart "abc" 6 "_-"
+ #  $ lo::padStart "abc" 6 "_-"
  #  > _-_abc
  #
- #  $ _padStart "abc"
+ #  $ lo::padStart "abc"
  #  > abc
  #  examples@
  #
  #  @dependencies
  #  `expr`
- #  _repeat
+ #  lo::repeat
  #  dependencies@
  #
  #  @returns
@@ -41,7 +41,7 @@
  #  @file functions/string/padStart.sh
  ##
 
-function _padStart {
+function lo::padStart {
   declare -i turn=0
   declare -i len=${2-0}
   declare -i avail_for_pad
@@ -58,12 +58,12 @@ function _padStart {
     avail_for_pad=`expr $len - $str_len`
     pad_freq=`expr $avail_for_pad / $chars_len + 1`
 
-    prefix=`_repeat "$chars" $pad_freq`
+    prefix=`lo::repeat "$chars" $pad_freq`
     prefix="${prefix:0:${avail_for_pad}}"
   fi
 
   echo "${prefix}${str}"
-  # ind=$( IFS=$'\n'; _repeat "$chars" $num )
+  # ind=$( IFS=$'\n'; lo::repeat "$chars" $num )
   # ( IFS=$'\n'; echo "${ind}${str}" )
 
   return $turn

@@ -16,4 +16,4 @@ if [ ! -d "$LOBASH_PATH" ]; then
 fi
 
 source "${LOBASH_PATH}"/functions/utility/sourceAll.sh
-_sourceAll -r -v -x "${LOBASH_PATH}"/functions
+lo::sourceAll -r -v -x "${LOBASH_PATH}"/functions

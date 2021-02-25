@@ -1,11 +1,11 @@
 #!/bin/bash
 
-h1 '_reverse'
+h1 'lo::reverse'
 
 
 arr=( 2 'hello' 'foobar' true )
 
-_reverse arr
+lo::reverse arr
 
 [[ "${#arr[@]}" = "4" ]] && pass || fail "'${#arr[@]}' = '4'"
 [[ "${arr[0]}" = "true" ]] && pass || fail "'${arr[0]}' = 'true'"

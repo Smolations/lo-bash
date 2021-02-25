@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _tree [<path>]
+ #  @usage lo::tree [<path>]
  #
  #  @output true
  #
@@ -13,7 +13,7 @@
  #  notes@
  #
  #  @examples
- #  $ _tree ~/Documents
+ #  $ lo::tree ~/Documents
  #  examples@
  #
  #  @dependencies
@@ -28,7 +28,7 @@
  #  @file functions/utility/tree.sh
  ## */
 
-function _tree {
+function lo::tree {
   local path="${@%/}" indent filePre folderPre
 
   [[ -z "$path" ]] && path=`pwd`
@@ -48,7 +48,7 @@ function _tree {
       export inRecurse=true
       grep -q '^\.' <<< "$entry" && continue
       echo "${indent}${folderPre}${COL_YELLOW}${entry}${X}"
-      _tree "${path}/${entry}"
+      lo::tree "${path}/${entry}"
 
     else
       echo "${indent}${filePre}${entry}"

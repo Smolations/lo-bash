@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _reverse <arrayName>
+ #  @usage lo::reverse <arrayName>
  #
  #  @output false
  #
@@ -14,7 +14,7 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' true )
- #  $ _reverse arr
+ #  $ lo::reverse arr
  #  $ echo "${arr[0]}"
  #  > true
  #  $ echo "${arr[3]}"
@@ -34,7 +34,7 @@
  #  @file functions/array/reverse.sh
  ## */
 
-function _reverse {
+function lo::reverse {
   declare -i turn=0
   local arrayName="$1" _newArray=( )
 

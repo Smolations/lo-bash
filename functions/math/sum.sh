@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _sum <val1>[, <val2>[, ...]]
+ #  @usage lo::sum <val1>[, <val2>[, ...]]
  #
  #  @output true
  #
@@ -9,10 +9,10 @@
  #
  #  @examples
  #  $ sum=(1 1 1 1 1)
- #  $ _sum ${sum[@]}
+ #  $ lo::sum ${sum[@]}
  #  > 5
  #  $ sum='2 2 2 2'
- #  $ _sum $sum
+ #  $ lo::sum $sum
  #  > 8
  #  examples@
  #
@@ -26,7 +26,7 @@
  #  @file functions/math/sum.sh
  ## */
 
-function _sum {
+function lo::sum {
   declare -i turn=0
   declare -i summ=0
   local args=($@) item

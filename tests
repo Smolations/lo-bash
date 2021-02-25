@@ -24,15 +24,15 @@ export -f pass fail skip h1
 
 
 # maybe need an _.executeAll?
-time _sourceAll -r test/
-# _sourceAll -r test/_
-# _sourceAll -r test/array
-# _sourceAll -r test/date
-# _sourceAll -r test/cuz
-# _sourceAll -r test/lang
-# _sourceAll -r test/math
-# _sourceAll -r test/number
-# _sourceAll -r test/string
-# _sourceAll -r test/utility
+# time lo::sourceAll -r test/
+# lo::sourceAll -r test/_
+# lo::sourceAll -r test/array
+# lo::sourceAll -r test/date
+# lo::sourceAll -r test/cuz
+# lo::sourceAll -r test/lang
+# lo::sourceAll -r test/math
+# lo::sourceAll -r test/number
+# lo::sourceAll -r test/string
+lo::sourceAll -r test/utility
 # echo "-> $?"
 echo

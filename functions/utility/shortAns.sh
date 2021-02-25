@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _shortAns <prompt>
+ #  @usage lo::shortAns <prompt>
  #
  #  @output true
  #
@@ -21,7 +21,7 @@
  #
  #  @examples
  #  # ignore errors
- #  _shortAns "Enter your Git user name:"
+ #  lo::shortAns "Enter your Git user name:"
  #  if [[ -n "$_ans" ]]; then
  #      git config --global user.name "$_ans"
  #      ...
@@ -30,7 +30,7 @@
  #  # OR
  #
  #  # account for any errors during processing within the function
- #  if _shortAns "Enter your Git user name:" && [[ -n "$_ans" ]]; then
+ #  if lo::shortAns "Enter your Git user name:" && [[ -n "$_ans" ]]; then
  #      git config --global user.name "$_ans"
  #      ...
  #  fi
@@ -41,10 +41,10 @@
  #  1 - no arguments were passed to function
  #  returns@
  #
- #  @file functions/utility/_shortAns.sh
+ #  @file functions/utility/lo::shortAns.sh
  ## */
 
-function _shortAns {
+function lo::shortAns {
   declare -i turn=0
   local prompt
 

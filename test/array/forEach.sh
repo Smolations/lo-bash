@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_forEach'
+h1 'lo::forEach'
 
 
 arr=( 'alpha' 'bravo' 'charlie' )
@@ -14,7 +14,7 @@ function iteratee {
 }
 
 
-_forEach arr iteratee
+lo::forEach arr iteratee
 
 for (( i = 0; i < ${#arr[@]}; i++ )); do
   [[ "${arrList[i]}" == "${i}. ${arr[i]}" ]] && pass || fail "'${arrList[i]}' == '${i}. ${arr[i]}'"
