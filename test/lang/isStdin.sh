@@ -1,7 +1,7 @@
 #!/bin/bash
 
-h1 '_isStdin'
+h1 'lo::isStdin'
 
 
-! _isStdin && pass || fail
-echo "hi" | _isStdin && pass || fail
+! lo::isStdin && pass || fail
+echo "hi" | lo::isStdin && pass || fail

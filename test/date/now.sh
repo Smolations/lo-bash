@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_now'
+h1 'lo::now'
 
-_now | egrep -q '^[0-9]+$' && pass || fail
+lo::now | egrep -q '^[0-9]+$' && pass || fail
 

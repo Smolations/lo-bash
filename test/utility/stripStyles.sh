@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_stripStyles'
+h1 'lo::stripStyles'
 
 bold=$(tput bold)
 underline=$(tput sgr 0 1)
@@ -42,8 +42,8 @@ echo "${combo}" | grep -q '\033' && fail || pass
 echo "${combo}" | grep -q $'\033' && pass || fail
 
 
-_stripStyles "${color}" | grep -q "$'\x1b'" && fail || pass
-_stripStyles "${color}" | grep -q "\[" && fail || pass
-_stripStyles "${style}" | grep -q "\[" && fail || pass
-_stripStyles "${style_color}" | grep -q '\[' && fail || pass
-_stripStyles "${combo}" | grep -q '\[' && fail || pass
+lo::stripStyles "${color}" | grep -q "$'\x1b'" && fail || pass
+lo::stripStyles "${color}" | grep -q "\[" && fail || pass
+lo::stripStyles "${style}" | grep -q "\[" && fail || pass
+lo::stripStyles "${style_color}" | grep -q '\[' && fail || pass
+lo::stripStyles "${combo}" | grep -q '\[' && fail || pass

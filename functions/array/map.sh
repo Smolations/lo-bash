@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _map <arrayName> <funcName> <newArray>
+ #  @usage lo::map <arrayName> <funcName> <newArray>
  #
  #  @output false
  #
@@ -27,20 +27,20 @@
  #    local val="$1"
  #
  #    if (( ndx > 1 )); then
- #      _toUpper "$val"
+ #      lo::toUpper "$val"
  #    else
  #      echo "$val"
  #    fi
  #  }
  #
- #  _map arr iteratee newArray
+ #  lo::map arr iteratee newArray
  #  echo "${newArray[@]}"   # this is INSANE
  #  examples@
  #
  #  @dependencies
  #  `eval`
  #  lb_arrayCopy
- #  _isFunction
+ #  lo::isFunction
  #  dependencies@
  #
  #  @returns
@@ -53,7 +53,7 @@
  #  @file functions/array/map.sh
  ## */
 
-function _map {
+function lo::map {
   declare -i turn=0
   local arrayName="${1?Existing array name required as first argument}"
   local funcName="${2?Function name required as second argument}"
@@ -63,7 +63,7 @@ function _map {
   if ! lb_arrayCopy _tmpArray $arrayName; then
     turn=1
 
-  elif ! _isFunction "$funcName"; then
+  elif ! lo::isFunction "$funcName"; then
     turn=2
 
   else

@@ -7,7 +7,7 @@ funcGroup=""
 function funcDoc {
   local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
 
-  _startsWith "${funcName}" 'lb' || funcName="_${funcName}"
+  lo::startsWith "${funcName}" 'lb' || funcName="_${funcName}"
 
   if [[ "$funcGroup" != "$fGroup" ]]; then
     echo "- **${fGroup}**"
@@ -31,7 +31,7 @@ echo "### Function List"
 echo
 
 # link to each function in code
-_recurse functions funcDoc
+lo::recurse functions funcDoc
 
 # show test output
 echo

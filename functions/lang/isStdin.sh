@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _isStdin
+ #  @usage lo::isStdin
  #
  #  @output false
  #
@@ -8,7 +8,7 @@
  #  description@
  #
  #  @examples
- #  if _isStdin; then
+ #  if lo::isStdin; then
  #    cat - | while IFS= read data; do
  #      # stuff with each line...
  #    done
@@ -25,6 +25,6 @@
  #  @file functions/lang/isStdin.sh
  ## */
 
-function _isStdin {
+function lo::isStdin {
   [[ "$( tty )" == 'not a tty' ]]
 }

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _now
+ #  @usage lo::now
  #
  #  @output true
  #
@@ -9,7 +9,7 @@
  #  description@
  #
  #  @examples
- #  $ _now
+ #  $ lo::now
  #  > 1491411470000
  #  examples@
  #
@@ -24,7 +24,7 @@
  #  @file functions/date/now.sh
  ## */
 
-function _now {
+function lo::now {
   echo $(($(date +'%s * 1000 + %-N / 1000000')))
   return 0
 }

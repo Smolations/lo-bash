@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _length <string>
+ #  @usage lo::length <string>
  #
  #  @output true
  #
@@ -14,7 +14,7 @@
  #  notes@
  #
  #  @examples
- #  $ _length "hey mom"
+ #  $ lo::length "hey mom"
  #  > 7
  #  examples@
  #
@@ -33,7 +33,7 @@
  #  @file functions/string/length.sh
  ## */
 
-function _length {
+function lo::length {
   declare -i turn=0
   declare -i len
 

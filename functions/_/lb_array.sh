@@ -43,7 +43,7 @@ function lb_array {
 
     num=$#
     for (( i = 0; i < num; i++)); do
-      arr_string+=" [${i}]=\"`lb_slash "${1}"`\"" && shift
+      arr_string+=" [${i}]=\"`lb_slash "${1}"`\"" && shift 
     done
 
     eval "${arr_name}=(${arr_string} )" && turn=$?

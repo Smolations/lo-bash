@@ -1,7 +1,7 @@
 #!/bin/bash
 
-h1 '_startsWith'
+h1 'lo::startsWith'
 
-`_startsWith "abcdef" "abc"` && pass || fail
-`_startsWith "abcdefg" "bcd"` && fail || pass
+`lo::startsWith "abcdef" "abc"` && pass || fail
+`lo::startsWith "abcdefg" "bcd"` && fail || pass
 # && pass || fail

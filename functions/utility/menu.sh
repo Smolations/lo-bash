@@ -1,11 +1,11 @@
 ## /* @function
- #  @usage _menu [--prompt=<msg>] <list_item> [<list_item>] ... ] [-k <list_item> [<list_item>] ...]
+ #  @usage lo::menu [--prompt=<msg>] <list_item> [<list_item>] ... ] [-k <list_item> [<list_item>] ...]
  #
  #  @output true
  #
  #  @exports
- #  $_menu_sel_index
- #  $_menu_sel_value
+ #  $lo::menu_sel_index
+ #  $lo::menu_sel_value
  #  exports@
  #
  #  @description
@@ -15,7 +15,7 @@
  #  If you require a second list that has user-specified indexes (non-numeric), you
  #  can pass them using the following format (note the -k option):
  #
- #      _menu -k ":key1:list item description" ":key2:list item description ..."
+ #      lo::menu -k ":key1:list item description" ":key2:list item description ..."
  #
  #  Each index must be contained within colons. The leading colon is used when
  #  parsing parameters, and to ensure the desired index is what will appear in the
@@ -45,9 +45,9 @@
  #  @examples
  #  list="oolah boolah boo"
  #  msg="this is a message"
- #  _menu --prompt="$msg" $list
+ #  lo::menu --prompt="$msg" $list
  #
- #  # output of _menu command (snippet) above would be
+ #  # output of lo::menu command (snippet) above would be
  #  # ...
  #  # 1.  oolah
  #  # 2.  boolah
@@ -55,16 +55,16 @@
  #  # --------------------------------------------
  #  # this is a message:
  #
- #  echo "You selected: ${_menu_sel_index}"
+ #  echo "You selected: ${lo::menu_sel_index}"
  #
  #  ### ...OR we could add an extra option... ###
  #
- #  _menu $list -k ":N:Show me something new!"
+ #  lo::menu $list -k ":N:Show me something new!"
  #
  #  ### Can be effectively used in conditional scripts as well ###
  #
- #  if _menu $list ":N:Show me something new!"; then
- #    case $_menu_sel_index in
+ #  if lo::menu $list ":N:Show me something new!"; then
+ #    case $lo::menu_sel_index in
  #      1)
  #        ...
  #
@@ -73,7 +73,7 @@
  #      N) ...;;
  #
  #      # the only other success in this case is if the user pressed enter to abort.
- #      # remember _menu will output "You chose to abort."
+ #      # remember lo::menu will output "You chose to abort."
  #      *)
  #        echo "Exiting..."; exit 0;;
  #    esac
@@ -113,7 +113,7 @@ MENU_PROMPT=${X}${MENU_HEADER}
  #[[ -n "$MENU_OPTION" ]] || export MENU_OPTION=${X}${COL_CYAN}
  #[[ -n "$MENU_PROMPT" ]] || export MENU_PROMPT=${X}${B}${COL_YELLOW}
 
-function _menu {
+function lo::menu {
   declare -a items extraItems ndxes vals
   local i j k index item opt optndx pair prompt msg parsedItem bar
   local hr="${MENU_HL}  ------------------------------------------------  ${X}"
@@ -146,15 +146,15 @@ function _menu {
   fi
 
   if [[ ${#items[@]} == 0 ]] && [[ ${#extraItems[@]} == 0 ]]; then
-    # __debug "_menu: No lists given. Given: $@"
+    # __debug "lo::menu: No lists given. Given: $@"
     echo
-    echo ${E}"  _menu did not detect any list items to display. Aborting...  "${X}
+    echo ${E}"  lo::menu did not detect any list items to display. Aborting...  "${X}
     return 2
   fi
 
   # reset output variables
-  _menu_sel_index=
-  _menu_sel_value=
+  lo::menu_sel_index=
+  lo::menu_sel_value=
 
   # check for custom message
   msg="Please make a selection"
@@ -209,17 +209,17 @@ function _menu {
 
   # validate response
   if [[ -n "$opt" ]]; then
-    _menu_sel_index="$opt"
+    lo::menu_sel_index="$opt"
 
     if [[ ${#extraItems[@]} > 0 ]] && _inArray "$opt" "${ndxes[@]}"; then
-        _menu_sel_value="${vals[${_in_array_index}]}"
+        lo::menu_sel_value="${vals[${_in_array_index}]}"
 
     # elif egrep -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then
     elif egrep -q '^[0-9]+$' <<< "$opt" && [[ $opt > 0 ]]; then
       (( optndx = opt - 1 ))
 
       if [[ -n "${items[${optndx}]}" ]]; then
-        _menu_sel_value="${items[${optndx}]}"
+        lo::menu_sel_value="${items[${optndx}]}"
       else
         # invalid selection. no *numeric* key matches what user typed in.
         return 4
@@ -231,15 +231,15 @@ function _menu {
     fi
 
     echo
-    echo "  You chose: ${MENU_INDEX}${_menu_sel_index}${X}"
+    echo "  You chose: ${MENU_INDEX}${lo::menu_sel_index}${X}"
   else
     echo
     echo "  You chose to abort."
   fi
 
   #wrap up...
-  export _menu_sel_index
-  export _menu_sel_value
+  export lo::menu_sel_index
+  export lo::menu_sel_value
 
   return 0
 }

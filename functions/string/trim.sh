@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _trim <string> <chars=" ">
+ #  @usage lo::trim <string> <chars=" ">
  #
  #  @output true
  #
@@ -8,9 +8,9 @@
  #  description@
  #
  #  @examples
- #  $ _trim "  abc  "
+ #  $ lo::trim "  abc  "
  #  > abc
- #  $ _trim "-_-abc-_-" "_-"
+ #  $ lo::trim "-_-abc-_-" "_-"
  #  > abc
  #  examples@
  #
@@ -25,7 +25,7 @@
  #  @file functions/string/trim.sh
  ## */
 
-function _trim {
+function lo::trim {
   local str="$1" chars=${2- }
   sed -E "s/^[${chars}]+|[${chars}]+$//g" <<< "$str"
   return 0

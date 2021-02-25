@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _yesNo --default=<y|n> <question>
+ #  @usage lo::yesNo --default=<y|n> <question>
  #
  #  @output true
  #
@@ -25,15 +25,15 @@
  #
  #  @examples
  #  # ignore errors
- #  _yesNo --default=n "Does this work"
+ #  lo::yesNo --default=n "Does this work"
  #  if [[ $_yes ]]; then
  #      ...
  #  fi
  #
  #  # OR
  #
- #  # take into account if there is an error during processing within _yesNo
- #  if _yesNo --default=n "Does this work" && [[ $_yes ]]; then
+ #  # take into account if there is an error during processing within lo::yesNo
+ #  if lo::yesNo --default=n "Does this work" && [[ $_yes ]]; then
  #      ...
  #  fi
  #  examples@
@@ -41,7 +41,7 @@
  #  @dependencies
  #  `egrep`
  #  `read`
- #  _inArgs
+ #  lo::inArgs
  #  dependencies@
  #
  #  @returns
@@ -54,8 +54,8 @@
  #  @file functions/utility/yesNo.sh
  ## */
 
-function _yesNo {
-  # __debug "_yesNo() $@"
+function lo::yesNo {
+  # __debug "lo::yesNo() $@"
 
   local Q="${X}${B}" A="${X}${B}${COL_MAGENTA}" default question optN optY ans
   _raw_ans=
@@ -68,7 +68,7 @@ function _yesNo {
   fi
 
   # the --default option is required.
-  if ! _inArgs default "$@"; then
+  if ! lo::inArgs default "$@"; then
     return 2
   fi
 
@@ -90,7 +90,7 @@ function _yesNo {
   # -n to keep response on same line; -e to honor escapes like \n
   echo -ne "${Q}  ${question} ${X}[${optY}/${optN}]${Q}?${X}  "
   read ans
-  # _log "_yesNo(): User answered '$ans'"
+  # lo::log "lo::yesNo(): User answered '$ans'"
   [[ -z "$ans" ]] && ans=$default
 
   ans=$( egrep --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
@@ -103,10 +103,10 @@ function _yesNo {
   else
     # this should get triggered when user answers something other than
     # the allowed characters
-    _yesNo --default=$default "$question"
+    lo::yesNo --default=$default "$question"
   fi
 
-  # _log "_yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
+  # lo::log "lo::yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
 
   if [[ -z "$_raw_ans" ]] || [[ "$_raw_ans" == "$default" ]]; then
     [[ "$default" == "y" ]] && _yes=true || _no=true

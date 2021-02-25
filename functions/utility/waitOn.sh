@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _waitOn [--max-time=<seconds>] <processID> [<wait_message>]
+ #  @usage lo::waitOn [--max-time=<seconds>] <processID> [<wait_message>]
  #
  #  @output true
  #
@@ -30,7 +30,7 @@
  #  @examples
  #  ./some_script.sh &
  #  thePID=$!
- #  if ! _waitOn --max-time=60 $thePID "Running my special script..."; then
+ #  if ! lo::waitOn --max-time=60 $thePID "Running my special script..."; then
  #    ...
  #  fi
  #  examples@
@@ -40,7 +40,7 @@
  #  `ps`
  #  `sleep`
  #  `wait`
- #  _inArgs
+ #  lo::inArgs
  #  dependencies@
  #
  #  @returns
@@ -54,16 +54,16 @@
  #  @file functions/utility/waitOn.sh
  ## */
 
-function _waitOn {
+function lo::waitOn {
   [[ $# == 0 ]] && return 1
 
   local maxWait thePID argsMsg indicators i modNum exitMsg waitMsg argsClipped
 
-  if _inArgs 'max-time' "$@"; then
+  if lo::inArgs 'max-time' "$@"; then
     if egrep --quiet '^[0-9]+$' <<< "${_arg_val}"; then
       maxWait="${_arg_val}"
     else
-      # __err "_waitOn:  --max-time option should have an integer value! Using default..."
+      # __err "lo::waitOn:  --max-time option should have an integer value! Using default..."
       return 2
     fi
     shift
@@ -76,7 +76,7 @@ function _waitOn {
   waitMsg="Waiting for process ${COL_CYAN}${thePID}${X} to complete..."
 
   if ! egrep --quiet '^[0-9]+$' <<< "$thePID"; then
-    # __err "_waitOn expects a valid process ID as the first parameter!"
+    # __err "lo::waitOn expects a valid process ID as the first parameter!"
     return 4
   fi
 
@@ -94,7 +94,7 @@ function _waitOn {
   # max wait time in seconds
   [[ -z "$maxWait" ]] && maxWait=120
 
-  # __log "_waitOn: PID(${thePID})  ${waitMsg} | ${maxWait} seconds"
+  # _lo::log "lo::waitOn: PID(${thePID})  ${waitMsg} | ${maxWait} seconds"
 
   i=1
   _exit_status=
@@ -118,7 +118,7 @@ function _waitOn {
     (( i++ ))
   done
 
-  # __log   "_waitOn:  _exit_status = ${_exit_status}"
+  # _lo::log   "lo::waitOn:  _exit_status = ${_exit_status}"
   export _exit_status
 
   if [[ -z "${_exit_status}" ]]; then

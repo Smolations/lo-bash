@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_isFunction'
+h1 'lo::isFunction'
 
 
 function whatwhat {
@@ -10,7 +10,7 @@ function whatwhat {
 whowho=(1 2 3)
 whywhy='1 2 3'
 
-_isFunction whatwhat && pass || fail
+lo::isFunction whatwhat && pass || fail
 
-_isFunction whowho && fail || pass
-_isFunction whywhy && fail || pass
+lo::isFunction whowho && fail || pass
+lo::isFunction whywhy && fail || pass

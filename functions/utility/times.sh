@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _times <num> <funcName> [<arrayName>]
+ #  @usage lo::times <num> <funcName> [<arrayName>]
  #
  #  @output false
  #
@@ -10,16 +10,16 @@
  #
  #  @examples
  #  $ function foo { echo -n "$1"; }
- #  $ _times 4 foo
+ #  $ lo::times 4 foo
  #  > 0123
- #  $ _times 4 foo newArray
+ #  $ lo::times 4 foo newArray
  #  $ echo ${newArray[1]}
  #  > 1
  #  examples@
  #
  #  @dependencies
  #  `eval`
- #  _isFunction
+ #  lo::isFunction
  #  lb_arrayCopy
  #  dependencies@
  #
@@ -32,12 +32,12 @@
  #  @file functions/utility/times.sh
  ## */
 
-function _times {
+function lo::times {
   declare -i turn=0
   declare -i num=${1-0}
   local funcName="$2" arrayName="$3" arr=()
 
-  if ! _isFunction "$funcName"; then
+  if ! lo::isFunction "$funcName"; then
     turn=1
 
   else

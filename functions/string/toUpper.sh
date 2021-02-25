@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _toUpper <string>
+ #  @usage lo::toUpper <string>
  #
  #  @output true
  #
@@ -8,13 +8,13 @@
  #  description@
  #
  #  @examples
- #  $ _toUpper "--foo-bar--"
+ #  $ lo::toUpper "--foo-bar--"
  #  > --FOO-BAR--
  #
- #  $ _toUpper "fooBar"
+ #  $ lo::toUpper "fooBar"
  #  > FOOBAR
  #
- #  $ _toUpper "__foo_bar__"
+ #  $ lo::toUpper "__foo_bar__"
  #  > __FOO_BAR__
  #  examples@
  #
@@ -29,6 +29,6 @@
  #  @file functions/string/toUpper.sh
  ## */
 
-function _toUpper {
+function lo::toUpper {
   awk '{ print toupper($0) }' <<< "$@"
 }

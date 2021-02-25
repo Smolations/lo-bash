@@ -20,7 +20,7 @@
  #
  #  @dependencies
  #  `eval`
- #  _isArray
+ #  lo::isArray
  #  dependencies@
  #
  #  @returns
@@ -35,7 +35,7 @@ function lb_arrayCopy {
   declare -i turn=1
   local arr_copy=$1 arr_orig=$2
 
-  if _isArray $arr_orig; then
+  if lo::isArray $arr_orig; then
     turn=0
     eval "${arr_copy}=( \"\${${arr_orig}[@]}\" )"
   else
