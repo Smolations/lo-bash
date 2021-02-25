@@ -33,6 +33,6 @@ time _::source_all -r test/
 # _::source_all -r test/math
 # _::source_all -r test/number
 # _::source_all -r test/string
-# _::source_all -r test/utility
+# _::source_all -r test/util
 # echo "-> $?"
 echo

@@ -16,5 +16,5 @@ if [ ! -d "$LOBASH_PATH" ]; then
 fi
 
 source "${LOBASH_PATH}"/colors.sh # could be gated on env var
-source "${LOBASH_PATH}"/functions/utility/source_all.sh
+source "${LOBASH_PATH}"/functions/util/source_all.sh
 _::source_all -r -v -x "${LOBASH_PATH}"/functions
