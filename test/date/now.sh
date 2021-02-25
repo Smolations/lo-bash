@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_::now'
+h1 '_::date::now'
 
-_::now | egrep -q '^[0-9]+$' && pass || fail
+_::date::now | egrep -q '^[0-9]+$' && pass || fail
 

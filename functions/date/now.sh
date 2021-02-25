@@ -24,7 +24,7 @@
  #  @file functions/date/now.sh
  ## */
 
-function _::now() {
+function _::date::now() {
   echo $(($(date +'%s * 1000 + %-N / 1000000')))
   return 0
 }
