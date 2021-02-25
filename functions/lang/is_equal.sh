@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::is_equal <val1> <val2>
+ #  @usage _::lang::is_equal <val1> <val2>
  #
  #  @output false
  #
@@ -15,11 +15,11 @@
  #  notes@
  #
  #  @examples
- #  $ _::is_equal 2 2 && echo 'yup'
+ #  $ _::lang::is_equal 2 2 && echo 'yup'
  #  > yup
- #  $ _::is_equal 'hey' 'hey' && echo 'yup'
+ #  $ _::lang::is_equal 'hey' 'hey' && echo 'yup'
  #  > yup
- #  $ _::is_equal 'hey' 'heyo' || echo 'aww'
+ #  $ _::lang::is_equal 'hey' 'heyo' || echo 'aww'
  #  > aww
  #  examples@
  #
@@ -36,10 +36,10 @@
  #  @file functions/lang/isEqual.sh
  ## */
 
-function _::is_equal() {
+function _::lang::is_equal() {
   declare -i turn=1
 
-  if _::is_number $1 && _::is_number $2; then
+  if _::lang::is_number $1 && _::lang::is_number $2; then
     lb_awkCompare "$1 == $2" && turn=0
   else
     [[ "$1" == "$2" ]] && turn=0

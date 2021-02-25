@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::gte <value> <other>
+ #  @usage _::lang::gte <value> <other>
  #
  #  @output false
  #
@@ -8,9 +8,9 @@
  #  description@
  #
  #  @examples
- #  $ _::gte 4 3 && echo "yup"
+ #  $ _::lang::gte 4 3 && echo "yup"
  #  > yup
- #  $ _::gte 3 3 && echo "yup"
+ #  $ _::lang::gte 3 3 && echo "yup"
  #  > yup
  #  examples@
  #
@@ -28,11 +28,11 @@
  #  @file functions/lang/gte.sh
  ## */
 
-function _::gte() {
+function _::lang::gte() {
   declare -i turn=1
   local perlRes=
 
-  if _::is_number $1 && _::is_number $2; then
+  if _::lang::is_number $1 && _::lang::is_number $2; then
     # if used enough, maybe a helper function to check output for true/false
     # would be useful
     lb_awkCompare "$1 >= $2" && turn=0

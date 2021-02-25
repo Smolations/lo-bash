@@ -25,6 +25,6 @@
  #  @file functions/lang/isStdin.sh
  ## */
 
-function _::is_stdin() {
+function _::lang::is_stdin() {
   [[ "$( tty )" == 'not a tty' ]]
 }

@@ -63,7 +63,7 @@ function _::map() {
   if ! lb_arrayCopy _tmpArray $arrayName; then
     turn=1
 
-  elif ! _::is_function "$funcName"; then
+  elif ! _::lang::is_function "$funcName"; then
     turn=2
 
   else

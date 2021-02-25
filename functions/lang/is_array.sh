@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::is_array <arrayName>
+ #  @usage _::lang::is_array <arrayName>
  #
  #  @output false
  #
@@ -9,7 +9,7 @@
  #
  #  @examples
  #  $ arr=()
- #  $ _::is_array arr && echo "yup"
+ #  $ _::lang::is_array arr && echo "yup"
  #  > yup
  #  examples@
  #
@@ -26,6 +26,6 @@
  #  @file functions/lang/isArray.sh
  ## */
 
-function _::is_array() {
+function _::lang::is_array() {
   declare -ap $1 2> /dev/null | grep -q '^declare \-a'
 }

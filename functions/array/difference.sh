@@ -43,7 +43,7 @@ function _::difference() {
   lb_arrayCopy one $2
   lb_arrayCopy two $3
 
-  if _::is_array one && _::is_array two; then
+  if _::lang::is_array one && _::lang::is_array two; then
     difference=() turn=0
 
     for (( i = 0; i < ${#one[@]}; i++ )); do

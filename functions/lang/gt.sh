@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::gt <value> <other>
+ #  @usage _::lang::gt <value> <other>
  #
  #  @output false
  #
@@ -8,7 +8,7 @@
  #  description@
  #
  #  @examples
- #  $ _::gt 4 3 && echo "yup"
+ #  $ _::lang::gt 4 3 && echo "yup"
  #  > yup
  #  examples@
  #
@@ -26,10 +26,10 @@
  #  @file functions/lang/gt.sh
  ## */
 
-function _::gt() {
+function _::lang::gt() {
   declare -i turn=1
 
-  if _::is_number $1 && _::is_number $2; then
+  if _::lang::is_number $1 && _::lang::is_number $2; then
     # if used enough, maybe a helper function to check output for true/false
     # would be useful
     lb_awkCompare "$1 > $2" && turn=0

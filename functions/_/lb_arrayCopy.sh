@@ -35,7 +35,7 @@ function lb_arrayCopy() {
   declare -i turn=1
   local arr_copy=$1 arr_orig=$2
 
-  if _::is_array $arr_orig; then
+  if _::lang::is_array $arr_orig; then
     turn=0
     eval "${arr_copy}=( \"\${${arr_orig}[@]}\" )"
   else

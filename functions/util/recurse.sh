@@ -48,7 +48,7 @@ function _::util::recurse() {
     sPath=`pwd`
   fi
 
-  if ! _::is_function "$fName"; then
+  if ! _::lang::is_function "$fName"; then
     return 2
   fi
 

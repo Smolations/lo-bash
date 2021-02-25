@@ -37,7 +37,7 @@ function _::util::times() {
   declare -i num=${1-0}
   local funcName="$2" arrayName="$3" arr=()
 
-  if ! _::is_function "$funcName"; then
+  if ! _::lang::is_function "$funcName"; then
     turn=1
 
   else

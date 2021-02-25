@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::eq <val1> <val2>
+ #  @usage _::lang::eq <val1> <val2>
  #
  #  @output false
  #
@@ -8,7 +8,7 @@
  #  description@
  #
  #  @examples
- #  $ _::eq 3 3 && echo "yup"
+ #  $ _::lang::eq 3 3 && echo "yup"
  #  > yup
  #  examples@
  #
@@ -24,7 +24,7 @@
  #  @file functions/lang/eq.sh
  ## */
 
-function _::eq() {
-  _::is_equal $@
+function _::lang::eq() {
+  _::lang::is_equal $@
 }
 

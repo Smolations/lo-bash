@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::lt <value> <other>
+ #  @usage _::lang::lt <value> <other>
  #
  #  @output false
  #
@@ -8,7 +8,7 @@
  #  description@
  #
  #  @examples
- #  $ _::lt 4 5 && echo "yup"
+ #  $ _::lang::lt 4 5 && echo "yup"
  #  > yup
  #  examples@
  #
@@ -24,6 +24,6 @@
  #  @file functions/lang/lt.sh
  ## */
 
-function _::lt() {
-  ! _::gte $@
+function _::lang::lt() {
+  ! _::lang::gte $@
 }
