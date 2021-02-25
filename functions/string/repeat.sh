@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::repeat [-n] <string> <num>
+ #  @usage _::string::repeat [-n] <string> <num>
  #
  #  @output true
  #
@@ -14,13 +14,13 @@
  #  options@
  #
  #  @examples
- #  _::repeat "*" 3
+ #  _::string::repeat "*" 3
  #  > ***
  #
- #  _::repeat "abc" 2
+ #  _::string::repeat "abc" 2
  #  > abcabc
  #
- #  _::repeat "abc" 0
+ #  _::string::repeat "abc" 0
  #  >
  #  examples@
  #
@@ -39,7 +39,7 @@
  #  @file functions/string/repeat.sh
  ## */
 
-function _::repeat() {
+function _::string::repeat() {
   declare -i turn=0
   declare -i mult
   declare -i i

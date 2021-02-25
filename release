@@ -7,7 +7,7 @@ funcGroup=""
 function funcDoc() {
   local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
 
-  _::starts_with "${funcName}" 'lb' || funcName="_${funcName}"
+  _::string::starts_with "${funcName}" 'lb' || funcName="_${funcName}"
 
   if [[ "$funcGroup" != "$fGroup" ]]; then
     echo "- **${fGroup}**"

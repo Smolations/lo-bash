@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::parse_int <string>
+ #  @usage _::string::parse_int <string>
  #
  #  @output true
  #
@@ -28,13 +28,13 @@
  #  @file functions/string/parseInt.sh
  ## */
 
-function _::parse_int() {
+function _::string::parse_int() {
   declare -i turn=0
-  local str=`_::trim "$@"`
+  local str=`_::string::trim "$@"`
 
   # come back to different bases?
   str=`egrep --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`
-  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`_::trim_left "$str" '0'`
+  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`_::string::trim_left "$str" '0'`
 
   echo -n $str
   return $turn

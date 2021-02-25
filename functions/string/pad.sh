@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::pad <string=""> <length=0> <chars=" ">
+ #  @usage _::string::pad <string=""> <length=0> <chars=" ">
  #
  #  @output true
  #
@@ -21,16 +21,16 @@
  #  notes@
  #
  #  @examples
- #  $ echo "'`_::pad "abc" 8`'"
+ #  $ echo "'`_::string::pad "abc" 8`'"
  #  > '  abc   '
  #
- #  $ _::pad "abc" 8 "_-"
+ #  $ _::string::pad "abc" 8 "_-"
  #  > _-abc_-_
  #
- #  $ _::pad "abc" 8 "123"
+ #  $ _::string::pad "abc" 8 "123"
  #  > 12abc123
  #
- #  $ _::pad "abc"
+ #  $ _::string::pad "abc"
  #  > abc
  #  examples@
  #
@@ -46,7 +46,7 @@
  #  @file functions/string/pad.sh
  ##
 
-function _::pad() {
+function _::string::pad() {
   declare -i turn=0
   declare -i len=${2-0}
   declare -i avail_for_end_pad
@@ -74,14 +74,14 @@ function _::pad() {
 
     pad_freq=`expr $avail_for_pad / $chars_len + 1`
 
-    prefix=`_::repeat "$chars" $pad_freq`
+    prefix=`_::string::repeat "$chars" $pad_freq`
     prefix="${prefix:0:${avail_for_start_pad}}"
-    suffix=`_::repeat "$chars" $pad_freq`
+    suffix=`_::string::repeat "$chars" $pad_freq`
     suffix="${suffix:0:${avail_for_end_pad}}"
   fi
 
   echo "${prefix}${str}${suffix}"
-  # ind=$( IFS=$'\n'; _::repeat "$chars" $num )
+  # ind=$( IFS=$'\n'; _::string::repeat "$chars" $num )
   # ( IFS=$'\n'; echo "${ind}${str}" )
 
   return $turn

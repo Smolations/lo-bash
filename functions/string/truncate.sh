@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::truncate [--length=<num>] [--omission=<string>] [--separator=<string>] <string="">
+ #  @usage _::string::truncate [--length=<num>] [--omission=<string>] [--separator=<string>] <string="">
  #
  #  @output true
  #
@@ -24,13 +24,13 @@
  #  notes@
  #
  #  @examples
- #  $ _::truncate "hi-diddly-ho there, neighborino"
+ #  $ _::string::truncate "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there, neighbo...
  #
- #  $ _::truncate --length=24 --separator=' ' "hi-diddly-ho there, neighborino"
+ #  $ _::string::truncate --length=24 --separator=' ' "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there,...
  #
- #  $ _::truncate --omission=' [...]' "hi-diddly-ho there, neighborino"
+ #  $ _::string::truncate --omission=' [...]' "hi-diddly-ho there, neighborino"
  #  > hi-diddly-ho there, neig [...]
  #  examples@
  #
@@ -48,7 +48,7 @@
  #  @file functions/string/truncate.sh
  ##
 
-function _::truncate() {
+function _::string::truncate() {
   declare -i turn=0
   declare -i len=30
   declare -i new_len

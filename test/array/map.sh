@@ -10,7 +10,7 @@ function iteratee() {
   local val="$1"
 
   if (( ndx > 1 )); then
-    _::to_upper "$val"
+    _::string::to_upper "$val"
   else
     echo "$val"
   fi

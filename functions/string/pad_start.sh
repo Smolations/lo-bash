@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::pad_start <string=""> <length=0> <chars=" ">
+ #  @usage _::string::pad_start <string=""> <length=0> <chars=" ">
  #
  #  @output true
  #
@@ -18,13 +18,13 @@
  #  notes@
  #
  #  @examples
- #  $ _::pad_start "abc"
+ #  $ _::string::pad_start "abc"
  #  >    abc
  #
- #  $ _::pad_start "abc" 6 "_-"
+ #  $ _::string::pad_start "abc" 6 "_-"
  #  > _-_abc
  #
- #  $ _::pad_start "abc"
+ #  $ _::string::pad_start "abc"
  #  > abc
  #  examples@
  #
@@ -41,7 +41,7 @@
  #  @file functions/string/padStart.sh
  ##
 
-function _::pad_start() {
+function _::string::pad_start() {
   declare -i turn=0
   declare -i len=${2-0}
   declare -i avail_for_pad
@@ -58,12 +58,12 @@ function _::pad_start() {
     avail_for_pad=`expr $len - $str_len`
     pad_freq=`expr $avail_for_pad / $chars_len + 1`
 
-    prefix=`_::repeat "$chars" $pad_freq`
+    prefix=`_::string::repeat "$chars" $pad_freq`
     prefix="${prefix:0:${avail_for_pad}}"
   fi
 
   echo "${prefix}${str}"
-  # ind=$( IFS=$'\n'; _::repeat "$chars" $num )
+  # ind=$( IFS=$'\n'; _::string::repeat "$chars" $num )
   # ( IFS=$'\n'; echo "${ind}${str}" )
 
   return $turn

@@ -106,7 +106,7 @@ Binary Dependencies
 
  ---==:  lb_arrayCopy               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  lb_array                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  lb_awkCompare              
+ ---==:  lb_awkCompare
  ---==:  lb_math                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  lb_slash                   S
  ---==:  _::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
@@ -135,22 +135,22 @@ Binary Dependencies
  ---==:  _::sum                     [32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::in_range                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::random                  [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::ends_with               [32m.(B[m[32m.(B[m
- ---==:  _::length                  [32m.(B[m[32m.(B[m
- ---==:  _::pad_end                 [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::pad                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::pad_start               [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::parse_int               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::repeat                  [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::replace                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::split                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::starts_with             [32m.(B[m[32m.(B[m
- ---==:  _::to_lower                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::to_upper                [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::trim_left               [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::trim_right              [32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::trim                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
- ---==:  _::truncate                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::ends_with               [32m.(B[m[32m.(B[m
+ ---==:  _::string::length                  [32m.(B[m[32m.(B[m
+ ---==:  _::string::pad_end                 [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::pad                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::pad_start               [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::parse_int               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::repeat                  [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::replace                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::split                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::starts_with             [32m.(B[m[32m.(B[m
+ ---==:  _::string::to_lower                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::to_upper                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim_left               [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim_right              [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::trim                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::string::truncate                [32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::in_args           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::strip_styles      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
  ---==:  _::util::times             [32m.(B[m[32m.(B[m[32m.(B[m
