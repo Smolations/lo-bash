@@ -1,16 +1,16 @@
 #!/bin/bash
 
-h1 'lo::lte'
+h1 '_::lte'
 
-lo::lte 1 3 && pass || fail
-lo::lte -1 3 && pass || fail
-lo::lte -1 -1 && pass || fail
-lo::lte 2 '5' && pass || fail
-lo::lte '1.233' '1.32' && pass || fail
-lo::lte 'b' 'g' && pass || fail
-lo::lte 'g' 'g' && pass || fail
-lo::lte 'g' 'go' && pass || fail
+_::lte 1 3 && pass || fail
+_::lte -1 3 && pass || fail
+_::lte -1 -1 && pass || fail
+_::lte 2 '5' && pass || fail
+_::lte '1.233' '1.32' && pass || fail
+_::lte 'b' 'g' && pass || fail
+_::lte 'g' 'g' && pass || fail
+_::lte 'g' 'go' && pass || fail
 
-lo::lte 3 1 && fail || pass
-lo::lte 'bee' 'Bee' && fail || pass
-lo::lte 'bees' 'bee' && fail || pass
+_::lte 3 1 && fail || pass
+_::lte 'bee' 'Bee' && fail || pass
+_::lte 'bees' 'bee' && fail || pass

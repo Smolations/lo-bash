@@ -34,7 +34,7 @@
  #  @file functions/_/lb_math.sh
  ## */
 
-function lb_math {
+function lb_math() {
   local args=$@
   awk "BEGIN { printf(\"%.16g\",${args// /}) }"
 }

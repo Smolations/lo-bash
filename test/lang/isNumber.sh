@@ -1,15 +1,15 @@
 #!/bin/bash
 
-h1 'lo::isNumber'
+h1 '_::is_number'
 
-lo::isNumber .4 && pass || fail
-lo::isNumber 4. && pass || fail
-lo::isNumber 4 && pass || fail
-lo::isNumber -5 && pass || fail
-lo::isNumber 7.312 && pass || fail
-lo::isNumber '65' && pass || fail
+_::is_number .4 && pass || fail
+_::is_number 4. && pass || fail
+_::is_number 4 && pass || fail
+_::is_number -5 && pass || fail
+_::is_number 7.312 && pass || fail
+_::is_number '65' && pass || fail
 
-lo::isNumber 7.3.12 && fail || pass
-lo::isNumber 'a' && fail || pass
-lo::isNumber '2a' && fail || pass
-lo::isNumber 7.-312 && fail || pass
+_::is_number 7.3.12 && fail || pass
+_::is_number 'a' && fail || pass
+_::is_number '2a' && fail || pass
+_::is_number 7.-312 && fail || pass

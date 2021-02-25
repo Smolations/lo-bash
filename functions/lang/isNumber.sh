@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::isNumber <value>
+ #  @usage _::is_number <value>
  #
  #  @output false
  #
@@ -9,15 +9,15 @@
  #  description@
  #
  #  @examples
- #  lo::isNumber .4       # true
- #  lo::isNumber 4.       # true
- #  lo::isNumber 4        # true
- #  lo::isNumber -5       # true
- #  lo::isNumber +5       # true
- #  lo::isNumber 7.312    # true
- #  lo::isNumber '65'     # true
- #  lo::isNumber 7.3.12   # false
- #  lo::isNumber 'a'      # false
+ #  _::is_number .4       # true
+ #  _::is_number 4.       # true
+ #  _::is_number 4        # true
+ #  _::is_number -5       # true
+ #  _::is_number +5       # true
+ #  _::is_number 7.312    # true
+ #  _::is_number '65'     # true
+ #  _::is_number 7.3.12   # false
+ #  _::is_number 'a'      # false
  #  examples@
  #
  #  @dependencies
@@ -31,7 +31,7 @@
  #  @file functions/lang/isNumber.sh
  ## */
 
-function lo::isNumber {
+function _::is_number() {
   declare -i turn=0
 
   case ${1#[-+]} in

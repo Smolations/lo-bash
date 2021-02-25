@@ -1,11 +1,11 @@
 #!/bin/bash
 
-h1 'lo::pull'
+h1 '_::pull'
 
 
 arr=( 2 'hello' 'foobar' true )
 
-lo::pull arr 'hello' true
+_::pull arr 'hello' true
 
 [[ "${#arr[@]}" == "2" ]] && pass || fail "'${#arr[@]}' = '2'"
 [[ "${arr[0]}" == "2" ]] && pass || fail "'${arr[0]}' = '2'"

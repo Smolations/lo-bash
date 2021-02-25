@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::yesNo --default=<y|n> <question>
+ #  @usage _::yes_no --default=<y|n> <question>
  #
  #  @output true
  #
@@ -25,15 +25,15 @@
  #
  #  @examples
  #  # ignore errors
- #  lo::yesNo --default=n "Does this work"
+ #  _::yes_no --default=n "Does this work"
  #  if [[ $_yes ]]; then
  #      ...
  #  fi
  #
  #  # OR
  #
- #  # take into account if there is an error during processing within lo::yesNo
- #  if lo::yesNo --default=n "Does this work" && [[ $_yes ]]; then
+ #  # take into account if there is an error during processing within _::yes_no
+ #  if _::yes_no --default=n "Does this work" && [[ $_yes ]]; then
  #      ...
  #  fi
  #  examples@
@@ -41,7 +41,7 @@
  #  @dependencies
  #  `egrep`
  #  `read`
- #  lo::inArgs
+ #  _::in_args
  #  dependencies@
  #
  #  @returns
@@ -54,8 +54,8 @@
  #  @file functions/utility/yesNo.sh
  ## */
 
-function lo::yesNo {
-  # __debug "lo::yesNo() $@"
+function _::yes_no() {
+  # __debug "_::yes_no() $@"
 
   local Q="${X}${B}" A="${X}${B}${COL_MAGENTA}" default question optN optY ans
   _raw_ans=
@@ -68,7 +68,7 @@ function lo::yesNo {
   fi
 
   # the --default option is required.
-  if ! lo::inArgs default "$@"; then
+  if ! _::in_args default "$@"; then
     return 2
   fi
 
@@ -90,7 +90,7 @@ function lo::yesNo {
   # -n to keep response on same line; -e to honor escapes like \n
   echo -ne "${Q}  ${question} ${X}[${optY}/${optN}]${Q}?${X}  "
   read ans
-  # lo::log "lo::yesNo(): User answered '$ans'"
+  # _::log "_::yes_no(): User answered '$ans'"
   [[ -z "$ans" ]] && ans=$default
 
   ans=$( egrep --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
@@ -103,10 +103,10 @@ function lo::yesNo {
   else
     # this should get triggered when user answers something other than
     # the allowed characters
-    lo::yesNo --default=$default "$question"
+    _::yes_no --default=$default "$question"
   fi
 
-  # lo::log "lo::yesNo(): \$_raw_ans after processing is '${_raw_ans}'"
+  # _::log "_::yes_no(): \$_raw_ans after processing is '${_raw_ans}'"
 
   if [[ -z "$_raw_ans" ]] || [[ "$_raw_ans" == "$default" ]]; then
     [[ "$default" == "y" ]] && _yes=true || _no=true

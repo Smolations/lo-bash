@@ -1,13 +1,13 @@
 #!/bin/bash
 
-h1 'lo::parseInt'
+h1 '_::parse_int'
 
-[[ "`lo::parseInt 3`" == '3' ]] && pass || fail
-[[ "`lo::parseInt '03'`" == '3' ]] && pass || fail
-[[ "`lo::parseInt 3.321`" == '3' ]] && pass || fail
-[[ "`lo::parseInt '3abc'`" == '3' ]] && pass || fail
-[[ "`lo::parseInt '   3.4'`" == '3' ]] && pass || fail
-[[ "`lo::parseInt abc`" == '' ]] && pass || fail
+[[ "`_::parse_int 3`" == '3' ]] && pass || fail
+[[ "`_::parse_int '03'`" == '3' ]] && pass || fail
+[[ "`_::parse_int 3.321`" == '3' ]] && pass || fail
+[[ "`_::parse_int '3abc'`" == '3' ]] && pass || fail
+[[ "`_::parse_int '   3.4'`" == '3' ]] && pass || fail
+[[ "`_::parse_int abc`" == '' ]] && pass || fail
 
-# [[ "`lo::parseInt abc`" == '' ]] && fail || pass
+# [[ "`_::parse_int abc`" == '' ]] && fail || pass
 

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::toLower <string>
+ #  @usage _::to_lower <string>
  #
  #  @output true
  #
@@ -8,13 +8,13 @@
  #  description@
  #
  #  @examples
- #  lo::toLower "--Foo-Bar--"
+ #  _::to_lower "--Foo-Bar--"
  #  > --foo-bar--
  #
- #  lo::toLower "fooBar"
+ #  _::to_lower "fooBar"
  #  > foobar
  #
- #  lo::toLower "__FOO_BAR__"
+ #  _::to_lower "__FOO_BAR__"
  #  > __foo_bar__
  #  examples@
  #
@@ -29,6 +29,6 @@
  #  @file functions/string/toLower.sh
  ## */
 
-function lo::toLower {
+function _::to_lower() {
   awk '{ print tolower($0) }' <<< "$@"
 }

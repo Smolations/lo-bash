@@ -33,7 +33,7 @@
  #  @file functions/_/lb_awkCompare.sh
  ## */
 
-function lb_awkCompare {
+function lb_awkCompare() {
   declare -i turn=1
   lb_awkPrint "$@" | grep -qi '1' && turn=0
   return $turn

@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::indexOf <arrayName> <value> <fromIndex=0>
+ #  @usage _::index_of <arrayName> <value> <fromIndex=0>
  #
  #  @output true
  #
@@ -14,13 +14,13 @@
  #
  #  @examples
  #  $ arr=( 2 'hello' 'foobar' true 'hello' )
- #  $ lo::indexOf arr 2
+ #  $ _::index_of arr 2
  #  > 0
- #  $ lo::indexOf arr "hello"
+ #  $ _::index_of arr "hello"
  #  > 1
- #  $ lo::indexOf arr "hello" 2
+ #  $ _::index_of arr "hello" 2
  #  > 4
- #  $ lo::indexOf arr true
+ #  $ _::index_of arr true
  #  > 3
  #  examples@
  #
@@ -37,7 +37,7 @@
  #  @file functions/array/indexOf.sh
  ## */
 
-function lo::indexOf {
+function _::index_of() {
   declare -i turn=0
   declare -i fromIndex=${3-0}
   declare -i ndx

@@ -4,10 +4,10 @@ source SOURCEME
 branch_name=$(expr "$( git symbolic-ref HEAD )" : 'refs/heads/\(.*\)')
 funcGroup=""
 
-function funcDoc {
+function funcDoc() {
   local indent="- " fGroup="${1#*/}" fileName="$2" funcName="${2%.sh}"
 
-  lo::startsWith "${funcName}" 'lb' || funcName="_${funcName}"
+  _::starts_with "${funcName}" 'lb' || funcName="_${funcName}"
 
   if [[ "$funcGroup" != "$fGroup" ]]; then
     echo "- **${fGroup}**"
@@ -31,7 +31,7 @@ echo "### Function List"
 echo
 
 # link to each function in code
-lo::recurse functions funcDoc
+_::recurse functions funcDoc
 
 # show test output
 echo

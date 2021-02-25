@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::split <string> <separator> <arrayName>
+ #  @usage _::split <string> <separator> <arrayName>
  #
  #  @output false
  #
@@ -20,12 +20,12 @@
  #
  #  @examples
  #  $ str="what's up guys?"
- #  $ lo::split "$str" " " splitArray
+ #  $ _::split "$str" " " splitArray
  #  $ echo "${#splitArray[@]}"
  #  > 3
  #  $ echo "${splitArray[2]}"
  #  > guys?
- #  $ lo::split "$str" " up " splitArray
+ #  $ _::split "$str" " up " splitArray
  #  $ echo "${#splitArray[@]}"
  #  > 2
  #  $ echo "${splitArray[0]}"
@@ -46,7 +46,7 @@
  #  @file functions/string/split.sh
  ## */
 
-function lo::split {
+function _::split() {
   declare -i turn=0
   declare -i sepEnd
   declare -i sepIndex

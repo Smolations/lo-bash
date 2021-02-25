@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::replace <string> <pattern> <replacement>
+ #  @usage _::replace <string> <pattern> <replacement>
  #
  #  @output true
  #
@@ -14,11 +14,11 @@
  #
  #  @examples
  #  $ str="i am an ultimate-unicorn. bow before ME!"
- #  $ lo::replace "$str" "u" "a"
+ #  $ _::replace "$str" "u" "a"
  #  > i am an altimate-anicorn. bow before ME!
- #  $ lo::replace "$str" "a[^ ]+" "x"
+ #  $ _::replace "$str" "a[^ ]+" "x"
  #  > i x x ultimx bow before ME!
- #  $ lo::replace "some/file/path" "\/" "|"
+ #  $ _::replace "some/file/path" "\/" "|"
  #  > some|file|path
  #  examples@
  #
@@ -34,7 +34,7 @@
  #  @file functions/string/replace.sh
  ## */
 
-function lo::replace {
+function _::replace() {
   declare -i turn=0
   local str="$1" patt="$2" repl="$3"
 

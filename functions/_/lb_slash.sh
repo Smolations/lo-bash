@@ -30,6 +30,6 @@
  #  @file functions/_/lb_slash.sh
  ## */
 
-function lb_slash {
+function lb_slash() {
   sed 's/"/\\"/g' <<< "$@"
 }

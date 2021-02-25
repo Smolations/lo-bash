@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::random [<lower=0>] [<upper=100>]
+ #  @usage _::random [<lower=0>] [<upper=100>]
  #
  #  @output true
  #
@@ -10,7 +10,7 @@
  #  description@
  #
  #  @examples
- #  $ lo::random
+ #  $ _::random
  #  > 32
  #  examples@
  #
@@ -26,7 +26,7 @@
  #  @file functions/number/random.sh
  ## */
 
-function lo::random {
+function _::random() {
   declare -i turn=0
   declare -i min=0
   declare -i max=100

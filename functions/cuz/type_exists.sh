@@ -1,6 +1,6 @@
 ## /* @function
- #  @usage lo::type_exists [-p | -a | -b | -f | -k] <command>
- #  @usage lo::type_exists [-p | -a | -b | -f | -k] <app_name>
+ #  @usage _::type_exists [-p | -a | -b | -f | -k] <command>
+ #  @usage _::type_exists [-p | -a | -b | -f | -k] <app_name>
  #
  #  @output on error
  #
@@ -11,7 +11,7 @@
  #  @description
  #  This function is basically a wrapper around the `type` command. Its purpose
  #  is to tell the user if a particular app/file/function/etc. exists on their
- #  system. Without passing an option, `lo::type_exists` will use the return
+ #  system. Without passing an option, `_::type_exists` will use the return
  #  code of the `type` command for the given input. Passing one of the options
  #  (and they can *only* be passed one at a time), will result in success only
  #  if the `type` of the input matches the type specified by the given option.
@@ -20,7 +20,7 @@
  #  In addition to pass/fail return codes, this function also exports a variable
  #  in case the script author needs it for some reason. See @exports.
  #
- #  `type -t` returns a single word if the <command> is found. `lo::type_exists`
+ #  `type -t` returns a single word if the <command> is found. `_::type_exists`
  #  adds another word, "app", to the mix specifically for OS X *.app's. The
  #  exported variable will be populated with one of these words if a type is
  #  found:
@@ -51,14 +51,14 @@
  #  notes@
  #
  #  @examples
- #  lo::type_exists echo                      => 0   $_type_is = "builtin"
- #  lo::type_exists -f echo                   => 4   $_type_is = "builtin"
- #  lo::type_exists fi                        => 0   $_type_is = "keyword"
- #  lo::type_exists -app git                  => 2   $_type_is = "file"
- #  lo::type_exists "Mission Control"         => 0   $_type_is = "app"
- #  lo::type_exists Mission Control           => 4   $_type_is = ""
- #  lo::type_exists -p Mission Control        => 0   $_type_is = "app"
- #  lo::type_exists lo::type_exists              => 0   $_type_is = "function"
+ #  _::type_exists echo                      => 0   $_type_is = "builtin"
+ #  _::type_exists -f echo                   => 4   $_type_is = "builtin"
+ #  _::type_exists fi                        => 0   $_type_is = "keyword"
+ #  _::type_exists -app git                  => 2   $_type_is = "file"
+ #  _::type_exists "Mission Control"         => 0   $_type_is = "app"
+ #  _::type_exists Mission Control           => 4   $_type_is = ""
+ #  _::type_exists -p Mission Control        => 0   $_type_is = "app"
+ #  _::type_exists _::type_exists              => 0   $_type_is = "function"
  #  examples@
  #
  #  @returns
@@ -71,7 +71,7 @@
  #  @file functions/cuz/type_exists.sh
  ## */
 
-function _typeExists {
+function _typeExists() {
     [[ $# == 0 ]] && return 1
 
     local retVal=0 targ results opt=
@@ -114,7 +114,7 @@ function _typeExists {
           [[ "$_type_is" == "keyword" ]] || retVal=4;;
 
         *)
-          echo "${E}  Incorrect option [${1}] specified for \`lo::type_exists\`.  ${X}"
+          echo "${E}  Incorrect option [${1}] specified for \`_::type_exists\`.  ${X}"
           retVal=2
       esac
     fi

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-h1 'lo::eq'
+h1 '_::eq'
 
-lo::eq 4 4 && pass || fail
-lo::eq 2 '2' && pass || fail
-lo::eq '2a' '2a' && pass || fail
+_::eq 4 4 && pass || fail
+_::eq 2 '2' && pass || fail
+_::eq '2a' '2a' && pass || fail
 
-lo::eq 3 4 && fail || pass
-lo::eq '2a' '2b' && fail || pass
+_::eq 3 4 && fail || pass
+_::eq '2a' '2b' && fail || pass

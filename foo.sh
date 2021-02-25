@@ -1,6 +1,6 @@
 
 
-function newfunc {
+function newfunc() {
   uri="$1" group="${uri%/*}" function_name="${uri#*/}" file_name="${uri}.sh"
 
   # the function

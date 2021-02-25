@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 'lo::add'
+h1 '_::add'
 
-[[ `lo::add 1 3` == 4 ]] && pass || fail
-[[ `lo::add 2 -5` == -3 ]] && pass || fail
+[[ `_::add 1 3` == 4 ]] && pass || fail
+[[ `_::add 2 -5` == -3 ]] && pass || fail

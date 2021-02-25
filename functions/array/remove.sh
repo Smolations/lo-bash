@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::remove <arrayName> <funcName>
+ #  @usage _::remove <arrayName> <funcName>
  #
  #  @output false
  #
@@ -10,7 +10,7 @@
  #  description@
  #
  #  @notes
- #  - This method mutates <arrayName>. Use lo::pull to pull elements from an
+ #  - This method mutates <arrayName>. Use _::pull to pull elements from an
  #  array by value.
  #  notes@
  #
@@ -25,7 +25,7 @@
  #    return $turn
  #  }
  #
- #  lo::remove arr predicate
+ #  _::remove arr predicate
  #  # arr is now ( 'hiya' 'sup' )
  #  examples@
  #
@@ -43,7 +43,7 @@
  #  @file functions/array/remove.sh
  ## */
 
-function lo::remove {
+function _::remove() {
   declare -i turn=0
   local arrayName="$1" funcName="$2" _newArray=( )
 

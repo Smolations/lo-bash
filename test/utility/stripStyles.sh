@@ -1,9 +1,9 @@
 #!/bin/bash
 
-h1 'lo::stripStyles'
+h1 '_::strip_styles'
 
 bold=$(tput bold)
-underline=$(tput sgr 0 1)
+underline=$(tput smul)
 reset=$(tput sgr0)
 
 black=$(tput setaf 0)
@@ -35,15 +35,25 @@ style="${underline}hey underlined${reset}"
 style_color="${underline}${green}hey bold, underlined and green${reset}"
 combo="${underline}${bold}${magenta}hey bold, underlined and magenta${reset}"
 
+# echo
+# echo "testing printing escape sequences"
+# # foo=$'\033'
+# printf -v quoted_params '%q ' "${combo}"
+# printf '%s\n' "${quoted_params% }"
+# echo "/testing"
+
+# ensuring expected escape sequences are present
 echo "${combo}" | grep -q '\[' && pass || fail
-echo "${combo}" | grep -q '\x1b' && pass || fail
 echo "${combo}" | grep -q '\e' && pass || fail
+
+# $'\033' is \E; should not appear in raw form,
+# but shows up when sequence is interpreted as \E
 echo "${combo}" | grep -q '\033' && fail || pass
 echo "${combo}" | grep -q $'\033' && pass || fail
 
 
-lo::stripStyles "${color}" | grep -q "$'\x1b'" && fail || pass
-lo::stripStyles "${color}" | grep -q "\[" && fail || pass
-lo::stripStyles "${style}" | grep -q "\[" && fail || pass
-lo::stripStyles "${style_color}" | grep -q '\[' && fail || pass
-lo::stripStyles "${combo}" | grep -q '\[' && fail || pass
+_::strip_styles "${color}" | grep -q "$'\x1b'" && fail || pass
+_::strip_styles "${color}" | grep -q "\[" && fail || pass
+_::strip_styles "${style}" | grep -q "\[" && fail || pass
+_::strip_styles "${style_color}" | grep -q '\[' && fail || pass
+_::strip_styles "${combo}" | grep -q '\[' && fail || pass

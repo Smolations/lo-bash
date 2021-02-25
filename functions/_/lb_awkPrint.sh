@@ -26,7 +26,7 @@
  #  @file functions/_/lb_awkPrint.sh
  ## */
 
-function lb_awkPrint {
+function lb_awkPrint() {
   awk "BEGIN { print(${@}) }"
 }
 

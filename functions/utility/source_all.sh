@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::sourceAll [-r] [-x] [<path>]
+ #  @usage _::source_all [-r] [-x] [<path>]
  #
  #  @output false (unless sourced files use STDOUT)
  #
@@ -21,9 +21,9 @@
  #  notes@
  #
  #  @examples
- #  lo::sourceAll "/some/path/to/folder"
- #  lo::sourceAll -x "/some/path/to/folder/of/functions"
- #  lo::sourceAll    # sources pwd
+ #  _::source_all "/some/path/to/folder"
+ #  _::source_all -x "/some/path/to/folder/of/functions"
+ #  _::source_all    # sources pwd
  #  examples@
  #
  #  @dependencies
@@ -40,7 +40,7 @@
  #  @file functions/utility/sourceAll.sh
  ## */
 
-function lo::sourceAll {
+function _::source_all() {
   (( $# == 0 )) && return 1
   args=($@)
 
@@ -65,7 +65,7 @@ function lo::sourceAll {
       if [[ -d "${file}" ]]; then
         if [[ $recurse ]]; then
           export source_count
-          lo::sourceAll ${flags[@]} "${file}"
+          _::source_all ${flags[@]} "${file}"
         fi
 
       elif [[ -s "${file}" ]]; then

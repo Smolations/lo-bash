@@ -1,18 +1,18 @@
 #!/bin/bash
 
-h1 'lo::remove'
+h1 '_::remove'
 
 
 arr=( 'hiya' 'hello' 'foobar' 'deuces' 'sup' )
 
-function predicate {
+function predicate() {
   declare -i turn=1
   local element="$1"
   (( ${#element} > 4 )) && turn=0
   return $turn
 }
 
-lo::remove arr predicate
+_::remove arr predicate
 
 [[ "${#arr[@]}" == "2" ]] && pass || fail "'${#arr[@]}' == '2'"
 [[ "${arr[0]}" == "hiya" ]] && pass || fail "'${arr[0]}' == 'hiya'"

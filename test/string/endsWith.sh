@@ -1,7 +1,7 @@
 #!/bin/bash
 
-h1 'lo::endsWith'
+h1 '_::ends_with'
 
-`lo::endsWith "abcdef" "def"` && pass || fail
-`lo::endsWith "abcdefg" "def"` && fail || pass
+`_::ends_with "abcdef" "def"` && pass || fail
+`_::ends_with "abcdefg" "def"` && fail || pass
 # && pass || fail

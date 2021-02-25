@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage lo::waitOn [--max-time=<seconds>] <processID> [<wait_message>]
+ #  @usage _::wait_on [--max-time=<seconds>] <processID> [<wait_message>]
  #
  #  @output true
  #
@@ -30,7 +30,7 @@
  #  @examples
  #  ./some_script.sh &
  #  thePID=$!
- #  if ! lo::waitOn --max-time=60 $thePID "Running my special script..."; then
+ #  if ! _::wait_on --max-time=60 $thePID "Running my special script..."; then
  #    ...
  #  fi
  #  examples@
@@ -40,7 +40,7 @@
  #  `ps`
  #  `sleep`
  #  `wait`
- #  lo::inArgs
+ #  _::in_args
  #  dependencies@
  #
  #  @returns
@@ -54,16 +54,16 @@
  #  @file functions/utility/waitOn.sh
  ## */
 
-function lo::waitOn {
+function _::wait_on() {
   [[ $# == 0 ]] && return 1
 
   local maxWait thePID argsMsg indicators i modNum exitMsg waitMsg argsClipped
 
-  if lo::inArgs 'max-time' "$@"; then
+  if _::in_args 'max-time' "$@"; then
     if egrep --quiet '^[0-9]+$' <<< "${_arg_val}"; then
       maxWait="${_arg_val}"
     else
-      # __err "lo::waitOn:  --max-time option should have an integer value! Using default..."
+      # __err "_::wait_on:  --max-time option should have an integer value! Using default..."
       return 2
     fi
     shift
@@ -76,7 +76,7 @@ function lo::waitOn {
   waitMsg="Waiting for process ${COL_CYAN}${thePID}${X} to complete..."
 
   if ! egrep --quiet '^[0-9]+$' <<< "$thePID"; then
-    # __err "lo::waitOn expects a valid process ID as the first parameter!"
+    # __err "_::wait_on expects a valid process ID as the first parameter!"
     return 4
   fi
 
@@ -94,7 +94,7 @@ function lo::waitOn {
   # max wait time in seconds
   [[ -z "$maxWait" ]] && maxWait=120
 
-  # _lo::log "lo::waitOn: PID(${thePID})  ${waitMsg} | ${maxWait} seconds"
+  # __::log "_::wait_on: PID(${thePID})  ${waitMsg} | ${maxWait} seconds"
 
   i=1
   _exit_status=
@@ -118,7 +118,7 @@ function lo::waitOn {
     (( i++ ))
   done
 
-  # _lo::log   "lo::waitOn:  _exit_status = ${_exit_status}"
+  # __::log   "_::wait_on:  _exit_status = ${_exit_status}"
   export _exit_status
 
   if [[ -z "${_exit_status}" ]]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-h1 'lo::max'
+h1 '_::max'
 
 nums=(5 9 2 24 12 1 19.1 24.01 -4)
 
-[[ "`lo::max ${nums[@]}`" == '24.01' ]] && pass || fail
+[[ "`_::max ${nums[@]}`" == '24.01' ]] && pass || fail

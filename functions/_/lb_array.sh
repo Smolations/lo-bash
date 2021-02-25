@@ -33,7 +33,7 @@
  #  @file functions/_/lb_array.sh
  ## */
 
-function lb_array {
+function lb_array() {
   declare -i turn=1
   declare -i num
   local arr_name=$1 arr_string=""
@@ -43,7 +43,7 @@ function lb_array {
 
     num=$#
     for (( i = 0; i < num; i++)); do
-      arr_string+=" [${i}]=\"`lb_slash "${1}"`\"" && shift 
+      arr_string+=" [${i}]=\"`lb_slash "${1}"`\"" && shift
     done
 
     eval "${arr_name}=(${arr_string} )" && turn=$?
