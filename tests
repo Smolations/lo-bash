@@ -4,7 +4,7 @@ source SOURCEME
 
 
 function h1() {
-  echo -n "`printf '\n ---==:  %-15s  ' $1`"
+  echo -n "`printf '\n ---==:  %-25s  ' $1`"
 }
 function pass() {
   echo -n "${FG_GREEN}.${X}"
@@ -24,15 +24,15 @@ export -f pass fail skip h1
 
 
 # maybe need an _.executeAll?
-time _::source_all -r test/
-# _::source_all -r test/_
-# _::source_all -r test/array
-# _::source_all -r test/date
-# _::source_all -r test/cuz
-# _::source_all -r test/lang
-# _::source_all -r test/math
-# _::source_all -r test/number
-# _::source_all -r test/string
-# _::source_all -r test/util
+time _::util::source_all -r test/
+# _::util::source_all -r test/_
+# _::util::source_all -r test/array
+# _::util::source_all -r test/date
+# _::util::source_all -r test/cuz
+# _::util::source_all -r test/lang
+# _::util::source_all -r test/math
+# _::util::source_all -r test/number
+# _::util::source_all -r test/string
+# _::util::source_all -r test/util
 # echo "-> $?"
 echo

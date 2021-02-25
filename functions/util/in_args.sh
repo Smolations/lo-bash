@@ -1,6 +1,6 @@
 ## /* @function
- #  @usage _::in_args <arg_name> "$@"
- #  @usage _::in_args <arg_name> "${_args_clipped[@]}"
+ #  @usage _::util::in_args <arg_name> "$@"
+ #  @usage _::util::in_args <arg_name> "${_args_clipped[@]}"
  #
  #  @output false
  #
@@ -12,7 +12,7 @@
  #
  #  @description
  #  Tired of looping through arguments to find the one you want? Say hello to
- #  `_::in_args`. Simply pass name of the option (without any leading hyphens) along
+ #  `_::util::in_args`. Simply pass name of the option (without any leading hyphens) along
  #  with the "all args" Bash variable ("$@"; make sure it's always wrapped in double
  #  quotes!) and the function will return 0 or 2 if the option is found or isn't
  #  found, respectively. The function will export the $_arg_val variable populated
@@ -23,10 +23,10 @@
  #  export the $_arg_index variable which holds the 0-based index of where the
  #  argument was found in the argument list.
  #
- #  If further parsing is required, `_::in_args` conveniently exports the original
+ #  If further parsing is required, `_::util::in_args` conveniently exports the original
  #  arguments, sans the passed-in search arg, into the $_args_clipped variable. In order
  #  to preserve argument values which contain spaces, this variable is an array. You
- #  can then pass the exported variable into your next `_::in_args` call, ALWAYS
+ #  can then pass the exported variable into your next `_::util::in_args` call, ALWAYS
  #  double-quoting the exported variable and specifying all elements: "${_args_clipped[@]}"
  #
  #  Have easy access to remaining arguments in a script makes creating pass-through
@@ -48,39 +48,39 @@
  #
  #  @examples
  #  # each fo the following 4 examples are meant to be seen as independent. that is,
- #  # they are not emulating consecutive calls to `_::in_args` ina  single script.
+ #  # they are not emulating consecutive calls to `_::util::in_args` ina  single script.
  #  # assume arguments passed to a script were:
  #  #   -a --quiet --dry-run=first
- #  _::in_args quiet "$@"          # returns 0 (success) matches: --quiet
+ #  _::util::in_args quiet "$@"          # returns 0 (success) matches: --quiet
  #                                #          $_arg_val    =
  #                                #        $_arg_index    = 1
  #                                #   ${_args_clipped[@]} = -a --dry-run=first
  #
- #  _::in_args a "$@"              # returns 0 (success) matches: -a
+ #  _::util::in_args a "$@"              # returns 0 (success) matches: -a
  #                                #          $_arg_val    =
  #                                #        $_arg_index    = 0
  #                                #   ${_args_clipped[@]} = --quiet --dry-run=first
  #
- #  _::in_args -a "$@"             # returns 2 (failure) should not include hyphen
+ #  _::util::in_args -a "$@"             # returns 2 (failure) should not include hyphen
  #                                #          $_arg_val    =
  #                                #        $_arg_index    =
  #                                #   ${_args_clipped[@]} = -a --quiet --dry-run=first
  #
- #  _::in_args dry-run "$@"        # returns 0 (success) matches: --dry-run
+ #  _::util::in_args dry-run "$@"        # returns 0 (success) matches: --dry-run
  #                                #          $_arg_val    = first
  #                                #        $_arg_index    = 2
  #                                #   ${_args_clipped[@]} = -a --quiet
  #
  #  # use only in conditionals thusly (note consecutive use of the function):
- #  if _::in_args a "$@"; then
- #      if _::in_args quiet "${_args_clipped[@]}"; then
+ #  if _::util::in_args a "$@"; then
+ #      if _::util::in_args quiet "${_args_clipped[@]}"; then
  #          git add -A . &> /dev/null
  #      else
  #          git add -A .
  #      fi
  #  fi
  #
- #  if _::in_args dry-run "${_args_clipped[@]}"; then
+ #  if _::util::in_args dry-run "${_args_clipped[@]}"; then
  #      runType="$_arg_val"
  #      # ...do something with $runType...
  #  fi
@@ -100,7 +100,7 @@
  #  @file functions/utility/inArgs.sh
  ## */
 
-function _::in_args() {
+function _::util::in_args() {
   declare -i turn=2
   local option patt sedPatt newArg
 

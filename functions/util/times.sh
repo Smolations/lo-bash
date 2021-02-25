@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::times <num> <funcName> [<arrayName>]
+ #  @usage _::util::times <num> <funcName> [<arrayName>]
  #
  #  @output false
  #
@@ -10,9 +10,9 @@
  #
  #  @examples
  #  $ function foo { echo -n "$1"; }
- #  $ _::times 4 foo
+ #  $ _::util::times 4 foo
  #  > 0123
- #  $ _::times 4 foo newArray
+ #  $ _::util::times 4 foo newArray
  #  $ echo ${newArray[1]}
  #  > 1
  #  examples@
@@ -32,7 +32,7 @@
  #  @file functions/utility/times.sh
  ## */
 
-function _::times() {
+function _::util::times() {
   declare -i turn=0
   declare -i num=${1-0}
   local funcName="$2" arrayName="$3" arr=()

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-h1 '_::strip_styles'
+h1 '_::util::strip_styles'
 
 bold=$(tput bold)
 underline=$(tput smul)
@@ -52,8 +52,8 @@ echo "${combo}" | grep -q '\033' && fail || pass
 echo "${combo}" | grep -q $'\033' && pass || fail
 
 
-_::strip_styles "${color}" | grep -q "$'\x1b'" && fail || pass
-_::strip_styles "${color}" | grep -q "\[" && fail || pass
-_::strip_styles "${style}" | grep -q "\[" && fail || pass
-_::strip_styles "${style_color}" | grep -q '\[' && fail || pass
-_::strip_styles "${combo}" | grep -q '\[' && fail || pass
+_::util::strip_styles "${color}" | grep -q "$'\x1b'" && fail || pass
+_::util::strip_styles "${color}" | grep -q "\[" && fail || pass
+_::util::strip_styles "${style}" | grep -q "\[" && fail || pass
+_::util::strip_styles "${style_color}" | grep -q '\[' && fail || pass
+_::util::strip_styles "${combo}" | grep -q '\[' && fail || pass

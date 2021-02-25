@@ -31,7 +31,7 @@ echo "### Function List"
 echo
 
 # link to each function in code
-_::recurse functions funcDoc
+_::util::recurse functions funcDoc
 
 # show test output
 echo

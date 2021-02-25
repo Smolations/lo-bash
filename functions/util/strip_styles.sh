@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::strip_styles [<data_string> [<data_string2> [...]]]
+ #  @usage _::util::strip_styles [<data_string> [<data_string2> [...]]]
  #
  #  @output true
  #
@@ -16,7 +16,7 @@
  #  @file functions/utility/stripStyles.sh
  ## */
 
-function _::strip_styles() {
+function _::util::strip_styles() {
   local esc_seq=$'\x1b'
   sed 's/'${esc_seq}'\[[0-9;]*m//g' <<< "$@" \
   | sed 's/'${esc_seq}'(B//g'

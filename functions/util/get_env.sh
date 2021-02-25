@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::get_env [-e]
+ #  @usage _::util::get_env [-e]
  #
  #  @output true (with -e option)
  #
@@ -31,7 +31,7 @@
  #  notes@
  #
  #  @examples
- #  _::get_env
+ #  _::util::get_env
  #
  #  if [[ $_ENV_OSX ]]; then
  #    say "I am on teh b3st 0S!"
@@ -51,7 +51,7 @@
  #  @file functions/utility/getEnv.sh
  ## */
 
-function _::get_env() {
+function _::util::get_env() {
   declare -i turn=0
 
   # get uname info

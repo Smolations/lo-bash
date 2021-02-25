@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::recurse [<path=".">] <funcName>
+ #  @usage _::util::recurse [<path=".">] <funcName>
  #
  #  @output false
  #
@@ -19,7 +19,7 @@
  #    local fullPath="${folderPath}/${fileName}"
  #    # do something with $fullPath
  #  }
- #  _::recurse "/some/path/to/folder" doSomething
+ #  _::util::recurse "/some/path/to/folder" doSomething
  #  examples@
  #
  #  @dependencies
@@ -37,7 +37,7 @@
  #  @file functions/utility/recurse.sh
  ## */
 
-function _::recurse() {
+function _::util::recurse() {
   declare -i turn=0
   local fName="$2" sPath="${1%/}"
 
@@ -57,7 +57,7 @@ function _::recurse() {
     for file in "${sPath}/"*; do
 
       if [[ -d "$file" ]]; then
-        _::recurse "$file" $fName
+        _::util::recurse "$file" $fName
 
       elif [[ -s "$file" ]]; then
         # pass directory path and file name

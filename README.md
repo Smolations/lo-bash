@@ -29,133 +29,133 @@ Binary Dependencies
 ### Function List
 
 - **_**
-  - [lb_array](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_array.sh)
   - [lb_arrayCopy](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_arrayCopy.sh)
+  - [lb_array](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_array.sh)
   - [lb_awkCompare](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_awkCompare.sh)
   - [lb_awkPrint](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_awkPrint.sh)
   - [lb_math](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_math.sh)
   - [lb_slash](https://github.com/Smolations/lo-bash/blob/master/functions/_/lb_slash.sh)
 - **array**
-  - [_::difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
-  - [_::for_each](https://github.com/Smolations/lo-bash/blob/master/functions/array/forEach.sh)
-  - [_::index_of](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
-  - [_::join](https://github.com/Smolations/lo-bash/blob/master/functions/array/join.sh)
-  - [_::last](https://github.com/Smolations/lo-bash/blob/master/functions/array/last.sh)
-  - [_::map](https://github.com/Smolations/lo-bash/blob/master/functions/array/map.sh)
-  - [_::pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
-  - [_::remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
-  - [_::reverse](https://github.com/Smolations/lo-bash/blob/master/functions/array/reverse.sh)
+  - [_difference](https://github.com/Smolations/lo-bash/blob/master/functions/array/difference.sh)
+  - [_forEach](https://github.com/Smolations/lo-bash/blob/master/functions/array/forEach.sh)
+  - [_indexOf](https://github.com/Smolations/lo-bash/blob/master/functions/array/indexOf.sh)
+  - [_join](https://github.com/Smolations/lo-bash/blob/master/functions/array/join.sh)
+  - [_last](https://github.com/Smolations/lo-bash/blob/master/functions/array/last.sh)
+  - [_map](https://github.com/Smolations/lo-bash/blob/master/functions/array/map.sh)
+  - [_pull](https://github.com/Smolations/lo-bash/blob/master/functions/array/pull.sh)
+  - [_remove](https://github.com/Smolations/lo-bash/blob/master/functions/array/remove.sh)
+  - [_reverse](https://github.com/Smolations/lo-bash/blob/master/functions/array/reverse.sh)
 - **cuz**
-  - [_::type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
+  - [_type_exists](https://github.com/Smolations/lo-bash/blob/master/functions/cuz/type_exists.sh)
 - **date**
-  - [_::now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
+  - [_now](https://github.com/Smolations/lo-bash/blob/master/functions/date/now.sh)
 - **lang**
-  - [_::eq](https://github.com/Smolations/lo-bash/blob/master/functions/lang/eq.sh)
-  - [_::gt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gt.sh)
-  - [_::gte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gte.sh)
-  - [_::is_array](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isArray.sh)
-  - [_::is_equal](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isEqual.sh)
-  - [_::is_function](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isFunction.sh)
-  - [_::is_number](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isNumber.sh)
-  - [_::is_stdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isStdin.sh)
-  - [_::lt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lt.sh)
-  - [_::lte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lte.sh)
+  - [_eq](https://github.com/Smolations/lo-bash/blob/master/functions/lang/eq.sh)
+  - [_gte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gte.sh)
+  - [_gt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/gt.sh)
+  - [_isArray](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isArray.sh)
+  - [_isEqual](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isEqual.sh)
+  - [_isFunction](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isFunction.sh)
+  - [_isNumber](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isNumber.sh)
+  - [_isStdin](https://github.com/Smolations/lo-bash/blob/master/functions/lang/isStdin.sh)
+  - [_lte](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lte.sh)
+  - [_lt](https://github.com/Smolations/lo-bash/blob/master/functions/lang/lt.sh)
 - **math**
-  - [_::add](https://github.com/Smolations/lo-bash/blob/master/functions/math/add.sh)
-  - [_::max](https://github.com/Smolations/lo-bash/blob/master/functions/math/max.sh)
-  - [_::min](https://github.com/Smolations/lo-bash/blob/master/functions/math/min.sh)
-  - [_::sum](https://github.com/Smolations/lo-bash/blob/master/functions/math/sum.sh)
+  - [_add](https://github.com/Smolations/lo-bash/blob/master/functions/math/add.sh)
+  - [_max](https://github.com/Smolations/lo-bash/blob/master/functions/math/max.sh)
+  - [_min](https://github.com/Smolations/lo-bash/blob/master/functions/math/min.sh)
+  - [_sum](https://github.com/Smolations/lo-bash/blob/master/functions/math/sum.sh)
 - **number**
-  - [_::in_range](https://github.com/Smolations/lo-bash/blob/master/functions/number/inRange.sh)
-  - [_::random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
+  - [_inRange](https://github.com/Smolations/lo-bash/blob/master/functions/number/inRange.sh)
+  - [_random](https://github.com/Smolations/lo-bash/blob/master/functions/number/random.sh)
 - **string**
-  - [_::ends_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/endsWith.sh)
-  - [_::length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
-  - [_::pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
-  - [_::pad_end](https://github.com/Smolations/lo-bash/blob/master/functions/string/padEnd.sh)
-  - [_::pad_start](https://github.com/Smolations/lo-bash/blob/master/functions/string/padStart.sh)
-  - [_::parse_int](https://github.com/Smolations/lo-bash/blob/master/functions/string/parseInt.sh)
-  - [_::repeat](https://github.com/Smolations/lo-bash/blob/master/functions/string/repeat.sh)
-  - [_::replace](https://github.com/Smolations/lo-bash/blob/master/functions/string/replace.sh)
-  - [_::split](https://github.com/Smolations/lo-bash/blob/master/functions/string/split.sh)
-  - [_::starts_with](https://github.com/Smolations/lo-bash/blob/master/functions/string/startsWith.sh)
-  - [_::to_lower](https://github.com/Smolations/lo-bash/blob/master/functions/string/toLower.sh)
-  - [_::to_upper](https://github.com/Smolations/lo-bash/blob/master/functions/string/toUpper.sh)
-  - [_::trim](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim.sh)
-  - [_::trim_left](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimLeft.sh)
-  - [_::trim_right](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimRight.sh)
-  - [_::truncate](https://github.com/Smolations/lo-bash/blob/master/functions/string/truncate.sh)
-- **utility**
-  - [_::get_env](https://github.com/Smolations/lo-bash/blob/master/functions/utility/getEnv.sh)
-  - [_::in_args](https://github.com/Smolations/lo-bash/blob/master/functions/utility/inArgs.sh)
-  - [_::log](https://github.com/Smolations/lo-bash/blob/master/functions/utility/log.sh)
-  - [_::menu](https://github.com/Smolations/lo-bash/blob/master/functions/utility/menu.sh)
-  - [_::recurse](https://github.com/Smolations/lo-bash/blob/master/functions/utility/recurse.sh)
-  - [_::short_ans](https://github.com/Smolations/lo-bash/blob/master/functions/utility/shortAns.sh)
-  - [_::source_all](https://github.com/Smolations/lo-bash/blob/master/functions/utility/sourceAll.sh)
-  - [_::strip_styles](https://github.com/Smolations/lo-bash/blob/master/functions/utility/stripStyles.sh)
-  - [_::times](https://github.com/Smolations/lo-bash/blob/master/functions/utility/times.sh)
-  - [_::tree](https://github.com/Smolations/lo-bash/blob/master/functions/utility/tree.sh)
-  - [_::wait_on](https://github.com/Smolations/lo-bash/blob/master/functions/utility/waitOn.sh)
-  - [_::yes_no](https://github.com/Smolations/lo-bash/blob/master/functions/utility/yesNo.sh)
+  - [_endsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/endsWith.sh)
+  - [_length](https://github.com/Smolations/lo-bash/blob/master/functions/string/length.sh)
+  - [_padEnd](https://github.com/Smolations/lo-bash/blob/master/functions/string/padEnd.sh)
+  - [_pad](https://github.com/Smolations/lo-bash/blob/master/functions/string/pad.sh)
+  - [_padStart](https://github.com/Smolations/lo-bash/blob/master/functions/string/padStart.sh)
+  - [_parseInt](https://github.com/Smolations/lo-bash/blob/master/functions/string/parseInt.sh)
+  - [_repeat](https://github.com/Smolations/lo-bash/blob/master/functions/string/repeat.sh)
+  - [_replace](https://github.com/Smolations/lo-bash/blob/master/functions/string/replace.sh)
+  - [_split](https://github.com/Smolations/lo-bash/blob/master/functions/string/split.sh)
+  - [_startsWith](https://github.com/Smolations/lo-bash/blob/master/functions/string/startsWith.sh)
+  - [_toLower](https://github.com/Smolations/lo-bash/blob/master/functions/string/toLower.sh)
+  - [_toUpper](https://github.com/Smolations/lo-bash/blob/master/functions/string/toUpper.sh)
+  - [_trimLeft](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimLeft.sh)
+  - [_trimRight](https://github.com/Smolations/lo-bash/blob/master/functions/string/trimRight.sh)
+  - [_trim](https://github.com/Smolations/lo-bash/blob/master/functions/string/trim.sh)
+  - [_truncate](https://github.com/Smolations/lo-bash/blob/master/functions/string/truncate.sh)
+- **util**
+  - [_get_env](https://github.com/Smolations/lo-bash/blob/master/functions/util/get_env.sh)
+  - [_in_args](https://github.com/Smolations/lo-bash/blob/master/functions/util/in_args.sh)
+  - [_log](https://github.com/Smolations/lo-bash/blob/master/functions/util/log.sh)
+  - [_menu](https://github.com/Smolations/lo-bash/blob/master/functions/util/menu.sh)
+  - [_recurse](https://github.com/Smolations/lo-bash/blob/master/functions/util/recurse.sh)
+  - [_short_ans](https://github.com/Smolations/lo-bash/blob/master/functions/util/short_ans.sh)
+  - [_source_all](https://github.com/Smolations/lo-bash/blob/master/functions/util/source_all.sh)
+  - [_strip_styles](https://github.com/Smolations/lo-bash/blob/master/functions/util/strip_styles.sh)
+  - [_times](https://github.com/Smolations/lo-bash/blob/master/functions/util/times.sh)
+  - [_tree](https://github.com/Smolations/lo-bash/blob/master/functions/util/tree.sh)
+  - [_wait_on](https://github.com/Smolations/lo-bash/blob/master/functions/util/wait_on.sh)
+  - [_yes_no](https://github.com/Smolations/lo-bash/blob/master/functions/util/yes_no.sh)
 
 
 ### tl;dr Test Output
 
 ```
 
- ---==:  lb_array         ....
- ---==:  lb_arrayCopy     ......
- ---==:  lb_awkCompare
- ---==:  lb_math          ......
- ---==:  lb_slash         S
- ---==:  _::difference      ..................
- ---==:  _::for_each         ...
- ---==:  _::index_of         ....
- ---==:  _::join            ..
- ---==:  _::last            ..
- ---==:  _::map             .
- ---==:  _::pull            ...
- ---==:  _::remove          ...
- ---==:  _::reverse         .....
- ---==:  _::now             .
- ---==:  _::eq              .....
- ---==:  _::gt              ........
- ---==:  _::gte             ...........
- ---==:  _::is_array         ....
- ---==:  _::is_equal         .....
- ---==:  _::is_function      ...
- ---==:  _::is_number        ..........
- ---==:  _::is_stdin         ..
- ---==:  _::lt              ........
- ---==:  _::lte             ...........
- ---==:  _::add             ..
- ---==:  _::max             .
- ---==:  _::min             .
- ---==:  _::sum             ...
- ---==:  _::in_range         ....
- ---==:  _::random          .....
- ---==:  _::ends_with        ..
- ---==:  _::length          ..
- ---==:  _::pad             ....
- ---==:  _::pad_end          ...
- ---==:  _::pad_start        ...
- ---==:  _::parse_int        ......
- ---==:  _::repeat          ...
- ---==:  _::replace         .....
- ---==:  _::split           ............
- ---==:  _::starts_with      ..
- ---==:  _::to_lower         ...
- ---==:  _::to_upper         ...
- ---==:  _::trim            ....
- ---==:  _::trim_left        ...
- ---==:  _::trim_right       ...
- ---==:  _::truncate        ...
- ---==:  _::in_args          ..................
- ---==:  _::strip_styles     ..........
- ---==:  _::times           ...
-real	0m2.044s
-user	0m0.994s
-sys	0m1.058s
+ ---==:  lb_arrayCopy               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  lb_array                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  lb_awkCompare              
+ ---==:  lb_math                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  lb_slash                   S
+ ---==:  _::difference              [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::for_each                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::index_of                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::join                    [32m.(B[m[32m.(B[m
+ ---==:  _::last                    [32m.(B[m[32m.(B[m
+ ---==:  _::map                     [32m.(B[m
+ ---==:  _::pull                    [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::remove                  [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::reverse                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::now                     [32m.(B[m
+ ---==:  _::eq                      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::gte                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::gt                      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::is_array                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::is_equal                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::is_function             [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::is_number               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::is_stdin                [32m.(B[m[32m.(B[m
+ ---==:  _::lte                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::lt                      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::add                     [32m.(B[m[32m.(B[m
+ ---==:  _::max                     [32m.(B[m
+ ---==:  _::min                     [32m.(B[m
+ ---==:  _::sum                     [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::in_range                [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::random                  [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::ends_with               [32m.(B[m[32m.(B[m
+ ---==:  _::length                  [32m.(B[m[32m.(B[m
+ ---==:  _::pad_end                 [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::pad                     [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::pad_start               [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::parse_int               [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::repeat                  [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::replace                 [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::split                   [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::starts_with             [32m.(B[m[32m.(B[m
+ ---==:  _::to_lower                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::to_upper                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::trim_left               [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::trim_right              [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::trim                    [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::truncate                [32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::util::in_args           [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::util::strip_styles      [32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m[32m.(B[m
+ ---==:  _::util::times             [32m.(B[m[32m.(B[m[32m.(B[m
+real	0m0.451s
+user	0m0.372s
+sys	0m0.098s
 
 ```

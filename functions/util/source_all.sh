@@ -1,5 +1,5 @@
 ## /* @function
- #  @usage _::source_all [-r] [-x] [<path>]
+ #  @usage _::util::source_all [-r] [-x] [<path>]
  #
  #  @output false (unless sourced files use STDOUT)
  #
@@ -21,9 +21,9 @@
  #  notes@
  #
  #  @examples
- #  _::source_all "/some/path/to/folder"
- #  _::source_all -x "/some/path/to/folder/of/functions"
- #  _::source_all    # sources pwd
+ #  _::util::source_all "/some/path/to/folder"
+ #  _::util::source_all -x "/some/path/to/folder/of/functions"
+ #  _::util::source_all    # sources pwd
  #  examples@
  #
  #  @dependencies
@@ -40,7 +40,7 @@
  #  @file functions/utility/sourceAll.sh
  ## */
 
-function _::source_all() {
+function _::util::source_all() {
   (( $# == 0 )) && return 1
   args=($@)
 
@@ -65,7 +65,7 @@ function _::source_all() {
       if [[ -d "${file}" ]]; then
         if [[ $recurse ]]; then
           export source_count
-          _::source_all ${flags[@]} "${file}"
+          _::util::source_all ${flags[@]} "${file}"
         fi
 
       elif [[ -s "${file}" ]]; then

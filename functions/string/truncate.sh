@@ -36,7 +36,7 @@
  #
  #  @dependencies
  #  `expr`
- #  _::in_args
+ #  _::util::in_args
  #  _::is_number
  #  dependencies@
  #
@@ -56,9 +56,9 @@ function _::truncate() {
   declare -i str_len
   local omission="..." sep= str=
 
-  _::in_args length "$@" && len="$_arg_val"
-  _::in_args omission "${_args_clipped[@]}" && omission="$_arg_val"
-  _::in_args separator "${_args_clipped[@]}" && sep="$_arg_val"
+  _::util::in_args length "$@" && len="$_arg_val"
+  _::util::in_args omission "${_args_clipped[@]}" && omission="$_arg_val"
+  _::util::in_args separator "${_args_clipped[@]}" && sep="$_arg_val"
 
   str="${_args_clipped[@]}"
 
