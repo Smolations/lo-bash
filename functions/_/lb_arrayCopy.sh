@@ -25,7 +25,7 @@
  #
  #  @returns
  #  0 - successful execution
- #  1 - copy operation failed
+ #  1 - copy operation failed due to non-existent array
  #  returns@
  #
  #  @file functions/_/lb_arrayCopy.sh
