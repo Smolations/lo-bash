@@ -47,7 +47,6 @@
  #  0 - successful execution
  #  1 - invalid <arrayName> given
  #  2 - invalid <funcName> given
- #  4 - invalid <newArray> given
  #  returns@
  #
  #  @file functions/array/map.sh
@@ -71,7 +70,7 @@ function _map {
       _newArray+=( `eval "$funcName \"${_tmpArray[i]}\" $i"` )
     done
 
-    lb_arrayCopy $newArrayName _newArray || turn=4
+    lb_arrayCopy $newArrayName _newArray
   fi
 
   unset _tmpArray
