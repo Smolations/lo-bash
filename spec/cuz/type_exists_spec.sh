@@ -1,4 +1,4 @@
-xDescribe 'array: _type_exists()'
+xDescribe 'cuz: _type_exists()'
   Include SOURCEME
 
 #   setup() {
