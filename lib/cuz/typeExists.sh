@@ -58,7 +58,7 @@
  #  _typeExists "Mission Control"         => 0   $_type_is = "app"
  #  _typeExists Mission Control           => 4   $_type_is = ""
  #  _typeExists -p Mission Control        => 0   $_type_is = "app"
- #  _typeExists _typeExists              => 0   $_type_is = "function"
+ #  _typeExists _typeExists               => 0   $_type_is = "function"
  #  examples@
  #
  #  @returns
@@ -86,12 +86,15 @@ function _typeExists {
 
     # odds are we will have to find the type, so we'll try it first
     _type_is=$( type -t "$targ" 2>/dev/null ) || retVal=4
+
     if [[ -z "$_type_is" ]]; then
       # an app will always fail a `type` check (since its a directory) so
       # $retVal needs to be reset
       retVal=0
+
       # look for system AND user app
-      results=$(find /Applications ~/Applications -maxdepth 4 -name "${targ}.app")
+      results=$(find /Applications /System/Applications /System/Library/CoreServices ~/Applications \( -maxdepth 4 -name "${targ}.app" \) -print)
+
       [[ -n "$results" ]] && _type_is=app || retVal=4
     fi
 

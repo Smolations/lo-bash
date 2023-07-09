@@ -2,7 +2,7 @@ Describe 'utility: _getEnv()'
   Include lib/utility/getEnv.sh
 
   osx() { [ -d '/Applications' ]; }
-  linux() { [ -d '/usr' ]; }
+  linux() { [ ! -d '/Applications' ]; } # this is not great
 
   Describe 'conditional linux'
     Skip if 'not linux' osx
