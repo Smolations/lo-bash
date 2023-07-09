@@ -88,7 +88,7 @@
  #
  #  @dependencies
  #  `sed`
- #  `egrep -E`
+ #  `grep -E`
  #  dependencies@
  #
  #  @returns
@@ -121,11 +121,12 @@ function _inArgs {
   if (( ${#option} == 1 )); then
     # POSIX-style single option/flag/switch (e.g. -a or -abc where abc contains 3 options)
     patt="^-[a-z]*${option}[a-z]*$"
+
     until (( $# == 0 )); do
       # __debug "[-] __in_args matching:  ${1}"
 
       if (( turn != 0 )); then
-        if egrep -E --quiet --ignore-case $patt <<< "$1"; then
+        if grep -E --quiet --ignore-case $patt <<< "$1"; then
           # __debug "[-] MATCH!"
 
           _arg_index=${#_args_clipped[@]}
@@ -153,15 +154,16 @@ function _inArgs {
   else
     # GNU-style long option (e.g. --option or --option=foo)
     patt="^--${option}(=|$)"
+
     until (( $# == 0 )); do
       # __debug "[--] __in_args matching:  ${1}"
 
       if (( turn != 0 )); then
-        if egrep -E --quiet $patt <<< "$1"; then
+        if grep -E --quiet $patt <<< "$1"; then
           # __debug "-- match!"
           _arg_index=${#_args_clipped[@]}
 
-          if egrep -E --quiet '=' <<< "$1"; then
+          if grep -E --quiet '=' <<< "$1"; then
             _arg_val="${1#*=}"
             _arg_val="${_arg_val/#\"}"
             _arg_val="${_arg_val/%\"}"

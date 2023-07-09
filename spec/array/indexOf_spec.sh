@@ -1,6 +1,7 @@
 Describe 'array: _indexOf()'
   Include lib/_/lb_arrayCopy.sh
   Include lib/lang/isArray.sh
+  Include lib/utility/inArgs.sh
 
   Include lib/array/indexOf.sh
 
@@ -32,6 +33,31 @@ Describe 'array: _indexOf()'
     When call _indexOf arr true
     The status should be success
     The output should equal 3
+  End
+
+  It 'finds the index using a regex pattern'
+    When call _indexOf --regex arr '^foo'
+    The status should be success
+    The output should equal 2
+  End
+
+  It 'finds the index using a regex pattern and fromIndex'
+    When call _indexOf --regex arr 'hell' 2
+    The status should be success
+    The output should equal 4
+  End
+
+  It 'makes absolute sure a pattern is not used unless specified'
+    unreal_array=(':unreal:semi-translucent black')
+    When call _indexOf unreal_array 'unreal'
+    The status should be success
+    The output should equal ''
+  End
+
+  It 'finds nothing'
+    When call _indexOf arr 'farts'
+    The status should be success
+    The output should be blank
   End
 
   Context 'errors'
