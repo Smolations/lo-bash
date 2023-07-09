@@ -28,6 +28,7 @@
  #  @file functions/utility/tree.sh
  ## */
 
+# this function is incomplete. it lacks proper indentation. it may not even be needed..
 function _tree {
   local path="${@%/}" indent filePre folderPre
 
@@ -51,6 +52,7 @@ function _tree {
       _tree "${path}/${entry}"
 
     else
+      export inRecurse=false
       echo "${indent}${filePre}${entry}"
     fi
   done

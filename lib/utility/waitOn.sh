@@ -36,7 +36,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep -E`
+ #  `grep -E`
  #  `ps`
  #  `sleep`
  #  `wait`
@@ -60,7 +60,7 @@ function _waitOn {
   local maxWait thePID argsMsg indicators i modNum exitMsg waitMsg argsClipped
 
   if _inArgs 'max-time' "$@"; then
-    if egrep -E --quiet '^[0-9]+$' <<< "${_arg_val}"; then
+    if grep -E --quiet '^[0-9]+$' <<< "${_arg_val}"; then
       maxWait="${_arg_val}"
     else
       # __err "_waitOn:  --max-time option should have an integer value! Using default..."
@@ -75,7 +75,7 @@ function _waitOn {
   thePID="${argsClipped%% *}"
   waitMsg="Waiting for process ${COL_CYAN}${thePID}${X} to complete..."
 
-  if ! egrep -E --quiet '^[0-9]+$' <<< "$thePID"; then
+  if ! grep -E --quiet '^[0-9]+$' <<< "$thePID"; then
     # __err "_waitOn expects a valid process ID as the first parameter!"
     return 4
   fi
@@ -83,7 +83,7 @@ function _waitOn {
   argsMsg="${argsClipped#* }"
 
   # check for user-supplied wait message...
-  egrep -E -q '[a-zA-Z]' <<< "$argsMsg" && waitMsg="$argsMsg"
+  grep -Eq '[a-zA-Z]' <<< "$argsMsg" && waitMsg="$argsMsg"
 
   # cycle through these to display an "animated" gif
   # indicators=( '/' '-' '\' '|')
