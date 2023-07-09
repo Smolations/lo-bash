@@ -1,56 +1,84 @@
-bold=$(tput bold)
-underline=$(tput sgr 0 1)
-reset=$(tput sgr0)
+%const BOLD:      $(tput bold)
+%const UNDERLINE: $(tput sgr 0 1)
+%const RESET:     $(tput sgr0)
 
-black=$(tput setaf 0)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-white=$(tput setaf 7)
+%const BLACK:   $(tput setaf 0)
+%const RED:     $(tput setaf 1)
+%const GREEN:   $(tput setaf 2)
+%const YELLOW:  $(tput setaf 3)
+%const BLUE:    $(tput setaf 4)
+%const MAGENTA: $(tput setaf 5)
+%const CYAN:    $(tput setaf 6)
+%const WHITE:   $(tput setaf 7)
 
-black_bg=$(tput setab 0)
-red_bg=$(tput setab 1)
-green_bg=$(tput setab 2)
-yellow_bg=$(tput setab 3)
-blue_bg=$(tput setab 4)
-magenta_bg=$(tput setab 5)
-cyan_bg=$(tput setab 6)
-white_bg=$(tput setab 7)
+%const BLACK_BG:   $(tput setab 0)
+%const RED_BG:     $(tput setab 1)
+%const GREEN_BG:   $(tput setab 2)
+%const YELLOW_BG:  $(tput setab 3)
+%const BLUE_BG:    $(tput setab 4)
+%const MAGENTA_BG: $(tput setab 5)
+%const CYAN_BG:    $(tput setab 6)
+%const WHITE_BG:   $(tput setab 7)
 
-color="${yellow}hey yellow${reset}"
-style="${underline}hey underlined${reset}"
-style_color="${underline}${green}hey bold, underlined and green${reset}"
-combo="${underline}${bold}${magenta}hey bold, underlined and magenta${reset}"
-
-xDescribe 'utility: _stripStyles()'
+Describe 'utility: _stripStyles()'
   Include lib/utility/stripStyles.sh
 
-# echo "${combo}" | grep -q '\[' && pass || fail
-# echo "${combo}" | grep -q '\x1b' && pass || fail
-# echo "${combo}" | grep -q '\e' && pass || fail
-# echo "${combo}" | grep -q '\033' && fail || pass
-# echo "${combo}" | grep -q $'\033' && pass || fail
-#
-# _stripStyles "${color}" | grep -q "$'\x1b'" && fail || pass
-# _stripStyles "${color}" | grep -q "\[" && fail || pass
-# _stripStyles "${style}" | grep -q "\[" && fail || pass
-# _stripStyles "${style_color}" | grep -q '\[' && fail || pass
-# _stripStyles "${combo}" | grep -q '\[' && fail || pass
-  # It ''
-  #   When call _stripStyles
-  #   The status should be success
-  #   The value true should equal false
-  # End
+  Describe 'testing all sequences'
+    Parameters
+      '#1' '['
+      '#2' $'\x1b'
+      '#3' $'\e'
+      '#4' $'\033'
+    End
 
-  Context 'errors'
-    It 'with invalid array name'
-      When call _stripStyles
-      The status should be failure
-      The status should equal 1
-      # The output should equal ''
+    It "checks bold with sequence $1"
+      Data "${BOLD}hey"
+
+      When call grep -Fq $2 -
+      The status should be success
+    End
+
+    It "checks underline with sequence $1"
+      Data "${UNDERLINE}hey"
+
+      When call grep -Fq $2 -
+      The status should be success
+    End
+
+    It "checks reset with sequence $1"
+      Data "${RESET}hey"
+
+      When call grep -Fq $2 -
+      The status should be success
+    End
+
+    It "checks foreground color with sequence $1"
+      Data "${BLUE}hey"
+
+      When call grep -Fq $2 -
+      The status should be success
+    End
+
+    It "checks bg color with sequence $1"
+      Data "${GREEN_BG}hey"
+
+      When call grep -Fq $2 -
+      The status should be success
     End
   End
+
+  It 'strips all sequences'
+    When call _stripStyles "${UNDERLINE}${BOLD}${MAGENTA}hey ${RED_BG}there${RESET}"
+    The status should be success
+    The output should equal 'hey there'
+  End
+
+  # Context 'errors'
+  #   It 'with invalid array name'
+  #     When call _stripStyles
+  #     The status should be failure
+  #     The status should equal 1
+  #     # The output should equal ''
+  #   End
+  # End
 End
