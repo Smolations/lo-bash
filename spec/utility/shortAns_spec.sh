@@ -1,18 +1,20 @@
-xDescribe 'utility: _shortAns()'
+Describe 'utility: _shortAns()'
   Include lib/utility/shortAns.sh
 
-  It ''
-    When call _shortAns
+  It 'shows the prompt and saves the answer'
+    Data 'orange'
+
+    When call _shortAns 'what is your favorite color?'
     The status should be success
-    # The output should equal '0123'
+    The output should include 'what is your favorite color?'
+    The variable _ans should equal 'orange'
   End
 
-  # Context 'errors'
-  #   It 'with invalid array name'
-  #     When call _times
-  #     The status should be failure
-  #     The status should equal 1
-  #     # The output should equal ''
-  #   End
-  # End
+  Context 'errors'
+    It 'no arguments were passed'
+      When call _shortAns
+      The status should be failure
+      The status should equal 1
+    End
+  End
 End
