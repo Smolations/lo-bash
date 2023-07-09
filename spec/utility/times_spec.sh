@@ -16,10 +16,9 @@ Describe 'utility: _times()'
     The output should equal '0123'
   End
 
-  It ''
+  It 'populates array with output of iteratee'
     When call _times 4 iteratee resultArray
     The status should be success
-    # The output should equal '0123'
     The variable resultArray[0] should equal 0
     The variable resultArray[1] should equal 1
     The variable resultArray[2] should equal 2
