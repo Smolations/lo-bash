@@ -121,12 +121,12 @@ function _menu {
   [[ $# == 0 ]] && return 1
 
   # purposely not using __in_args due to complexity of args
-  if egrep -E -q "^--prompt=" <<< "$1"; then
+  if grep -E -q "^--prompt=" <<< "$1"; then
     prompt=$( awk '{ print substr($0,10); }' <<< "$1" )
     shift
   fi
 
-  egrep -E -q ' -k :' <<< "$@" && k=true
+  grep -E -q ' -k :' <<< "$@" && k=true
   if [[ $k ]]; then
     until [[ "$1" == "-k" ]]; do
       items[${#items[@]}]="$1"
@@ -211,11 +211,14 @@ function _menu {
   if [[ -n "$opt" ]]; then
     _menu_sel_index="$opt"
 
-    if [[ ${#extraItems[@]} > 0 ]] && _inArray "$opt" "${ndxes[@]}"; then
-        _menu_sel_value="${vals[${_in_array_index}]}"
+    if [[ ${#extraItems[@]} > 0 ]]; then
+      optndx=$(_indexOf --regex extraItems "$opt")
 
-    # elif egrep -E -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then
-    elif egrep -E -q '^[0-9]+$' <<< "$opt" && [[ $opt > 0 ]]; then
+      if [[ -n "$optndx" ]]; then
+        _menu_sel_value="${vals[${optndx}]##*:}"
+      fi
+
+    elif grep -Eq '^[0-9]+$' <<< "$opt" && (( $opt > 0 )); then
       (( optndx = opt - 1 ))
 
       if [[ -n "${items[${optndx}]}" ]]; then
@@ -237,7 +240,6 @@ function _menu {
     echo "  You chose to abort."
   fi
 
-  #wrap up...
   export _menu_sel_index
   export _menu_sel_value
 
