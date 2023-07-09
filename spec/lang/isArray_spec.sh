@@ -1,5 +1,5 @@
 Describe 'lang: _isArray()'
-  Include SOURCEME
+  Include lib/lang/isArray.sh
 
   setup() {
     alpha='1 2 3'

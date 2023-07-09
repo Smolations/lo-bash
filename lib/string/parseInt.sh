@@ -16,7 +16,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep`
+ #  `egrep -E`
  #  _trim
  #  _trimLeft
  #  dependencies@
@@ -33,8 +33,8 @@ function _parseInt {
   local str=`_trim "$@"`
 
   # come back to different bases?
-  str=`egrep --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`
-  [[ -n "$str" ]] && egrep -q '^0+$' <<< "$str" || str=`_trimLeft "$str" '0'`
+  str=`egrep -E --only-matching '^[0-9]+' <<< "$str" 2>/dev/null`
+  [[ -n "$str" ]] && egrep -E -q '^0+$' <<< "$str" || str=`_trimLeft "$str" '0'`
 
   echo -n $str
   return $turn

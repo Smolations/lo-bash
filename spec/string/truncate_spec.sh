@@ -1,5 +1,7 @@
 Describe 'string: _truncate()'
-  Include SOURCEME
+  Include lib/utility/inArgs.sh
+
+  Include lib/string/truncate.sh
 
   It 'truncates with default options'
     When call _truncate 'hi-diddly-ho there, neighborino'

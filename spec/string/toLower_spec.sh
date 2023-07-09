@@ -1,5 +1,5 @@
 Describe 'string: _toLower()'
-  Include SOURCEME
+  Include lib/string/toLower.sh
 
   It 'with symbols'
     When call _toLower '--Foo-Bar--'

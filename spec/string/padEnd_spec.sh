@@ -1,5 +1,7 @@
 Describe 'string: _padEnd()'
-  Include SOURCEME
+  Include lib/string/repeat.sh
+
+  Include lib/string/padEnd.sh
 
   It 'default padding with spaces'
     When call _padEnd 'abc' 6

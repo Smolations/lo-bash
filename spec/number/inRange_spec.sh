@@ -1,5 +1,5 @@
 Describe 'number: _inRange()'
-  Include SOURCEME
+  Include lib/number/inRange.sh
 
   It 'using default start number'
     When call _inRange 5 10

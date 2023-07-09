@@ -24,6 +24,8 @@
  #  @file functions/date/now.sh
  ## */
 
+# this actually can trigger errors for some reason:
+# lib/date/now.sh: line 28: 1688839473 * 1000 + 026479437: value too great for base (error token is "026479437")
 function _now {
   echo $(($(date +'%s * 1000 + %-N / 1000000')))
   return 0

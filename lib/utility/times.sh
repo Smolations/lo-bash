@@ -41,7 +41,6 @@ function _times {
     turn=1
 
   else
-
     for (( i = 0; i < num; i++ )); do
       if [[ -n "$arrayName" ]]; then
         arr+=( `eval "$funcName $i"` )
@@ -50,7 +49,9 @@ function _times {
       fi
     done
 
-    [[ -n "$arrayName" ]] && lb_arrayCopy $arrayName arr || turn=2
+    if [[ -n "$arrayName" ]]; then
+      lb_arrayCopy $arrayName arr || turn=2
+    fi
   fi
 
   return $turn

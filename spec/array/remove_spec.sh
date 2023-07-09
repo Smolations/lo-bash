@@ -6,7 +6,10 @@ function predicate {
 }
 
 Describe 'array: _remove()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/remove.sh
 
   setup() {
     arr=( 'hiya' 'hello' 'foobar' 'deuces' 'sup' )

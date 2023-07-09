@@ -1,5 +1,10 @@
 Describe 'lang: _eq()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/isEqual.sh
+  Include lib/lang/isNumber.sh
+
+  Include lib/lang/eq.sh
 
   It 'compares two numbers'
     When call _eq 4 4

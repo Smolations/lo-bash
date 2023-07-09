@@ -1,5 +1,5 @@
 Describe 'string: _startsWith()'
-  Include SOURCEME
+  Include lib/string/startsWith.sh
 
   It 'matches starting string'
     When call _startsWith 'abcdef' 'abc'

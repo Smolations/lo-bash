@@ -1,8 +1,8 @@
-xDescribe '_: lb_slash()'
-  Include SOURCEME
+Describe '_: lb_slash()'
+  Include lib/_/lb_slash.sh
 
-  It 'removes slashes'
-    When call lb_slash
-    The value true should equal false
+  It 'escapes double quotes with a backslash'
+    When call lb_slash '""'
+    The output should equal '\"\"'
   End
 End

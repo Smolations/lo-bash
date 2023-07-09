@@ -1,5 +1,7 @@
 Describe 'math: _add()'
-  Include SOURCEME
+  Include lib/_/lb_math.sh
+
+  Include lib/math/add.sh
 
   It 'adds two positive integers'
     When call _add 1 3

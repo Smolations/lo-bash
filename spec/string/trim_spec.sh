@@ -1,5 +1,5 @@
 Describe 'string: _trim()'
-  Include SOURCEME
+  Include lib/string/trim.sh
 
   It 'trims spaces by default'
     When call _trim '  3456  '

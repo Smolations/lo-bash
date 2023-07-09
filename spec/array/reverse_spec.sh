@@ -1,5 +1,8 @@
 Describe 'array: _reverse()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/reverse.sh
 
   setup() {
     arr=( 2 'hello' 'foobar' true )
@@ -11,10 +14,10 @@ Describe 'array: _reverse()'
     When call _reverse arr
     The status should be success
     The value "${#arr[@]}" should equal 4
-    The value "${arr[0]}" should equal true
-    The value "${arr[1]}" should equal 'foobar'
-    The value "${arr[2]}" should equal 'hello'
-    The value "${arr[3]}" should equal 2
+    The variable arr[0] should equal true
+    The variable arr[1] should equal 'foobar'
+    The variable arr[2] should equal 'hello'
+    The variable arr[3] should equal 2
   End
 
   Context 'errors'

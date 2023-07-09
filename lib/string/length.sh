@@ -19,7 +19,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep`
+ #  `egrep -E`
  #  `tr`
  #  `wc`
  #  functions/__strip_color_codes.sh
@@ -45,7 +45,7 @@ function _length {
     len=$( echo "$@" | wc -c | tr -d '\n\t ' )
 
     # \d not working in ubuntu bash4 for some reason...
-    if egrep -q '^[0-9]+$' <<< "$len"; then
+    if egrep -E -q '^[0-9]+$' <<< "$len"; then
       (( len-- ))
     else
       turn=1

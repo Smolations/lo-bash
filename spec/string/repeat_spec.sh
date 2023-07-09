@@ -1,5 +1,5 @@
 Describe 'string: _repeat()'
-  Include SOURCEME
+  Include lib/string/repeat.sh
 
   It 'repeats a single character'
     When call _repeat '*' 3

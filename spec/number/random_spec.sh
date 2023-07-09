@@ -7,7 +7,14 @@ gte_min() {
 }
 
 Describe 'number: _random()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/gt.sh
+  Include lib/lang/gte.sh
+  Include lib/lang/isNumber.sh
+  Include lib/lang/lte.sh
+
+  Include lib/number/random.sh
 
   It 'default args'
     When call _random

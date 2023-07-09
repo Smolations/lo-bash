@@ -1,5 +1,5 @@
 Describe 'string: _trimLeft()'
-  Include SOURCEME
+  Include lib/string/trimLeft.sh
 
   It 'trims spaces'
     When call _trimLeft '  3456  '

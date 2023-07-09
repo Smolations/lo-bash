@@ -1,8 +1,10 @@
-xDescribe '_: lb_awkCompare()'
-  Include SOURCEME
+Describe '_: lb_awkCompare()'
+  Include lib/_/lb_awkPrint.sh
 
-  It 'compares'
-    When call lb_awkCompare
-    The value "${#result_array[@]}" should equal '5'
+  Include lib/_/lb_awkCompare.sh
+
+  It 'compares numbers'
+    When call lb_awkCompare '4 > 3'
+    The status should be success
   End
 End

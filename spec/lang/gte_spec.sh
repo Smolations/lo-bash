@@ -1,5 +1,9 @@
 Describe 'lang: _gte()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/isNumber.sh
+
+  Include lib/lang/gte.sh
 
   It 'two positive numbers'
     When call _gte 3 1

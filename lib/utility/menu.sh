@@ -85,7 +85,7 @@
  #
  #  @dependencies
  #  `awk`
- #  `egrep`
+ #  `egrep -E`
  #  `printf`
  #  `read`
  #  _inArray
@@ -121,12 +121,12 @@ function _menu {
   [[ $# == 0 ]] && return 1
 
   # purposely not using __in_args due to complexity of args
-  if egrep -q "^--prompt=" <<< "$1"; then
+  if egrep -E -q "^--prompt=" <<< "$1"; then
     prompt=$( awk '{ print substr($0,10); }' <<< "$1" )
     shift
   fi
 
-  egrep -q ' -k :' <<< "$@" && k=true
+  egrep -E -q ' -k :' <<< "$@" && k=true
   if [[ $k ]]; then
     until [[ "$1" == "-k" ]]; do
       items[${#items[@]}]="$1"
@@ -214,8 +214,8 @@ function _menu {
     if [[ ${#extraItems[@]} > 0 ]] && _inArray "$opt" "${ndxes[@]}"; then
         _menu_sel_value="${vals[${_in_array_index}]}"
 
-    # elif egrep -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then
-    elif egrep -q '^[0-9]+$' <<< "$opt" && [[ $opt > 0 ]]; then
+    # elif egrep -E -q '^[[:digit:]]+$' <<< "$opt" && [[ $opt -gt 0 ]]; then
+    elif egrep -E -q '^[0-9]+$' <<< "$opt" && [[ $opt > 0 ]]; then
       (( optndx = opt - 1 ))
 
       if [[ -n "${items[${optndx}]}" ]]; then

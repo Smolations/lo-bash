@@ -88,7 +88,7 @@
  #
  #  @dependencies
  #  `sed`
- #  `egrep`
+ #  `egrep -E`
  #  dependencies@
  #
  #  @returns
@@ -125,7 +125,7 @@ function _inArgs {
       # __debug "[-] __in_args matching:  ${1}"
 
       if (( turn != 0 )); then
-        if egrep --quiet --ignore-case $patt <<< "$1"; then
+        if egrep -E --quiet --ignore-case $patt <<< "$1"; then
           # __debug "[-] MATCH!"
 
           _arg_index=${#_args_clipped[@]}
@@ -157,11 +157,11 @@ function _inArgs {
       # __debug "[--] __in_args matching:  ${1}"
 
       if (( turn != 0 )); then
-        if egrep --quiet $patt <<< "$1"; then
+        if egrep -E --quiet $patt <<< "$1"; then
           # __debug "-- match!"
           _arg_index=${#_args_clipped[@]}
 
-          if egrep --quiet '=' <<< "$1"; then
+          if egrep -E --quiet '=' <<< "$1"; then
             _arg_val="${1#*=}"
             _arg_val="${_arg_val/#\"}"
             _arg_val="${_arg_val/%\"}"

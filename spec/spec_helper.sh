@@ -10,11 +10,6 @@ spec_helper_precheck() {
   # Available functions: info, warn, error, abort, setenv, unsetenv
   # Available variables: VERSION, SHELL_TYPE, SHELL_VERSION
   : minimum_version "0.28.1"
-  # if [ "$SHELL_TYPE" != "bash" ]; then
-  #   abort "Only bash is supported."
-  # fi
-
-  # great place to check for all shell dependencies! (e.g. awk, grep, etc)
 }
 
 # This callback function will be invoked after a specfile has been loaded.

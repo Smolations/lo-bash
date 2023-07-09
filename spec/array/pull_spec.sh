@@ -1,5 +1,11 @@
 Describe 'array: _pull()'
-  Include SOURCEME
+  Include lib/_/lb_array.sh
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/_/lb_slash.sh
+  Include lib/array/difference.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/pull.sh
 
   setup() {
     arr=( 2 'hello' 'foobar' true )
@@ -11,8 +17,8 @@ Describe 'array: _pull()'
     When call _pull arr 'hello' true
     The status should be success
     The value "${#arr[@]}" should equal 2
-    The value "${arr[0]}" should equal 2
-    The value "${arr[1]}" should equal 'foobar'
+    The variable arr[0] should equal 2
+    The variable arr[1] should equal 'foobar'
   End
 
   Context 'errors'

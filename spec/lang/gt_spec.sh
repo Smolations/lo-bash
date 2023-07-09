@@ -1,5 +1,9 @@
 Describe 'lang: _gt()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/isNumber.sh
+
+  Include lib/lang/gt.sh
 
   It 'compares two positive numbers'
     When call _gt 3 1

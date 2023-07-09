@@ -1,5 +1,5 @@
 Describe 'math: _sum()'
-  Include SOURCEME
+  Include lib/math/sum.sh
 
   It 'sums array of positive integers'
     sum=(1 1 2 1 1)

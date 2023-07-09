@@ -4,7 +4,7 @@
  #  @output true
  #
  #  @description
- #  Something to do with escaping quotes...
+ #  Escaping double quotes in strings with backslashes.
  #  description@
  #
  #  @options
@@ -15,7 +15,8 @@
  #  notes@
  #
  #  @examples
- #  lb_slash
+ #  lb_slash '""'
+ #  > \"\"
  #  examples@
  #
  #  @dependencies

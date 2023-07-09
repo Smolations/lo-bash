@@ -1,9 +1,11 @@
-is_array() {
-  declare -ap $1 2> /dev/null | grep -q '^declare \-a'
-}
-
 Describe '_: lb_array()'
-  Include SOURCEME
+  Include lib/_/lb_slash.sh
+
+  Include lib/_/lb_array.sh
+
+  isArray() {
+    declare -ap $1 2> /dev/null | grep -q '^declare -a'
+  }
 
   It 'creates an array of numbers'
     When call lb_array myArray 1 2 3
@@ -26,7 +28,7 @@ Describe '_: lb_array()'
   It 'creates an array of strings that include quotes'
     When call lb_array emptyArray
     The status should be success
-    Assert is_array emptyArray
+    Assert isArray emptyArray
   End
 
   Context 'errors'

@@ -1,10 +1,8 @@
 Describe 'lang: _isStdin()'
-  Include SOURCEME
+  Include lib/lang/isStdin.sh
 
   It 'with stdin'
-    inning() {
-      echo "hi" | _isStdin
-    }
+    inning() { echo "hi" | _isStdin; }
 
     When call inning
     The status should be success

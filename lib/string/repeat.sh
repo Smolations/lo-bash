@@ -25,7 +25,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep`
+ #  `egrep -E`
  #  `seq`
  #  dependencies@
  #

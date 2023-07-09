@@ -1,9 +1,9 @@
 Describe 'date: _now()'
-  Include SOURCEME
+  Include lib/date/now.sh
 
   It 'returns the epoch timestamp'
     pattern() {
-      echo "$pattern" | egrep -q '^[0-9]+$'
+      echo "$pattern" | grep -E -q '^[0-9]+$'
     }
 
     When call _now

@@ -1,5 +1,5 @@
 Describe 'math: _max()'
-  Include SOURCEME
+  Include lib/math/max.sh
 
   It 'finds the max'
     nums=(5 9 2 24 12 1 19.1 24.01 -4)

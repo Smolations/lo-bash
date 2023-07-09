@@ -1,5 +1,7 @@
 Describe 'string: _pad()'
-  Include SOURCEME
+  Include lib/string/repeat.sh
+
+  Include lib/string/pad.sh
 
   It 'default padding with spaces'
     When call _pad 'abc' 8

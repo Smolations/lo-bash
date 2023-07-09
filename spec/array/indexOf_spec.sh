@@ -1,5 +1,8 @@
 Describe 'array: _indexOf()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/indexOf.sh
 
   setup() {
     arr=( 2 'hello' 'foobar' true 'hello' )

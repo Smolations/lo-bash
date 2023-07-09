@@ -1,5 +1,8 @@
 Describe 'array: _last()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/last.sh
 
   setup() {
     arr1=( 2 'hello' 'foobar' true 'hello' )

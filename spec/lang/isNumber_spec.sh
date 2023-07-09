@@ -1,5 +1,8 @@
 Describe 'lang: _isNumber()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+
+  Include lib/lang/isNumber.sh
 
   It 'decimal with no leading integer'
     When call _isNumber .4

@@ -1,5 +1,5 @@
 Describe '_: lb_awkPrint()'
-  Include SOURCEME
+  Include lib/_/lb_awkPrint.sh
 
   It 'does math'
     When call lb_awkPrint "2 + 4"

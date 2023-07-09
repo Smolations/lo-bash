@@ -10,7 +10,12 @@ function iteratee {
 }
 
 Describe 'array: _map()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+  Include lib/lang/isFunction.sh
+  Include lib/string/toUpper.sh  # for iteratee
+
+  Include lib/array/map.sh
 
   setup() {
     arr=( 'thiz' 'be' 'insane')
@@ -21,9 +26,9 @@ Describe 'array: _map()'
   It 'maps'
     When call _map arr iteratee newArray
     The status should be success
-    The value "${newArray[0]}" should equal "thiz"
-    The value "${newArray[1]}" should equal "be"
-    The value "${newArray[2]}" should equal "INSANE"
+    The variable newArray[0] should equal 'thiz'
+    The variable newArray[1] should equal 'be'
+    The variable newArray[2] should equal 'INSANE'
   End
 
   Context 'errors'

@@ -27,7 +27,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep`
+ #  `egrep -E`
  #  `eval`
  #  `type`
  #  dependencies@
@@ -52,8 +52,8 @@ function _sourceAll {
 
   # parse arguments
   flags=()
-  egrep -q '(^| )-x ' <<< "$@" && export_funcs=true && flags+=('-x')
-  egrep -q '(^| )-r ' <<< "$@" && recurse=true && flags+=('-r')
+  egrep -E -q '(^| )-x ' <<< "$@" && export_funcs=true && flags+=('-x')
+  egrep -E -q '(^| )-r ' <<< "$@" && recurse=true && flags+=('-r')
 
   [[ -z "$source_path" ]] && arg=$( pwd ) || arg="${source_path%/}"
   # echo "$export_funcs | $arg | ${flags[@]}"
@@ -75,14 +75,14 @@ function _sourceAll {
 
         if [[ $export_funcs ]]; then
           # echo 'grepping fn_regex'
-          fn_name=$( egrep "${fn_regex}" "${file}" \
+          fn_name=$( egrep -E "${fn_regex}" "${file}" \
             | sed 's/^[^A-Za-z0-9_-]*//;s/^function //;s/\([A-Za-z0-9_-]*\).*/\1/g' )
           # echo "fn_name = [${fn_name}]"
 
           if [[ -n "${fn_name}" ]]; then
             # supported characters for bash function names
             f_type=$( type -t "${fn_name}" 2>/dev/null )
-            if egrep -qi '^[-_.a-z0-9]+$' <<< "${fn_name}" && [[ "${f_type}" == 'function' ]]; then
+            if egrep -E -qi '^[-_.a-z0-9]+$' <<< "${fn_name}" && [[ "${f_type}" == 'function' ]]; then
               eval export -f $fn_name
               (( export_count++ ))
             fi

@@ -1,43 +1,40 @@
-xDescribe 'string: _parseInt()'
-  Include SOURCEME
+Describe 'string: _parseInt()'
+  Include lib/string/trim.sh
+  Include lib/string/trimLeft.sh
 
-# [[ "`_parseInt 3`" == '3' ]] && pass || fail
-# [[ "`_parseInt '03'`" == '3' ]] && pass || fail
-# [[ "`_parseInt 3.321`" == '3' ]] && pass || fail
-# [[ "`_parseInt '3abc'`" == '3' ]] && pass || fail
-# [[ "`_parseInt '   3.4'`" == '3' ]] && pass || fail
-# [[ "`_parseInt abc`" == '' ]] && pass || fail
-  It ''
+  Include lib/string/parseInt.sh
+
+  It 'parses int from int'
     When call _parseInt 3
     The status should be success
     The output should equal '3'
   End
 
-  It ''
+  It 'parses int from leading zero'
     When call _parseInt '03'
     The status should be success
     The output should equal '3'
   End
 
-  It ''
+  It 'parses int from decimal'
     When call _parseInt 3.321
     The status should be success
     The output should equal '3'
   End
 
-  It ''
+  It 'parses int from number and letters'
     When call _parseInt '3abc'
     The status should be success
     The output should equal '3'
   End
 
-  It ''
+  It 'parses int from decimal with leading spaces'
     When call _parseInt '   3.4'
     The status should be success
     The output should equal '3'
   End
 
-  It ''
+  It 'parses nothing'
     When call _parseInt abc
     The status should be success
     The output should equal ''

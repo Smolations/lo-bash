@@ -1,5 +1,5 @@
 Describe 'math: _min()'
-  Include SOURCEME
+  Include lib/math/min.sh
 
   It 'finds the min'
     nums=(5 9 2 24 12 1 19.1 24.01 -4)

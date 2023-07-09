@@ -1,5 +1,5 @@
 Describe 'string: _trimRight()'
-  Include SOURCEME
+  Include lib/string/trimRight.sh
 
   It ''
     When call _trimRight '  3456  '

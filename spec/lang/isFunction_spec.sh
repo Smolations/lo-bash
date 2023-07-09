@@ -1,10 +1,8 @@
 Describe 'lang: _isFunction()'
-  Include SOURCEME
+  Include lib/lang/isFunction.sh
 
   setup() {
-    function whatwhat {
-      :
-    }
+    function whatwhat { :; }
 
     whowho=(1 2 3)
     whywhy='1 2 3'

@@ -1,5 +1,5 @@
 Describe 'string: _toUpper()'
-  Include SOURCEME
+  Include lib/string/toUpper.sh
 
   It 'with symbols'
     When call _toUpper '--Foo-Bar--'

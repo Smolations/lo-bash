@@ -1,5 +1,5 @@
 Describe '_: lb_math()'
-  Include SOURCEME
+  Include lib/_/lb_math.sh
 
   It 'adds'
     When call lb_math '1 + 2'

@@ -1,46 +1,50 @@
 Describe 'string: _split()'
-  Include SOURCEME
+  Include lib/_/lb_array.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/_/lb_slash.sh
+
+  Include lib/string/split.sh
 
   It 'splits on excluded letter'
     When call _split "what's up guys?" 'z' splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 1
-    The value "${splitArray[0]}" should equal "what's up guys?"
+    The variable splitArray[0] should equal "what's up guys?"
   End
 
   It 'splits on space'
     When call _split "what's up guys?" ' ' splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 3
-    The value "${splitArray[1]}" should equal 'up'
+    The variable splitArray[1] should equal 'up'
   End
 
   It 'splits on single quote'
     When call _split "what's up guys?" "'" splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 2
-    The value "${splitArray[1]}" should equal 's up guys?'
+    The variable splitArray[1] should equal 's up guys?'
   End
 
   It 'splits on trailing character'
     When call _split "what's up guys?" '?' splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 2
-    The value "${splitArray[1]}" should equal ''
+    The variable splitArray[1] should equal ''
   End
 
   It 'splits on leading character'
     When call _split "what's up guys?" 'w' splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 2
-    The value "${splitArray[1]}" should equal "hat's up guys?"
+    The variable splitArray[1] should equal "hat's up guys?"
   End
 
   It 'splits on space-padded word'
     When call _split "what's up guys?" ' up ' splitArray
     The status should be success
     The value ${#splitArray[*]} should equal 2
-    The value "${splitArray[1]}" should equal 'guys?'
+    The variable splitArray[1] should equal 'guys?'
   End
 
   # Context 'errors'

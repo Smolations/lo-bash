@@ -6,7 +6,11 @@ function iteratee {
 }
 
 Describe 'array: _forEach()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+  Include lib/lang/isFunction.sh
+
+  Include lib/array/forEach.sh
 
   setup() {
     arr=( 'alpha' 'bravo' 'charlie' )
@@ -18,9 +22,9 @@ Describe 'array: _forEach()'
   It 'iterates'
     When call _forEach arr iteratee
     The status should be success
-    The value "${arrList[0]}" should equal "0. alpha"
-    The value "${arrList[1]}" should equal "1. bravo"
-    The value "${arrList[2]}" should equal "2. charlie"
+    The variable arrList[0] should equal "0. alpha"
+    The variable arrList[1] should equal "1. bravo"
+    The variable arrList[2] should equal "2. charlie"
   End
 
   Context 'errors'

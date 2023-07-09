@@ -1,5 +1,7 @@
 Describe 'string: _padStart()'
-  Include SOURCEME
+  Include lib/string/repeat.sh
+
+  Include lib/string/padStart.sh
 
   It 'default padding with spaces'
     When call _padStart 'abc' 6

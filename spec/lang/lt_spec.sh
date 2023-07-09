@@ -1,5 +1,10 @@
 Describe 'lang: _lt()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/gte.sh
+  Include lib/lang/isNumber.sh
+
+  Include lib/lang/lt.sh
 
   It 'two positive integers'
     When call _lt 1 3

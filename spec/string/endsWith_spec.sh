@@ -1,5 +1,5 @@
 Describe 'string: _endsWith()'
-  Include SOURCEME
+  Include lib/string/endsWith.sh
 
   It 'matches the end of a string'
     When call _endsWith "abcdef" "def"

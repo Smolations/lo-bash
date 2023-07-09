@@ -1,5 +1,9 @@
 Describe 'lang: _isEqual()'
-  Include SOURCEME
+  Include lib/_/lb_awkCompare.sh
+  Include lib/_/lb_awkPrint.sh
+  Include lib/lang/isNumber.sh
+
+  Include lib/lang/isEqual.sh
 
   It 'with two numbers'
     When call _isEqual 4 4

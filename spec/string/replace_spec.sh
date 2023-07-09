@@ -1,5 +1,5 @@
 Describe 'string: _replace()'
-  Include SOURCEME
+  Include lib/string/replace.sh
 
   It 'replaces single letter with letter'
     When call _replace 'i am an ultimate-unicorn. bow before ME!' 'u' 'a'

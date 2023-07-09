@@ -1,5 +1,5 @@
 Describe 'string: _length()'
-  Include SOURCEME
+  Include lib/string/length.sh
 
   It 'calculates the correct length'
     When call _length 'hey there'

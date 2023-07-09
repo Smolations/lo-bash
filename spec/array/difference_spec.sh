@@ -1,5 +1,8 @@
 Describe 'array: _difference()'
-  Include SOURCEME
+  Include lib/_/lb_arrayCopy.sh
+  Include lib/lang/isArray.sh
+
+  Include lib/array/difference.sh
 
   Context 'number arrays'
     setup() {
@@ -13,15 +16,15 @@ Describe 'array: _difference()'
       When call _difference arr_diff arr1 arr2
       The status should be success
       The value "${#arr_diff[*]}" should equal 2
-      The value "${arr_diff[0]}" should equal 1
-      The value "${arr_diff[1]}" should equal 3
+      The variable arr_diff[0] should equal 1
+      The variable arr_diff[1] should equal 3
     End
 
     It 'calculates the difference between arr2 and arr1'
       When call _difference arr_diff arr2 arr1
       The status should be success
       The value "${#arr_diff[*]}" should equal 1
-      The value "${arr_diff[0]}" should equal 4
+      The variable arr_diff[0] should equal 4
     End
   End
 
@@ -37,15 +40,15 @@ Describe 'array: _difference()'
       When call _difference result arr1 arr2
       The status should be success
       The value "${#result[*]}" should equal 2
-      The value "${result[0]}" should equal 'dogs'
-      The value "${result[1]}" should equal 'are the'
+      The variable result[0] should equal 'dogs'
+      The variable result[1] should equal 'are the'
     End
 
     It 'calculates the difference between arr2 and arr1'
       When call _difference result arr2 arr1
       The status should be success
       The value "${#result[*]}" should equal 1
-      The value "${result[0]}" should equal 'the absolute'
+      The variable result[0] should equal 'the absolute'
     End
   End
 
@@ -61,16 +64,16 @@ Describe 'array: _difference()'
       When call _difference result arr1 arr2
       The status should be success
       The value "${#result[*]}" should equal 2
-      The value "${result[0]}" should equal "so that's"
-      The value "${result[1]}" should equal 'given "name?"'
+      The variable result[0] should equal "so that's"
+      The variable result[1] should equal 'given "name?"'
     End
 
     It 'calculates the difference between arr2 and arr1'
       When call _difference result arr2 arr1
       The status should be success
       The value "${#result[*]}" should equal 2
-      The value "${result[0]}" should equal "yes that's"
-      The value "${result[1]}" should equal 'given "name"'
+      The variable result[0] should equal "yes that's"
+      The variable result[1] should equal 'given "name"'
     End
   End
 
