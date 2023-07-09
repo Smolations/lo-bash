@@ -39,7 +39,7 @@
  #  examples@
  #
  #  @dependencies
- #  `egrep -E`
+ #  `grep -E`
  #  `read`
  #  _inArgs
  #  dependencies@
@@ -80,7 +80,7 @@ function _yesNo {
   default="${default//Y/y}"
 
   # validate input
-  if [[ -z "$default" ]] || ! egrep -E -q '^[yn]$' <<< "$default"; then
+  if [[ -z "$default" ]] || ! grep -E -q '^[yn]$' <<< "$default"; then
     return 4
   fi
 
@@ -93,7 +93,7 @@ function _yesNo {
   # _log "_yesNo(): User answered '$ans'"
   [[ -z "$ans" ]] && ans=$default
 
-  ans=$( egrep -E --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
+  ans=$( grep -E --only-matching '^[ynYN]$' <<< "$ans" 2>/dev/null )
 
   if [[ -n "$ans" ]]; then
     ans="${ans//Y/y}"
