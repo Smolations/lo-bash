@@ -1,12 +1,5 @@
 %const TMP_DIR: "$(pwd)/tmp"
 
-function doSomething {
-  local folderPath="$1" fileName="$2"
-
-  echo "path: $folderPath"
-  echo "name: $fileName"
-}
-
 Describe 'utility: _recurse()'
   Include lib/lang/isFunction.sh
 
@@ -29,10 +22,22 @@ Describe 'utility: _recurse()'
   BeforeAll 'setup'
   AfterAll 'teardown'
 
-  It ''
+  function doSomething {
+    local folderPath="$1" fileName="$2"
+
+    echo "path: $folderPath"
+    echo "name: $fileName"
+  }
+
+  It 'recurses a file/folder structure'
     When call _recurse "$TMP_DIR" doSomething
     The status should be success
-    # The output should equal '0123'
+    The line 1 of stdout should match pattern 'path: *tmp/dir1/dir1_2'
+    The line 2 of stdout should match pattern 'name: dir1_2_file.sh'
+    The line 3 of stdout should match pattern 'path: *tmp/dir1'
+    The line 4 of stdout should match pattern 'name: dir1_file.sh'
+    The line 5 of stdout should match pattern 'path: *tmp/dir2'
+    The line 6 of stdout should match pattern 'name: dir2_file.sh'
   End
 
   # Context 'errors'

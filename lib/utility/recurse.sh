@@ -43,7 +43,7 @@ function _recurse {
 
   (( $# == 0 )) && return 1
 
-  if [[ "$fName" == "" ]]; then
+  if [[ -z "$fName" ]]; then
     fName="$sPath"
     sPath=`pwd`
   fi
@@ -59,9 +59,9 @@ function _recurse {
       if [[ -d "$file" ]]; then
         _recurse "$file" $fName
 
-      elif [[ -s "$file" ]]; then
+      elif [[ -f "$file" ]]; then
         # pass directory path and file name
-        eval $fName "${file%/*}" "${file##*/}"
+        $fName "${file%/*}" "${file##*/}"
       fi
 
     done
